@@ -27,4 +27,5 @@ export const handleLocation = async () => {
   const html = await fetch(route).then((data) => data.text());
 
   document.getElementById("main-page").innerHTML = html;
+  if(path === "/") first_text()();
 };
