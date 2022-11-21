@@ -6,11 +6,13 @@ export const route = (event) => {
 const routes = {
   404: "/templates/pages/404.html",
   "/": "/templates/pages/main.html",
+  list: "/templates/pages/list.html",
   fashion: "/templates/pages/fashion.html",
   food: "/templates/pages/food.html",
   travel: "/templates/pages/travel.html",
   sports: "/templates/pages/sports.html",
   entertainment: "/templates/pages/entertainment.html",
+  mypage: "/templates/pages/mypage.html",
   login: "/templates/pages/login.html",
   signin: "/templates/pages/signin.html",
 };
@@ -27,12 +29,3 @@ export const handleLocation = async () => {
   document.getElementById("main-page").innerHTML = html;
   if(path === "/") first_text()();
 };
-
-// const GoToLorem = () => {
-//     window.location.hash = "#lorem";
-//   };
-
-window.addEventListener("hashchange", handleLocation);
-
-document.addEventListener("DOMContentLoaded", handleLocation);
-
