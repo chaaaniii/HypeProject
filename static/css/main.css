@@ -1,5 +1,11 @@
+/*reset*/
+@import "reset.css";
+
 /*home*/
 @import url("./home.css");
 
 /*login*/
 @import url("./login.css");
+
+/*list*/
+@import url("./list.css");
