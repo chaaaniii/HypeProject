@@ -21,3 +21,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // 전역 함수 리스트
 window.route = route;
+
