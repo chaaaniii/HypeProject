@@ -25,6 +25,7 @@ const handleLocation = async () => {
   const html = await fetch(route).then((data) => data.text());
 
   document.getElementById("main-page").innerHTML = html;
+  first_text();
 };
 
 // const GoToLorem = () => {
@@ -34,3 +35,4 @@ const handleLocation = async () => {
 window.addEventListener("hashchange", handleLocation);
 
 document.addEventListener("DOMContentLoaded", handleLocation);
+
