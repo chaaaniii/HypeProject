@@ -1,0 +1,11 @@
+.category {
+  display: flexbox;
+  background-color: aqua;
+}
+.write_switch {
+  display: flexbox;
+  background-color: aliceblue;
+}
+main {
+  background-color: bisque;
+}

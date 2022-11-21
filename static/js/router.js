@@ -6,6 +6,7 @@ const route = (event) => {
 const routes = {
   404: "/templates/pages/404.html",
   "/": "/templates/pages/main.html",
+  list: "/templates/pages/list.html",
   fashion: "/templates/pages/fashion.html",
   food: "/templates/pages/food.html",
   travel: "/templates/pages/travel.html",
