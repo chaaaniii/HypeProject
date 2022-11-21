@@ -1,5 +1,4 @@
 import { handleLocation , route } from "./router.js";
-import { first_text } from "./pages/home";
 
 // hash url 변경 시 처리
 window.addEventListener("hashchange", handleLocation);

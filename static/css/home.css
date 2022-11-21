@@ -161,6 +161,8 @@ a {
 }
 
 .slide {
+  position: relative;
+  
   float: right;
   margin-right: 5rem;
 
@@ -168,4 +170,17 @@ a {
   font-weight: 600;
   color: rgb(106, 106, 106);
   letter-spacing: 1rem;
+
+  animation: fadeInRight 1s;
+}
+
+@keyframes fadeInRight {
+  0% {
+      opacity: 0;
+      transform: translate3d(100%, 0, 0);
+  }
+  to {
+      opacity: 1;
+      transform: translateZ(0);
+  }
 }

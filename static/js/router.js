@@ -1,4 +1,4 @@
-const route = (event) => {
+export const route = (event) => {
   event.preventDefault();
   window.location.hash = event.target.hash;
 };
@@ -15,7 +15,7 @@ const routes = {
   signin: "/templates/pages/signin.html",
 };
 
-const handleLocation = async () => {
+export const handleLocation = async () => {
   let path = window.location.hash.replace("#", "");
 
   if (path.length === 0) {
@@ -25,7 +25,7 @@ const handleLocation = async () => {
   const html = await fetch(route).then((data) => data.text());
 
   document.getElementById("main-page").innerHTML = html;
-  if(path === "/") first_text();
+  if(path === "/") first_text()();
 };
 
 // const GoToLorem = () => {
