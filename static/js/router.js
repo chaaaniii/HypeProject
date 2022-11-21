@@ -6,6 +6,7 @@ export const route = (event) => {
 const routes = {
   404: "/templates/pages/404.html",
   "/": "/templates/pages/main.html",
+  list: "/templates/pages/list.html",
   fashion: "/templates/pages/fashion.html",
   food: "/templates/pages/food.html",
   travel: "/templates/pages/travel.html",
@@ -26,4 +27,5 @@ export const handleLocation = async () => {
   const html = await fetch(route).then((data) => data.text());
 
   document.getElementById("main-page").innerHTML = html;
+  if(path === "/") first_text()();
 };
