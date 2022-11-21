@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
       // 로그인 상태인 경우
     } else {
       // 로그아웃 상태인 경우
-      alert("로그아웃 상태입니다.");
     }
   });
 });
