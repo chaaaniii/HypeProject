@@ -1,4 +1,5 @@
-import { handleLocation , route } from "./router.js";
+// import { authService } from "./firebase";
+import { handleLocation, route } from "./router.js";
 
 // hash url 변경 시 처리
 window.addEventListener("hashchange", handleLocation);
