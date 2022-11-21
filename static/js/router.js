@@ -1,4 +1,4 @@
-const route = (event) => {
+export const route = (event) => {
   event.preventDefault();
   window.location.hash = event.target.hash;
 };
@@ -16,7 +16,7 @@ const routes = {
   signin: "/templates/pages/signin.html",
 };
 
-const handleLocation = async () => {
+export const handleLocation = async () => {
   let path = window.location.hash.replace("#", "");
 
   if (path.length === 0) {
@@ -27,11 +27,3 @@ const handleLocation = async () => {
 
   document.getElementById("main-page").innerHTML = html;
 };
-
-// const GoToLorem = () => {
-//     window.location.hash = "#lorem";
-//   };
-
-window.addEventListener("hashchange", handleLocation);
-
-document.addEventListener("DOMContentLoaded", handleLocation);
