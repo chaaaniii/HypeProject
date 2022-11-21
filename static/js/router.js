@@ -25,7 +25,7 @@ const handleLocation = async () => {
   const html = await fetch(route).then((data) => data.text());
 
   document.getElementById("main-page").innerHTML = html;
-  first_text();
+  if(path === "/") first_text();
 };
 
 // const GoToLorem = () => {

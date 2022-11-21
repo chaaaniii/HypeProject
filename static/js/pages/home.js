@@ -1,4 +1,4 @@
-setTimeout(function(){
+const first_text = ()=>{
 
 const h2 = document.querySelector(".first_text");
 const txt = `여러분들의 공간에 
@@ -22,4 +22,4 @@ const typing = function (_, counter = 0) {
 
 // 페이지 요소가 로드되면 타이핑 애니메이션을 수행할 것
 window.addEventListener("load", typing);
-},5000)
+}
