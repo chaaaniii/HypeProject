@@ -13,10 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
     handleLocation();
     if (user) {
       // 로그인 상태인 경우
-      alert("로그인 상태");
     } else {
       // 로그아웃 상태인 경우
-      alert("로그아웃 상태");
+      alert("로그아웃 상태입니다.");
     }
   });
 });
