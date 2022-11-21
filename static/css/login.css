@@ -15,9 +15,9 @@
 
 .loginback {
   background-color: white;
-
   width: 100%;
   height: 100%;
+  margin-top: 50px;
 }
 
 #loginPage {
@@ -71,21 +71,6 @@ section {
   font-weight: 0;
 }
 
-/* .socialBtn {
-  display: inline-flex;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-} */
-.socialBtns {
-  display: inline-flex;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-}
-
 button {
   border-radius: 50px;
   border-style: none;
@@ -93,17 +78,22 @@ button {
   height: 50px;
   color: white;
   font-size: 16px;
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  letter-spacing: 1px;
 }
 .googleBtn {
   background-color: white;
   border: 1px solid rgb(135, 136, 136);
   color: rgb(135, 136, 136);
-  letter-spacing: 1px;
+  margin-right: 20px;
 }
 .githubBtn {
   background-color: black;
   color: white;
-  letter-spacing: 1px;
 }
 
 .fontimg {
@@ -112,4 +102,101 @@ button {
   column-gap: 10px;
   -webkit-box-align: center;
   align-items: center;
+}
+.githubimg {
+  z-index: 1;
+  margin-right: 7px;
+  margin-left: 3px;
+}
+.whitelayer {
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  margin-right: -38px;
+}
+
+.googleimg {
+  background: url("https://accounts.scdn.co/sso/images/google-icon.1cdc8fce9609d07f0e9d8d0bc4b61f8f.svg")
+    center center no-repeat;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+.githubtxt {
+  letter-spacing: 1.5px;
+  margin-left: 2px;
+}
+.loginOrSecetion {
+  display: flex;
+  flex-direction: row;
+}
+.loginLine {
+  margin: 12px 0px 20px;
+  flex: 1 1 0%;
+  border-top: 1px solid rgb(217, 218, 220);
+}
+.loginOr {
+  flex: 0.3 1 0%;
+  align-content: center;
+  text-align: center;
+  line-height: 1px;
+  font-weight: 500;
+  font-size: 12px;
+  background: rgb(255, 255, 255);
+  text-transform: uppercase;
+  margin-top: 12px;
+}
+.emailWrap,
+.pwWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#email,
+#pw {
+  max-width: 500px;
+  width: 100%;
+  display: block;
+  appearance: none;
+  background-image: none;
+  border: 0px;
+  font-size: 16px;
+  line-height: 1.5rem;
+  font-weight: 400;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-radius: 4px;
+  padding: 12px;
+  border: 1px solid rgb(135, 136, 136);
+  background-color: white;
+  color: black;
+  margin: 15px 0px 15px 0px;
+}
+#email:hover,
+#pw:hover {
+  box-shadow: inset 0 0 0 1px;
+}
+
+#loginBtn {
+  background-color: #1ed760;
+  color: black;
+  letter-spacing: 1px;
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#loginBtn:hover {
+  transform: scale(1.05);
+}
+#signinBtn {
+  background-color: white;
+  border: 1px solid rgb(135, 136, 136);
+  color: rgb(135, 136, 136);
+  letter-spacing: 1px;
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
