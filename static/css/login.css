@@ -1,0 +1,115 @@
+@font-face {
+  font-family: "SLEIGothicTTF";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  font-family: "SLEIGothicTTF";
+}
+
+.loginback {
+  background-color: white;
+
+  width: 100%;
+  height: 100%;
+}
+
+#loginPage {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+#loginLogo {
+  border-bottom: 1px solid rgb(217, 218, 220);
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+#logo {
+  font-size: 40px;
+}
+
+.loginWrap {
+  flex: 3 1 0%;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding: 10px;
+}
+.loginTrm {
+  max-width: 500px;
+  width: 100%;
+}
+
+.loginContainer,
+section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  row-gap: 10px;
+}
+
+#loginTitle {
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 500;
+}
+.titleSize {
+  font-size: 12px;
+  margin: 2px 5px 0px 5px;
+  font-weight: 0;
+}
+
+/* .socialBtn {
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+} */
+.socialBtns {
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+button {
+  border-radius: 50px;
+  border-style: none;
+  width: 500px;
+  height: 50px;
+  color: white;
+  font-size: 16px;
+}
+.googleBtn {
+  background-color: white;
+  border: 1px solid rgb(135, 136, 136);
+  color: rgb(135, 136, 136);
+  letter-spacing: 1px;
+}
+.githubBtn {
+  background-color: black;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.fontimg {
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  -webkit-box-align: center;
+  align-items: center;
+}
