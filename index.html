@@ -14,43 +14,53 @@
     <div id="root">
       <nav class="navBar">
         <ul class="nav_menu">
-          <li class="nav_item logo"><a href="/" class="nav_link">logo</a></li>
-          <li class="nav_item Fs">
-            <a href="#fashion" class="nav_link" onclick="route(event)">
-              Fashion
-            </a>
-          </li>
-          <li class="nav_item Fd">
-            <a href="#food" class="nav_link" onclick="route(event)"> Food </a>
-          </li>
-          <li class="nav_item Tr">
-            <a href="#travel" class="nav_link" onclick="route(event)">
-              Travel
-            </a>
-          </li>
-          <li class="nav_item Sp">
-            <a href="#sports" class="nav_link" onclick="route(event)">
-              Sports
-            </a>
-          </li>
-          <li class="nav_item Em">
-            <a href="#entertainment" class="nav_link" onclick="route(event)">
-              ENT
-            </a>
-          </li>
-          <li class="nav_item Mp" >
-            <a href="#mypage" class="nav_link" onclick="route(event)">
-              My Page
-            </a>
-          </li>
-          <li class="nav_item login">
-            <a href="#login" class="nav_link" onclick="route(event)"> Login </a>
-          </li>
-          <li class="nav_item signin">
-            <a href="#singin" class="nav_link" onclick="route(event)">
-              singin
-            </a>
-          </li>
+          <div class="nav_lis">
+            <li class="nav_item logo">
+              <a href="/" class="nav_link" onclick="route(event)">logo</a>
+            </li>
+            <li class="nav_item Fs">
+              <a href="#fashion" class="nav_link" onclick="route(event)">
+                Fashion
+              </a>
+            </li>
+            <li class="nav_item Fd">
+              <a href="#food" class="nav_link" onclick="route(event)"> Food </a>
+            </li>
+            <li class="nav_item Tr">
+              <a href="#travel" class="nav_link" onclick="route(event)">
+                Travel
+              </a>
+            </li>
+            <li class="nav_item Sp">
+              <a href="#sports" class="nav_link" onclick="route(event)">
+                Sports
+              </a>
+            </li>
+            <li class="nav_item Em">
+              <a href="#entertainment" class="nav_link" onclick="route(event)">
+                ENT
+              </a>
+            </li>
+            <li class="nav_item Mp">
+              <a href="#mypage" class="nav_link" onclick="route(event)">
+                My Page
+              </a>
+            </li>
+          </div>
+          <div class="nav_btns">
+            <li class="nav_button">
+              <button class='nav_btn'onclick="location.href='#signin'">
+                Sign in
+              </button>
+            </li>
+            <li class="nav_button login">
+              <button
+                id="login_out"
+                class="nav_btn"
+                onclick="location.href='#login'"
+              ></button>
+            </li>
+          </div>
         </ul>
       </nav>
       <div id="main-page"></div>
