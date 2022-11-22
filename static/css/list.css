@@ -20,7 +20,7 @@
   align-items: center;
   font-size: 2rem;
   font-weight: bold;
-  padding-left: 2em;
+  padding-left: 1em;
 }
 .category .bt_new {
   width: 10rem;
@@ -52,8 +52,15 @@
   height: 10%;
   margin: 2em 0 2em 6.5em;
 }
-
-.btn_switch img {
+.btn_switch a {
+  width: 7rem;
+  align-items: center;
+}
+.btn_switch a img {
   width: 2rem;
   height: 2rem;
+  padding-right: 1rem;
+}
+.btn_switch > span {
+  font-size: 1rem;
 }
