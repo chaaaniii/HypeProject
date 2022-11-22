@@ -17,6 +17,7 @@ const routes = {
   mypage: "/templates/pages/mypage.html",
   login: "/templates/pages/login.html",
   signin: "/templates/pages/signin.html",
+  board: "/board/main_board/index.html"
 };
 
 export const handleLocation = async () => {

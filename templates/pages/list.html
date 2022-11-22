@@ -1,39 +1,16 @@
-<header class="category">
+<header class="category" id="category">
   <h3>패션</h3>
-  <button class="bt_new">새글작성</button>
+  <button type="button" class="bt_new"><a href="#">새글작성</a></button>
 </header>
 <nav class="write_switch">
-  <ul>
-    <img src="/static/img/clock.png" alt="clock" />
-    <li>최신글</li>
-    <img src="/static/img/flame.png" alt="fire" />
-    <li>인기글</li>
-  </ul>
-</nav>
-<main>
-  <div class="wrap_box">
-    <div class="img_area">
-      <img src="#" alt="img_area" />
+  <div class="btn_switch">
+    <div onclick="recent(event)" class="clock">
+      <img src="/img/clock.png" alt="clock" />
+      <p>최신글</p>
     </div>
-    <div class="write">
-      <div class="txt_area">
-        <ul>
-          <h4>title</h4>
-          <p>모나코 몬테가를로 비치 호텔에서 펼쳐진 크루즈쇼</p>
-        </ul>
-        <div class="date">
-          <span>YYYY년 MM월 DD일</span>
-          <span>* 12개의 댓글</span>
-        </div>
-        <div class="autor_index">
-          <img src="" alt="autor_index" />
-          <p>by Jin9606</p>
-          <div class="like">
-            <img src="#" alt="like" />
-            <p>250</p>
-          </div>
-        </div>
-      </div>
+    <div onclick="pop(event)" class="fire">
+      <img src="/img/flame.png" alt="fire" />
+      <p>인기글</p>
     </div>
   </div>
-</main>
+</nav>
