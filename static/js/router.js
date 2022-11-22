@@ -1,3 +1,5 @@
+// import { authService } from "./firebase.js";
+
 export const route = (event) => {
   event.preventDefault();
   window.location.hash = event.target.hash;
@@ -28,5 +30,5 @@ export const handleLocation = async () => {
   const html = await fetch(route).then((data) => data.text());
 
   document.getElementById("main-page").innerHTML = html;
-  if(path === "/") TypeText();
+  if (path === "/") TypeText();
 };
