@@ -27,4 +27,4 @@ document.addEventListener("DOMContentLoaded", () => {
 // 전역 함수 리스트
 window.route = route;
 window.handleAuth = handleAuth;
-window.logout = logout;
+// window.logout = logout; 아직 미지정 오류나서 주석처리함
