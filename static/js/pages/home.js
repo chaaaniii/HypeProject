@@ -5,6 +5,7 @@ const h2 = document.querySelector(".first_text");
 const txt = `여러분들의 공간에 
 Hype함을 배달합니다.`;
 
+
   let counter = 0
   // 출력할 내용
   setInterval(() => {
