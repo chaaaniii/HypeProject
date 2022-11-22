@@ -1,0 +1,37 @@
+@font-face {
+  font-family: "SLEIGothicTTF";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: "SLEIGothicTTF";
+}
+
+.signinback {
+  background-color: white;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+#signinPage {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+#signinLogo {
+  border-bottom: 1px solid rgb(217, 218, 220);
+  padding: 40px;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+#signin {
+  font-size: 40px;
+  margin-bottom: 30px;
+}

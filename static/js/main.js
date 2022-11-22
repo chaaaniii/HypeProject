@@ -1,5 +1,6 @@
 import { authService } from "./firebase.js";
 import { handleLocation, route } from "./router.js";
+// import { socialLogin } from "./pages/login.js";
 
 // hash url 변경 시 처리
 window.addEventListener("hashchange", handleLocation);
@@ -14,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (user) {
       // 로그인 상태인 경우
       let Mp = document.querySelector(".Mp");
-      Mp.style.visibility = "visible"
+      Mp.style.visibility = "visible";
     } else {
       // 로그아웃 상태인 경우
     }
@@ -23,4 +24,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // 전역 함수 리스트
 window.route = route;
-
+// window.handleAuth = handleAuth;
