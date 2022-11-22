@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
       Mp.style.visibility = "visible"
     } else {
       // 로그아웃 상태인 경우
-
     }
   });
 });
