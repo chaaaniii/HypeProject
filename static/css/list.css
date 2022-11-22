@@ -6,6 +6,9 @@
   font-style: normal;
 }
 
+body {
+  font-family: "SLEIGothicTTF";
+}
 /* 카테고리&새글작성버튼 */
 .category {
   margin-top: 3em;
@@ -20,7 +23,7 @@
   align-items: center;
   font-size: 2rem;
   font-weight: bold;
-  padding-left: 2em;
+  padding-left: 1em;
 }
 .category .bt_new {
   width: 10rem;
@@ -42,18 +45,36 @@
   justify-content: left;
   align-items: center;
   position: relative;
-  background-color: aliceblue;
 }
 .btn_switch {
   display: flex;
   justify-content: left;
+  flex-direction: row; /*수평 정렬*/
   align-items: center;
-  width: 100%;
+  width: 500px;
   height: 10%;
   margin: 2em 0 2em 6.5em;
 }
-
+.clock {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.fire {
+  width: 30%;
+  display: flex;
+  align-items: center;
+}
 .btn_switch img {
+  display: flex;
+  align-items: center;
   width: 2rem;
   height: 2rem;
+}
+.btn_switch p {
+  width: 5rem;
+  height: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
 }
