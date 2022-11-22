@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
     handleLocation();
     if (user) {
       // 로그인 상태인 경우
+      let Mp = document.querySelector(".Mp");
+      Mp.style.visibility = "visible"
     } else {
       // 로그아웃 상태인 경우
     }
