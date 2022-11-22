@@ -7,17 +7,13 @@
 }
 
 * {
-  margin: 0;
-  padding: 0;
-
   font-family: "SLEIGothicTTF";
 }
 
 .loginback {
   background-color: white;
-  width: 100%;
-  height: 100%;
-  margin-top: 50px;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 #loginPage {
@@ -29,7 +25,7 @@
 
 #loginLogo {
   border-bottom: 1px solid rgb(217, 218, 220);
-  padding: 10px;
+  padding: 40px;
   margin-bottom: 10px;
   text-align: center;
   width: 100%;
@@ -37,6 +33,7 @@
 
 #logo {
   font-size: 40px;
+  margin-bottom: 30px;
 }
 
 .loginWrap {
@@ -44,7 +41,10 @@
   display: flex;
   -webkit-box-pack: center;
   justify-content: center;
-  padding: 10px;
+  padding-top: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
 }
 .loginTrm {
   max-width: 500px;
@@ -56,17 +56,19 @@ section {
   display: flex;
   flex-direction: column;
   text-align: center;
-  row-gap: 10px;
+  row-gap: 30px;
 }
 
 #loginTitle {
   display: flex;
   justify-content: center;
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .titleSize {
-  font-size: 12px;
+  font-size: 15px;
   margin: 2px 5px 0px 5px;
   font-weight: 0;
 }
@@ -141,16 +143,21 @@ button {
   text-align: center;
   line-height: 1px;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 15px;
   background: rgb(255, 255, 255);
   text-transform: uppercase;
   margin-top: 12px;
+}
+#loginSubtitle {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .emailWrap,
 .pwWrap {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  font-weight: 600;
 }
 #email,
 #pw {
@@ -162,7 +169,7 @@ button {
   border: 0px;
   font-size: 16px;
   line-height: 1.5rem;
-  font-weight: 400;
+  font-weight: 300;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
   margin-top: 0px;
@@ -198,5 +205,10 @@ button {
   color: rgb(135, 136, 136);
   letter-spacing: 1px;
   margin-top: 20px;
-  margin-bottom: 50px;
+}
+
+#loginSubtitle {
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 25px;
 }
