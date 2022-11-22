@@ -19,3 +19,13 @@ Hype함을 배달합니다.`;
       counter++;
     }, 60);
   };
+
+const UptoMenu = () => {
+  let nav = document.querySelector('.nav_menu')
+  nav.style.transform = 'translateY(-50rem)'
+}
+
+const DowntoMenu = () => {
+  let nav = document.querySelector('.nav_menu')
+  nav.style.transform = 'translateY(50rem)'
+}

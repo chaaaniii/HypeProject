@@ -13,11 +13,10 @@
   <body>
     <div id="root">
       <nav class="navBar">
+        <input type="image" class="logo" onclick="location.href='/'" src="static/img/logo.png"/>
         <ul class="nav_menu">
           <div class="nav_lis">
-            <li class="nav_item logo">
-              <a href="/" class="nav_link" onclick="route(event)">logo</a>
-            </li>
+            <h1 class="Down_nav" onclick="DowntoMenu()">MENU</h1>
             <li class="nav_item Fs">
               <a href="#fashion" class="nav_link" onclick="route(event)">
                 Fashion
@@ -64,6 +63,7 @@
         </ul>
       </nav>
       <div id="main-page"></div>
+      <h2 class="Menu" onclick="UptoMenu()">MENU</h2>
     </div>
     <script src="static/js/pages/login.js"></script>
     <script src="static/js/pages/home.js"></script>
