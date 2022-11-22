@@ -159,8 +159,8 @@ button {
   align-items: flex-start;
   font-weight: 600;
 }
-#email,
-#pw {
+#LoginInEmail,
+#LoginInPassword {
   max-width: 500px;
   width: 100%;
   display: block;

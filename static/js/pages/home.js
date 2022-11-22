@@ -13,7 +13,6 @@ Hype함을 배달합니다.`;
     }
     // 문자열 하나하나 h2의 텍스트 컨텐츠로 추가한다
     h2.innerHTML += txt[counter] === "\n" ? `<br>` : txt[counter];
-
     // 카운터 증산
     counter++;
   }, 60);

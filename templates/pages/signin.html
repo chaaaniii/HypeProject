@@ -49,14 +49,16 @@
             <hr class="loginLine" />
           </div>
           <!--회원가입-->
-          <form onsubmit="handleAuth(event)">
+          <form>
             <div class="emailWrap">
               이메일 주소 <input type="email" id="signUpEmail" />
             </div>
             <div class="pwWrap">
               비밀번호를 만드세요<input type="password" id="signUpPassword" />
             </div>
-            <button type="submit" id="signUpBtn">가입 하기</button>
+            <button type="submit" id="signUpBtn" onclick="handleAuth(event)">
+              가입하기
+            </button>
           </form>
         </div>
       </div>
