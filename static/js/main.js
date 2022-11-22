@@ -15,8 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
       // 로그인 상태인 경우
       let Mp = document.querySelector(".Mp");
       Mp.style.visibility = "visible"
+      document.querySelector('#login_out').innerHTML = "Logout"
     } else {
       // 로그아웃 상태인 경우
+      document.querySelector('#login_out').innerHTML = "Login"
     }
   });
 });
