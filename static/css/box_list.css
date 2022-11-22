@@ -1,0 +1,25 @@
+/* 이미지&글정보 */
+
+.wrap_box {
+  display: flex;
+  text-align: center;
+  background-color: pink;
+}
+
+.txt_area ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.author_index {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.like {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
