@@ -78,6 +78,7 @@ body {
 
 .Mp {
   background-color: rgb(89, 100, 217);
+  visibility: hidden;
 }
 
 .nav_link {
