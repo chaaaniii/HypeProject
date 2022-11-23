@@ -14,7 +14,24 @@ Hype함을 배달합니다.`;
     }
     // 문자열 하나하나 h2의 텍스트 컨텐츠로 추가한다
     h2.innerHTML += txt[counter] === "\n" ? `<br>` : txt[counter];
-    // 카운터 증산
-    counter++;
-  }, 60);
-};
+      // 카운터 증산
+      counter++;
+    }, 60);
+  };
+
+const UptoMenu = () => {
+  let nav = document.querySelector('.nav_menu')
+  nav.style.transform = 'translateY(-50rem)'
+}
+
+const DowntoMenu = () => {
+  let nav = document.querySelector('.nav_menu')
+  nav.style.transform = 'translateY(0rem)'
+}
+
+let nav = document.querySelector('.nav_menu');
+window.onresize = function(){
+  var innerWidth = window.innerWidth;
+  innerWidth <= '1120'? nav.style.transform = 'translateY(0)': console.log('반응');
+}
+
