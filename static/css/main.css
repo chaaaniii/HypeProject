@@ -7,6 +7,9 @@
 /*login*/
 @import url("./login.css");
 
+/*Signin*/
+@import url("./signin.css");
+
 /*list*/
 @import url("./list.css");
 
@@ -15,3 +18,6 @@
 
 /* .write board */
 @import url("./summernote-lite.css");
+
+/* mypage */
+@import url("./mypage.css");

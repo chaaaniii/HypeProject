@@ -1,3 +1,5 @@
+// import { authService } from "./firebase.js";
+
 export const route = (event) => {
   event.preventDefault();
   window.location.hash = event.target.hash;
@@ -13,6 +15,7 @@ const routes = {
   sports: "/templates/pages/sports.html",
   entertainment: "/templates/pages/entertainment.html",
   mypage: "/templates/pages/mypage.html",
+  setting: "/templates/pages/setting.html",
   login: "/templates/pages/login.html",
   signin: "/templates/pages/signin.html",
   // 게시판 글 하고 등록 
@@ -30,5 +33,5 @@ export const handleLocation = async () => {
   const html = await fetch(route).then((data) => data.text());
 
   document.getElementById("main-page").innerHTML = html;
-  if(path === "/") TypeText();
+  if (path === "/") TypeText();
 };
