@@ -18,7 +18,7 @@ body {
   background-color: black;
   font-family: "SLEIGothicTTF";
 
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 /* 내비바 */
@@ -143,7 +143,7 @@ body {
   .Down_nav {
     background-color: green;
     color: #fff;
-    margin-top: -90px;
+    margin-top: -95px;
 
     display: flex;
     justify-content: center;
@@ -152,13 +152,15 @@ body {
     right: 0;
 
     font-size: 2.5rem;
-    padding: 1rem 1.5rem 1rem 1rem;
+    padding: 1rem 1.5rem 2rem 1rem;
 
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
 
     width: 8rem;
     height: 1.6rem;
+
+    cursor: pointer;
   }
 
   .Menu {
@@ -171,13 +173,15 @@ body {
     bottom: 0;
     z-index: 1;
     font-size: 2.5rem;
-    padding: 1rem 1.5rem 1rem 1rem;
+    padding: 1rem 1.5rem 2rem 1rem;
 
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
 
     width: 8rem;
     height: 1.6rem;
+
+    cursor: pointer;
   }
 
   .nav_menu {

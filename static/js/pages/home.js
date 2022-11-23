@@ -27,5 +27,11 @@ const UptoMenu = () => {
 
 const DowntoMenu = () => {
   let nav = document.querySelector('.nav_menu')
-  nav.style.transform = 'translateY(50rem)'
+  nav.style.transform = 'translateY(0rem)'
+}
+
+let nav = document.querySelector('.nav_menu');
+window.onresize = function(){
+  var innerWidth = window.innerWidth;
+  innerWidth <= '1120'? nav.style.transform = 'translateY(0)': console.log('반응');
 }
