@@ -18,20 +18,45 @@ Hype함을 배달합니다.`;
       counter++;
     }, 60);
   };
-
+//반응형일 때 우측하단에 NAV바 올리는 버튼
 const UptoMenu = () => {
   let nav = document.querySelector('.nav_menu')
   nav.style.transform = 'translateY(-50rem)'
 }
-
+//반응형일 때 NAV바 올라온걸 내리는 버튼
 const DowntoMenu = () => {
   let nav = document.querySelector('.nav_menu')
   nav.style.transform = 'translateY(0rem)'
 }
-
+//width가 1120이 아닐경우 네비바 위쪽에 고정
 let nav = document.querySelector('.nav_menu');
+let Down = document.querySelector('.Down_nav');
 window.onresize = function(){
   var innerWidth = window.innerWidth;
-  innerWidth <= '1120'? nav.style.transform = 'translateY(0)': console.log('반응');
+  innerWidth <= '1120'? nav.style.transform = 'translateY(0)'   : console.log('반응');
+}
+const nav_menu = document.querySelector(".nav_menu");
+const navBar = document.querySelector(".navBar");
+
+const nav_visi = () => {
+  let path = window.location.hash.replace("#", "");
+if(path === 'login'){
+  nav_menu.style.visibility = "hidden";
+  navBar.style.backgroundColor='white';
+}else{
+  nav_menu.style.visibility = "visible";
+  navBar.style.backgroundColor="black";
+}
+}
+
+const nav_visi_sign = () => {
+  let path = window.location.hash.replace("#", "");
+if(path === 'signin'){
+  nav_menu.style.visibility = "hidden";
+  navBar.style.backgroundColor='white';
+}else{
+  nav_menu.style.visibility = "visible";
+  navBar.style.backgroundColor="black";
+}
 }
 
