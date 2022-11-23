@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <title>Document</title>
 </head>
-<body>
+<body> -->
 
     <div class="warp">
 
@@ -45,7 +45,13 @@
         </div>
 
         <div class="text">
-            <p class="text1">샤넬의 수장 뭐무머뭐무머머 샤넬의 수장 뭐무머뭐무머머  </p>
+            <div class="text12">
+            <p class="text123">믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥
+                믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥
+                믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥
+                믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥
+                믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥 </p>
+            </div>
         </div>
 
 
@@ -54,17 +60,20 @@
         <!-- 댓글 -->
         <div class="comment_input">
             <input type="text" class="comment_input1" placeholder="댓글을 입력하세요..." id="comment_input1"/>
-            <button class="comment_input_btn" onclick="write_comment(event)">등록</button>
+            <button class="comment_input_btn" onclick="writecomment(event);getfire()">등록</button>
+
+            <!-- 홈페이지가 새로고침 또는 랜딩이 될떄마다 뿌려주는 함수는 getfire이다 팀원들이 뿌려주는 먼가를만들면 거기에 넣어주기만하면됨 -->
+            <!-- <button onclick="getfire()">뻐른</button> -->
         </div>
 
-    <div class="comment_list">
+    <div class="comment_list" id="comment_list">
         <div class="comment_box" id="comment_box" >
 
                 <div class="comment">
                     <img src="/static/css/다운로드.jpeg" alt="" class="comment_img">
-                    <p class="name">픠에엥</p>
+                    <p class="commentname">픠에엥</p>
                     <div>
-                        <p class="comment_text" id="comment_text">픠에엥에에에에ㅔ에엥</p>
+                        <p class="comment_text" id="comment_text">amldpdpdpdp</p>
                             <div class="comment_input_container">
                                 <input type="text" class="comment_input" id="comment_input" />
                                 <button  id="comment_save" onclick="comment_save()">버른</button>
@@ -97,6 +106,6 @@
         </div>
     
 
-<script src="/static/js/pages/board.js" type="module"></script>
+<!-- <script src="/static/js/pages/board.js" type="module"></script>
 </body>
-</html>
+</html> -->

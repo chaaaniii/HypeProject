@@ -6,7 +6,7 @@ import {
   GoogleAuthProvider,
   GithubAuthProvider,
   signInWithPopup,
-  // signOut,
+  signOut,
 } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
 
 //회원가입
@@ -111,31 +111,18 @@ export const socialLogin = (str) => {
       const errorMessage = error.message;
     });
 };
-// export const logout = () => {
-//   signOut(authService)
-//     .then(() => {
-//       // Sign-out successful.
-//       localStorage.clear();
-//       console.log("로그아웃 성공");
-//     })
-//     .catch((error) => {
-//       // An error happened.
-//       console.log("error:", error);
-//     });
-// };
 
-// const login = document.querySelector(".login");
-
-
-// const body = document.querySelector("body");
-// const change = document.getElementById("csschange");
-
-// login.addEventListener("click", () => {
-//   let path = window.location.hash.replace("#", "");
-//   if (path === "#login") {
-//     change.href = "./" + css + "login.css";
-//     nav_menu.style.visibility = "hidden";
-//     navBar.style.visibility = "hidden";
-//     body.style.backgroundColor = "white";
-//   }
-
+export const logout = () => {
+  signOut(authService)
+    .then(() => {
+      // Sign-out successful.
+      localStorage.clear();
+      console.log("로그아웃 성공");
+      document.querySelector("#login_out").innerText = "Log In";
+      window.location.hash = "/";
+    })
+    .catch((error) => {
+      // An error happened.
+      console.log("error:", error);
+    });
+};

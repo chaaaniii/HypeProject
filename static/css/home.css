@@ -18,7 +18,7 @@ body {
   background-color: black;
   font-family: "SLEIGothicTTF";
 
-  overflow-y: hidden
+  overflow-y: hidden;
 }
 /* #sign_in {
   display: none;
@@ -250,9 +250,7 @@ body {
   .nav_btn:hover {
     color: #fff;
     background-color: black;
-
     border: 2px solid white;
-
   }
 }
 
