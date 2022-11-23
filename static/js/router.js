@@ -1,4 +1,4 @@
-// import { authService } from "./firebase.js";
+import { authService } from "./firebase.js";
 
 export const route = (event) => {
   event.preventDefault();
@@ -18,7 +18,7 @@ const routes = {
   setting: "/templates/pages/setting.html",
   login: "/templates/pages/login.html",
   signin: "/templates/pages/signin.html",
-  // 게시판 글 하고 등록 
+  // 게시판 글 하고 등록
   // : "/templates/pages/board.html"
   // : "/templates/pages/write_board.html"
 };
