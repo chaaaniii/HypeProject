@@ -7,5 +7,17 @@
 /*login*/
 @import url("./login.css");
 
+/*Signin*/
+@import url("./signin.css");
+
 /*list*/
 @import url("./list.css");
+
+/* board */
+@import url("./board.css");
+
+/* .write board */
+@import url("./summernote-lite.css");
+
+/* mypage */
+@import url("./mypage.css");

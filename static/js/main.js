@@ -1,5 +1,6 @@
 import { authService } from "./firebase.js";
 import { handleLocation, route } from "./router.js";
+import { handleAuth } from "./auth.js";
 
 // hash url 변경 시 처리
 window.addEventListener("hashchange", handleLocation);
@@ -13,16 +14,17 @@ document.addEventListener("DOMContentLoaded", () => {
     handleLocation();
     if (user) {
       // 로그인 상태인 경우
-      let Mp = document.querySelector(".Mp");
-      Mp.style.visibility = "visible"
-      document.querySelector('#login_out').innerHTML = "Logout"
+      // let Mp = document.querySelector(".Mp");
+      // Mp.style.visibility = "visible";
+      // document.querySelector("#login_out").innerHTML = "Logout";
     } else {
       // 로그아웃 상태인 경우
-      document.querySelector('#login_out').innerHTML = "Login"
+      // document.querySelector("#login_out").innerHTML = "Login";
     }
   });
 });
 
 // 전역 함수 리스트
 window.route = route;
-
+window.handleAuth = handleAuth;
+// window.logout = logout; 아직 미지정 오류나서 주석처리함
