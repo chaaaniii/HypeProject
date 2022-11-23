@@ -17,7 +17,6 @@ a {
 body {
   background-color: black;
   font-family: "SLEIGothicTTF";
-
   overflow-y: hidden;
 }
 /* #sign_in {
@@ -245,9 +244,7 @@ body {
   .nav_btn:hover {
     color: #fff;
     background-color: black;
-
     border: 2px solid white;
-
   }
 }
 
