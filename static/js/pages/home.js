@@ -49,3 +49,14 @@ if(path === 'login'){
 }
 }
 
+const nav_visi_sign = () => {
+  let path = window.location.hash.replace("#", "");
+if(path === 'signin'){
+  nav_menu.style.visibility = "hidden";
+  navBar.style.backgroundColor='white';
+}else{
+  nav_menu.style.visibility = "visible";
+  navBar.style.backgroundColor="black";
+}
+}
+
