@@ -40,10 +40,8 @@ const navBar = document.querySelector(".navBar");
 
 const nav_visi = () => {
   let path = window.location.hash.replace("#", "");
-  console.log("a")
 if(path === 'login'){
   nav_menu.style.visibility = "hidden";
-  console.log("b")
   navBar.style.backgroundColor='white';
 }else{
   nav_menu.style.visibility = "visible";
