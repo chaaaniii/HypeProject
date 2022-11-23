@@ -1,5 +1,6 @@
 import { authService } from "./firebase.js";
 import { handleLocation, route } from "./router.js";
+import { socialLogin } from "./auth.js";
 import { handleAuth } from "./auth.js";
 
 // hash url 변경 시 처리
@@ -14,12 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
     handleLocation();
     if (user) {
       // 로그인 상태인 경우
-      // let Mp = document.querySelector(".Mp");
-      // Mp.style.visibility = "visible";
-      // document.querySelector("#login_out").innerHTML = "Logout";
+      let Mp = document.querySelector(".Mp");
+      Mp.style.visibility = "visible";
+      let hidden = document.querySelector("#sign_in");
+      hidden.style.display = "none";
     } else {
       // 로그아웃 상태인 경우
-      // document.querySelector("#login_out").innerHTML = "Login";
     }
   });
 });
@@ -27,4 +28,5 @@ document.addEventListener("DOMContentLoaded", () => {
 // 전역 함수 리스트
 window.route = route;
 window.handleAuth = handleAuth;
+window.socialLogin = socialLogin;
 // window.logout = logout; 아직 미지정 오류나서 주석처리함
