@@ -11,7 +11,7 @@
                 <button class="img_upload" onclick="upload_img()">이미지 업로드</button>
                 <button class="img_remove">이미지 제거</button>
             </div>
-            <input type="file" id="imgUpload" accept="img/*" style="display: none;">
+            <input onchange="onFileChange(event)" type="file" id="imgUpload" accept="img/*" style="display: none;">
             <div class="profile_info_area">
                 <div id="info" class="info" style="visibility: visible;">
                     <div id="username" class="username">이름</div>

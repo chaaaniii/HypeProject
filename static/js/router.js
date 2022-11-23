@@ -14,6 +14,8 @@ const routes = {
   sports: "/templates/pages/sports.html",
   entertainment: "/templates/pages/entertainment.html",
   mypage: "/templates/pages/mypage.html",
+  like: "/templates/pages/like.html",
+  scrab: "/templates/pages/scrab.html",
   setting: "/templates/pages/setting.html",
   login: "/templates/pages/login.html",
   signin: "/templates/pages/signin.html",

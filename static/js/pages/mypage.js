@@ -3,8 +3,7 @@ function uploadedPost() {
     const like = document.querySelector('#like');
     const scrab = document.querySelector('#scrab');
     const tab_underline = document.querySelector('.tab_underline');
-    let selected = mypost
-
+    let selected = mypost;
     if (mypost === selected) {
         mypost.classList.add('active');
         like.classList.remove('active');
@@ -18,9 +17,7 @@ function likePost() {
     const like = document.querySelector('#like');
     const scrab = document.querySelector('#scrab');
     const tab_underline = document.querySelector('.tab_underline');
-    
-    let selected = like
-    console.log(selected)
+    let selected = like;
     if (like === selected) {
         mypost.classList.remove('active');
         like.classList.add('active');
@@ -34,8 +31,7 @@ function scrabPost() {
     const like = document.querySelector('#like');
     const scrab = document.querySelector('#scrab');
     const tab_underline = document.querySelector('.tab_underline');
-
-    let selected = scrab
+    let selected = scrab;
     if (scrab === selected) {
         mypost.classList.remove('active');
         like.classList.remove('active');
