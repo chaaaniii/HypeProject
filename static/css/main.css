@@ -19,8 +19,5 @@
 /* board */
 @import url("./board.css");
 
-/* .write board */
-@import url("./summernote-lite.css");
-
 /* mypage */
 @import url("./mypage.css");
