@@ -1,25 +1,31 @@
-// import {
-//     addDoc,
-//     collection
-//     } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
-// import { dbService } from "../firebase.js";
+import {
+    addDoc,
+    collection,
+    query,
+    orderBy,
+    getDocs
 
-// export 
-// const write_comment = async(event) => {
-//     event.preventDefault()
-//     const comment = document.getElementById('comment_input1');
-//     try{ 
-//         await addDoc(collection(dbService, "boardcomment"), {
-//             value : comment.value,
-//             createAt : Date.now(),
-//         })
-//         comment.value = ""
-//     }
-//     catch(error){
-//         alert(error)
-//     }
-// };
- // user : uuid 박아라 영재야 임마!
+    } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+import { dbService } from "../firebase.js";
+
+    const writecomment = async(event) => {
+    event.preventDefault()
+    const comment = document.getElementById('comment_input1');
+    try{ 
+        await addDoc(collection(dbService, "boardcomment"), {
+            value : comment.value,
+            createAt : Date.now(),
+        })
+        comment.value = ""
+    }
+    catch(error){
+        alert(error)
+    }
+};
+window.writecomment = writecomment
+
+
+//  user : uuid 박아라 영재야 임마!
 // -----------------드롭다운
 window.show = function show(){
     const bar = document.getElementById('search_history');
@@ -135,3 +141,67 @@ window.comment_delete = function comment_delete(event){
 
 // var elem = document.querySelector('#some-element');
 //     elem.parentNode.removeChild(elem);
+
+
+// commtnt_firebase=============================
+
+    const getfire = async() => {
+    const list = []
+    const q = query(
+        collection(dbService, "boardcomment"),
+        //최신순으로 읽어올꺼야~
+        orderBy("createAt", "desc")
+    );  
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+            const obj = {
+            id : doc.id,
+            ...doc.data()
+        }
+        list.push(obj)
+    })
+    const comment_box = document.getElementById('comment_list')
+    comment_box.innerHTML = ''
+    list.forEach((item) => {
+        const temp_html = `<div class="comment_box" id="comment_box" >
+
+        <div class="comment">
+            <img src="/static/css/다운로드.jpeg" alt="" class="comment_img">
+            <p class="name">픠에엥</p>
+            <div>
+                <p class="comment_text" id="comment_text">${item.value}</p>
+                    <div class="comment_input_container">
+                        <input type="text" class="comment_input" id="comment_input" />
+                        <button  id="comment_save" onclick="comment_save()">버른</button>
+                    </div>
+            </div>
+        </div>
+
+
+        <div class="heart-btn">
+            <div class="content">
+                <span class="heart"></span>
+                <span class="tex"></span>
+                <span class="numb"></span>
+            </div>
+        </div>
+    
+        <div class="buttons1">
+            <button href="#" class="top_btn1" id="search_input1" onclick="show1()">...</button>
+                <ul class="hide_bar1" id="search_history1" >
+                    <li id="comment_modify" onclick="comment_modifyed()">수정</li>
+                    <li id="comment_delete" onclick="comment_delete()">삭제</li>
+                </ul>
+        </div>
+
+</div>`
+        const div = document.createElement('div')
+        div.classList.add("box");
+        div.innerHTML = temp_html;
+        comment_box.appendChild(div);
+    })
+}
+window.getfire = getfire
+getfire()
+
+
