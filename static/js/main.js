@@ -2,6 +2,7 @@ import { authService } from "./firebase.js";
 import { handleLocation, route } from "./router.js";
 import { logout } from "./auth.js";
 import { socialLogin, handleAuth } from "./auth.js";
+// import { writecomment } from "./pages/board.js";
 
 // hash url 변경 시 처리
 window.addEventListener("hashchange", handleLocation);
@@ -38,3 +39,4 @@ window.route = route;
 window.handleAuth = handleAuth;
 window.socialLogin = socialLogin;
 window.logout = logout;
+// window.writecomment = writecomment;

@@ -54,10 +54,13 @@
         <!-- 댓글 -->
         <div class="comment_input">
             <input type="text" class="comment_input1" placeholder="댓글을 입력하세요..." id="comment_input1"/>
-            <button class="comment_input_btn" onclick="write_comment(event)">등록</button>
+            <button class="comment_input_btn" onclick="writecomment(event);getfire()">등록</button>
+
+            <!-- 홈페이지가 새로고침 또는 랜딩이 될떄마다 뿌려주는 함수는 getfire이다 팀원들이 뿌려주는 먼가를만들면 거기에 넣어주기만하면됨 -->
+            <button onclick="getfire()">뻐른</button>
         </div>
 
-    <div class="comment_list">
+    <div class="comment_list" id="comment_list">
         <div class="comment_box" id="comment_box" >
 
                 <div class="comment">
