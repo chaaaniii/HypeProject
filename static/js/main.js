@@ -39,4 +39,8 @@ window.route = route;
 window.handleAuth = handleAuth;
 window.socialLogin = socialLogin;
 window.logout = logout;
+<<<<<<< HEAD
 // window.writecomment = writecomment;
+=======
+window.writecomment = writecomment;
+>>>>>>> 5ee13b6b78fab7ce71d6190736c6a68c895d2202
