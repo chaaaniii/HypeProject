@@ -11,6 +11,8 @@ function upload_img() {
 }
 
 function mod() {
+    const info = document.querySelector('#info')
+    const modify = document.querySelector('#modify')
     info.style.visibility = 'hidden';
     modify.style.visibility = 'visible';
 }
@@ -20,6 +22,8 @@ function save() {
     const urintroduce = document.querySelector('#urintroduceinput').value;
     const username = document.querySelector('#username');
     const userintroduce = document.querySelector('#userintroduce');
+    const info = document.querySelector('#info')
+    const modify = document.querySelector('#modify')
     if (urname === '') {
         alert("이름을 입력해주세요.");
         onclick.preventDefault();
