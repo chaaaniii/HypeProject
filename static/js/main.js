@@ -1,7 +1,7 @@
 import { authService } from "./firebase.js";
 import { handleLocation, route } from "./router.js";
-import { socialLogin } from "./auth.js";
-import { handleAuth } from "./auth.js";
+import { logout } from "./auth.js";
+import { socialLogin, handleAuth } from "./auth.js";
 // import { writecomment } from "./pages/board.js"
 
 // hash url 변경 시 처리
