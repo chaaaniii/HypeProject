@@ -81,11 +81,20 @@
             </li>
             <li class="nav_button login">
               <button
-                id="login_out"
+                id="log_in"
                 class="nav_btn"
-                onclick=" location.href='#login'; nav_visi()"
+                onclick="nav_visi()"
               >
                 Log In
+              </button>
+            </li>
+            <li class="nav_button logout">
+              <button
+                id="logout"
+                class="nav_btn"
+                onclick="logout()"
+              >
+                Logout
               </button>
             </li>
           </div>
@@ -97,12 +106,12 @@
     <script src="static/js/pages/home.js"></script>
     <script src="static/js/main.js" type="module"></script>
     <!-- board scripts -->
-    <script src="static/js/pages/board.js" type="module"></script>
-    <script>
+    <!-- <script src="static/js/pages/board.js" type="module"></script> -->
+    <!-- <script>
       $(".summernote").summernote({
         height: 650,
         lang: "ko-KR",
       });
-    </script>
+    </script> -->
   </body>
 </html>

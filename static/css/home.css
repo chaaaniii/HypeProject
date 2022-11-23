@@ -20,9 +20,9 @@ body {
 
   overflow-y: hidden;
 }
-/* #sign_in {
+#logout{
   display: none;
-} */
+}
 /* 내비바 */
 .navBar {
   display: flex;

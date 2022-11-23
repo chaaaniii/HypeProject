@@ -65,7 +65,7 @@ document.addEventListener('click', function handleClickOutsideBox(event) {
 
     const box = document.getElementById('search_history');
     const button = document.getElementById('search_input');
-    const isBoxShowing = !box.classList.contains('hide_bar');
+    // const isBoxShowing = !box.classList.contains('hide_bar');
     const isButtonClicked = button.contains(event.target);
     
 
