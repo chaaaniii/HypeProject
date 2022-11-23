@@ -4,7 +4,7 @@
     width: 108rem;
     padding-top: 1px;
     margin-top: 13px;
-    margin-left: 192px;
+    margin-left: 176px;
 }
 .box {
     width: 768px;
@@ -139,6 +139,7 @@
     height: 2rem;
     font-size: 1rem;
     transition: background-color 0.3s ease-in-out 0s;
+    z-index: 999;
 }
 .back_button a:hover {
     background: green;
@@ -148,6 +149,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.img_save {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: white;
+    color: black;
+    border-radius: 1rem;
+    width: 9rem;
+    height: 3rem;
+    font-size: 1rem;
+    padding: .5rem 1.5rem;
+    transition: background-color 0.3s ease-in-out 0s;
+}
+.profile_img_btn .img_save:hover {
+    background-color: green;
+    color: white;
 }
 .profile_img_btn button {
     display: inline-flex;
@@ -178,7 +200,7 @@
     margin-top: 3rem;
     padding-top: 3rem;
     flex: 1 1 0%;
-    border-top: 2px solid white;
+    border-top: 2px solid black;
 }
 .info {
     position: absolute;

@@ -33,3 +33,7 @@ function save() {
     info.style.visibility = 'visible';
     modify.style.visibility = 'hidden';
 }
+
+function changeProfile() {
+    console.log(asdf)
+}

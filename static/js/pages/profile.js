@@ -15,7 +15,8 @@ export const changeProfile = async (event) => {
     `${authService.currentUser.uid}/${uuidv4()}`
   );
 
-  const newNickname = document.getElementById("profileNickname").value;
+  const newNickname = document.getElementById("username").innerText;
+  console.log(newNickname)
   // 프로필 이미지 dataUrl을 Storage에 업로드 후 다운로드 링크를 받아서 photoURL에 저장.
   const imgDataUrl = localStorage.getItem("imgDataUrl");
   let downloadUrl;
@@ -29,7 +30,7 @@ export const changeProfile = async (event) => {
   })
     .then(() => {
       alert("프로필 수정 완료");
-      window.location.hash = "#fanLog";
+      window.location.hash = "/";
     })
     .catch((error) => {
       alert("프로필 수정 실패");
@@ -37,6 +38,7 @@ export const changeProfile = async (event) => {
     });
 };
 
+// 미리보기
 export const onFileChange = (event) => {
   const theFile = event.target.files[0]; // file 객체
   const reader = new FileReader();
