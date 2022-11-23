@@ -18,20 +18,21 @@ document.addEventListener("DOMContentLoaded", () => {
       // 로그인 상태인 경우
       let Mp = document.querySelector(".Mp");
       Mp.style.visibility = "visible";
-      let hidden = document.querySelector("#sign_in");
-      hidden.style.display = "none";
-
-      document.querySelector("#login_out").innerText = "Log out";
+      let hidden_sign = document.querySelector("#sign_in");
+      hidden_sign.style.display = "none";
+      let hidden_login = document.querySelector("#log_in");
+      hidden_login.style.display = "none";
+      let logout = document.querySelector("#logout");
+      logout.style.display="flex";
     } else {
       // 로그아웃 상태인 경우
+      // window.location.hash = "/"
     }
   });
 });
 
-document.querySelector("#login_out").addEventListener("click", () => {
-  if (document.querySelector("#login_out").innerText === "Log out") {
+document.querySelector("#logout").addEventListener("click", () => {
     logout();
-  }
 });
 
 // 전역 함수 리스트
@@ -39,4 +40,4 @@ window.route = route;
 window.handleAuth = handleAuth;
 window.socialLogin = socialLogin;
 window.logout = logout;
-window.writecomment = writecomment;
+// window.writecomment = writecomment;
