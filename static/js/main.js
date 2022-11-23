@@ -29,3 +29,4 @@ document.addEventListener("DOMContentLoaded", () => {
 window.route = route;
 window.handleAuth = handleAuth;
 window.socialLogin = socialLogin;
+// window.logout = logout; 아직 미지정 오류나서 주석처리함

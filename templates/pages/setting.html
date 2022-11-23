@@ -1,0 +1,33 @@
+<div class="background">
+    <div class="box_profile">
+        <div class="profile_setting_box">
+            <div class="profile_img_area">
+                <img src="/static/img/empty_profile.png" alt="profile">
+            </div>
+            <div class="back_button">
+                <a href="#mypage">돌아가기</a>
+            </div>
+            <div class="profile_img_btn">
+                <button class="img_upload">이미지 업로드</button>
+                <button class="img_remove">이미지 제거</button>
+            </div>
+            <input type="file" id="imgUpload" accept="img/*" style="display: none;">
+            <div class="profile_info_area">
+                <div id="info" class="info" style="visibility: visible;">
+                    <div id="username" class="username">이름</div>
+                    <p id="userintroduce">소개가 들어갑니다.</p>
+                    <div class="modify_button">
+                        <button id="modify_btn" class="modify" onclick="mod()">수정</button>
+                    </div>
+                </div>
+                <form id="modify" class="profile_modify" style="visibility: hidden;">
+                    <input placeholder="이름" id="urnameinput" class="profile_text display_name">
+                    <input placeholder="소개" id="urintroduceinput" class="profile_text info">
+                    <div class="save_button">
+                        <button id="save_btn" class="save" type="button" onclick="save()">저장</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

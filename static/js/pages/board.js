@@ -1,31 +1,32 @@
-import {
-    addDoc,
-    collection
-    } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
-import { dbService } from "../firebase.js";
+// import {
+//     addDoc,
+//     collection
+//     } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+// import { dbService } from "../firebase.js";
 
-export const write_comment = async(event) => {
-    event.preventDefault()
-    const comment = document.getElementById('comment_input1');
-    try{ 
-        await addDoc(collection(dbService, "boardcomment"), {
-            value : comment.value,
-            createAt : Date.now(),
-        })
-        comment.value = ""
-    }
-    catch(error){
-        alert(error)
-    }
-};
+// export 
+// const write_comment = async(event) => {
+//     event.preventDefault()
+//     const comment = document.getElementById('comment_input1');
+//     try{ 
+//         await addDoc(collection(dbService, "boardcomment"), {
+//             value : comment.value,
+//             createAt : Date.now(),
+//         })
+//         comment.value = ""
+//     }
+//     catch(error){
+//         alert(error)
+//     }
+// };
  // user : uuid 박아라 영재야 임마!
 // -----------------드롭다운
-function show(){
+window.show = function show(){
     const bar = document.getElementById('search_history');
     bar.classList.toggle('hide_bar')
 }
 
-function show1(){
+window.show1 = function show1(){
     const bar1 = document.getElementById('search_history1');
     bar1.classList.toggle('hide_bar1')
 }
@@ -95,7 +96,7 @@ document.addEventListener('click', function handleClickOutsideBox(event) {
 // ===========================modify
 
 const comment_modify = document.getElementById('comment_modify')
-function comment_modifyed(){
+window.comment_modifyed = function comment_modifyed(){
 
     const comment_text = document.querySelector('#comment_text')
     const comment_text_value = comment_text.innerHTML
@@ -113,7 +114,7 @@ function comment_modifyed(){
     
 }
 
-function comment_save(){
+window.comment_save = function comment_save(){
     const comment_box = document.getElementById('comment_text');
     const comment_input = document.getElementById('comment_input');
     const comment_input_container = document.querySelector('.comment_input_container')
@@ -127,7 +128,7 @@ function comment_save(){
 }   
 
 // ============================commet_delete
-function comment_delete(event){
+window.comment_delete = function comment_delete(event){
     const comment_delete = document.querySelector('#comment_box');
     comment_delete.parentNode.removeChild(comment_delete);
 }
