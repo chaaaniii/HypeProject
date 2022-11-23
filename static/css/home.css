@@ -18,7 +18,9 @@ body {
   background-color: black;
   font-family: "SLEIGothicTTF";
 }
-
+/* #sign_in {
+  display: none;
+} */
 /* 내비바 */
 .navBar {
   display: flex;
@@ -44,12 +46,12 @@ body {
   box-sizing: border-box;
 }
 
-.nav_lis{
+.nav_lis {
   display: flex;
   flex-direction: row;
 }
 
-.nav_btns{
+.nav_btns {
   display: flex;
   flex-direction: row;
 
@@ -67,23 +69,23 @@ body {
   height: 1.6rem;
 }
 
-.nav_button{
+.nav_button {
   display: flex;
-  justify-content:end;
+  justify-content: end;
   align-items: center;
 
   width: 8rem;
-  
+
   margin: 0 0.5rem 0 0.5rem;
 }
 
-.nav_btn{
+.nav_btn {
   font-size: 1.3rem;
   font-weight: 600;
   color: black;
 }
 
-.nav_btn:hover{
+.nav_btn:hover {
   color: #fff;
   background-color: black;
 
@@ -138,7 +140,7 @@ body {
 }
 /* nav바 반응형 */
 @media (max-width: 1120px) {
-  .navBar{
+  .navBar {
     display: none;
   }
 }
@@ -159,10 +161,8 @@ body {
   letter-spacing: 0.3rem;
 }
 
-
 /* 네온사인 플리커 */
 .flicker {
-
   margin-top: 2.5rem;
   margin-left: 10rem;
 
@@ -177,84 +177,83 @@ body {
   animation: text-flicker 5s linear infinite;
 }
 
-.offset{
+.offset {
   animation: letter-flicker 3s linear infinite;
 }
 
 @keyframes text-flicker {
   0% {
-    opacity:0.1;
+    opacity: 0.1;
     text-shadow: 0px 0px 22px gray;
   }
   2% {
-    opacity:1;
+    opacity: 1;
     text-shadow: 0px 0px 22px gray;
   }
   6% {
-    opacity:0.1;
+    opacity: 0.1;
     text-shadow: 0px 0px 22px gray;
   }
   8% {
-    opacity:0.1;
+    opacity: 0.1;
     text-shadow: 0px 0px 22px gray;
   }
   9% {
-    opacity:1;
+    opacity: 1;
     text-shadow: 0px 0px 22px gray;
   }
   12% {
-    opacity:0.1;
+    opacity: 0.1;
     text-shadow: 0px 0px 22px gray;
   }
   20% {
-    opacity:1;
+    opacity: 1;
     text-shadow: 0px 0px 22px gray;
   }
   100% {
-    opacity:.9;
+    opacity: 0.9;
     text-shadow: 0px 0px 22px gray;
   }
 }
 
 @keyframes letter-flicker {
   0% {
-    opacity:0.1;
+    opacity: 0.1;
     text-shadow: 0px 0px 22px gray;
   }
   2% {
-    opacity:0.1;
+    opacity: 0.1;
     text-shadow: 0px 0px 22px gray;
   }
   4% {
-    opacity:1;
+    opacity: 1;
     text-shadow: 0px 0px 22px gray;
   }
   19% {
-    opacity:1;
+    opacity: 1;
     text-shadow: 0px 0px 22px gray;
   }
   21% {
-    opacity:0.1;
+    opacity: 0.1;
     text-shadow: 0px 0px 22px gray;
   }
   23% {
-    opacity:1;
+    opacity: 1;
     text-shadow: 0px 0px 22px gray;
   }
   80% {
-    opacity:1;
+    opacity: 1;
     text-shadow: 0px 0px 22px gray;
   }
   83% {
-    opacity:0.4;
+    opacity: 0.4;
     text-shadow: 0px 0px 22px gray;
   }
   87% {
-    opacity:1;
+    opacity: 1;
     text-shadow: 0px 0px 22px gray;
   }
 }
-
 
 /* express 슬라이드 */
 .slide {

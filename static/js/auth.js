@@ -1,13 +1,17 @@
-// import { emailRegex, pwRegex } from "../util.js";
+import { emailRegex, pwRegex } from "./util.js";
 import { authService } from "./firebase.js";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  signOut,
+  GoogleAuthProvider,
+  GithubAuthProvider,
+  signInWithPopup,
+  // signOut,
 } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
 
 //회원가입
 export function handleAuth(event) {
+  //회원가입
   const btnText = event.target.innerText;
   if (btnText === "가입하기") {
     // document.getElementById("signUpBtn").addEventListener("click", (event) => {
@@ -20,7 +24,7 @@ export function handleAuth(event) {
         // Signed in
         const user = userCredential.user;
         alert("회원가입 성공!");
-        // window.location.hash = "/";
+        window.location.hash = "/";
         // ...
       })
       .catch((error) => {
@@ -33,6 +37,36 @@ export function handleAuth(event) {
     // });
   } else {
     //로그인
+    const email = document.getElementById("LoginInEmail");
+    const emailVal = email.value;
+    const pw = document.getElementById("LoginInPassword");
+    const pwVal = pw.value;
+
+    //유효성 검사 진행
+    if (!emailVal) {
+      alert("이메일을 입력해 주세요");
+      email.focus();
+      return;
+    }
+    if (!pwVal) {
+      alert("비밀번호를 입력해 주세요");
+      pw.focus();
+      return;
+    }
+
+    const matchedEmail = emailVal.match(emailRegex);
+    const matchedPw = pwVal.match(pwRegex);
+
+    if (matchedEmail === null) {
+      alert("이메일 형식에 맞게 입력해 주세요");
+      email.focus();
+      return;
+    }
+    if (matchedPw === null) {
+      alert("비밀번호는 8자리 이상 영문자, 숫자, 특수문자 조합이어야 합니다.");
+      pw.focus();
+      return;
+    }
     // console.log(event.target);
     // document.getElementById("loginBtn").addEventListener("click", (event) => {
     event.preventDefault();
@@ -59,18 +93,36 @@ export function handleAuth(event) {
   }
 }
 
-export const logout = () => {
-  signOut(authService)
-    .then(() => {
-      // Sign-out successful.
-      localStorage.clear();
-      console.log("로그아웃 성공");
+export const socialLogin = (str) => {
+  let provider;
+  if (str === "google") {
+    provider = new GoogleAuthProvider();
+  } else if (str === "github") {
+    provider = new GithubAuthProvider();
+  }
+  signInWithPopup(authService, provider)
+    .then((result) => {
+      const user = result.user;
     })
     .catch((error) => {
-      // An error happened.
+      // Handle Errors here.
       console.log("error:", error);
+      const errorCode = error.code;
+      const errorMessage = error.message;
     });
 };
+// export const logout = () => {
+//   signOut(authService)
+//     .then(() => {
+//       // Sign-out successful.
+//       localStorage.clear();
+//       console.log("로그아웃 성공");
+//     })
+//     .catch((error) => {
+//       // An error happened.
+//       console.log("error:", error);
+//     });
+// };
 
 // const login = document.querySelector(".login");
 // const nav_menu = document.querySelector(".nav_menu");
