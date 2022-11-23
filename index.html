@@ -8,6 +8,17 @@
       href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css"
       rel="stylesheet"
     />
+    <!-- 내용글에대한 스크립트 -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://kit.fontawesome.com/66c674ac51.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <!-- 글쓰기 에대한 스크립트 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./summernote-lite.js"></script>
+    <script src="./summernote-ko-KR.js"></script>
   </head>
 
   <body>
@@ -68,5 +79,13 @@
     <script src="static/js/pages/login.js"></script>
     <script src="static/js/pages/home.js"></script>
     <script src="static/js/main.js" type="module"></script>
+    <!-- board scripts -->
+    <script src="static/js/pages/board.js" type="module"></script>
+    <script>
+      $('.summernote').summernote({
+          height: 650,
+          lang: "ko-KR"
+        });
+      </script>
   </body>
 </html>

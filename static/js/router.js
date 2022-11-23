@@ -15,6 +15,7 @@ const routes = {
   mypage: "/templates/pages/mypage.html",
   login: "/templates/pages/login.html",
   signin: "/templates/pages/signin.html",
+  // 게시판 글 하고 등록 
   // : "/templates/pages/board.html"
   // : "/templates/pages/write_board.html"
 };
