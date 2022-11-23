@@ -72,11 +72,13 @@ a {
   padding-top: 5px;
   padding-bottom: 5px;
   color: white;
+
 }
 
 .buttons ul li:hover {
   background: green;
   padding-right: 40px;
+  
 }
 
 .buttons ul {
@@ -116,18 +118,20 @@ a {
   padding-right: 5px;
   padding-bottom: 5px;
   position: relative;
+  z-index: 100;
 }
 
 .buttons {
   position: absolute;
   margin-bottom: 570px;
-  margin-left: 800px;
+  margin-left: 910px;
+  z-index: 100;
 }
 
 .warp {
   margin-top: 13px;
   float: right;
-  width: 87.71%;
+  width: 101rem;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -141,7 +145,7 @@ a {
   align-items: center;
   position: relative;
   height: 720px;
-  width: 85%;
+  width: 90%;
   margin-bottom: 100px;
 
   background-color: rgba(255, 255, 255, 0.3);
@@ -383,12 +387,12 @@ a {
   justify-content: center;
   align-items: center;
   margin-bottom: 1000px;
-  margin-right: 2200px;
+  margin-right: 2300px;
   background: rgba(125, 125, 125, 0.7);
   height: 90px;
   width: 40px;
   border-radius: 20px;
-
+  z-index: 100;
 
   /* transform: translate(-50%,-50%); */
 }

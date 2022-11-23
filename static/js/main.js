@@ -1,4 +1,5 @@
 import { authService } from "./firebase.js";
+import { changeProfile, onFileChange } from "./pages/profile.js";
 import { handleLocation, route } from "./router.js";
 import { logout } from "./auth.js";
 import { socialLogin, handleAuth } from "./auth.js";
@@ -40,4 +41,6 @@ window.route = route;
 window.handleAuth = handleAuth;
 window.socialLogin = socialLogin;
 window.logout = logout;
+window.onFileChange = onFileChange;
+window.changeProfile = changeProfile;
 // window.writecomment = writecomment;
