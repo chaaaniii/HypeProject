@@ -2,6 +2,7 @@ import { authService } from "./firebase.js";
 import { handleLocation, route } from "./router.js";
 import { socialLogin } from "./auth.js";
 import { handleAuth } from "./auth.js";
+import { writecomment } from "./pages/board.js"
 
 // hash url 변경 시 처리
 window.addEventListener("hashchange", handleLocation);
@@ -29,4 +30,5 @@ document.addEventListener("DOMContentLoaded", () => {
 window.route = route;
 window.handleAuth = handleAuth;
 window.socialLogin = socialLogin;
+window.writecomment = writecomment;
 // window.logout = logout; 아직 미지정 오류나서 주석처리함
