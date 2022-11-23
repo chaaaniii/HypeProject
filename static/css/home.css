@@ -284,6 +284,7 @@ body {
 }
 
 .offset {
+  color: #ffffff;
   animation: letter-flicker 3s linear infinite;
 }
 
@@ -365,8 +366,8 @@ body {
 .slide {
   position: relative;
 
-  float: right;
-  margin-right: 5rem;
+  /* float: right; */
+  margin-left: 10rem;
 
   font-size: 20rem;
   font-weight: 600;
@@ -385,4 +386,20 @@ body {
     opacity: 1;
     transform: translateZ(0);
   }
+}
+
+.last_text{
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+
+  margin-top: 5rem;
+  margin-right: 3rem;
+
+  float: right;
+}
+
+.lastTxt{
+  color: #fff;
+  font-size: 5rem;
 }
