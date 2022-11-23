@@ -18,7 +18,7 @@ body {
   background-color: black;
   font-family: "SLEIGothicTTF";
 
-  overflow-y: hidden;
+  overflow-y: hidden
 }
 /* #sign_in {
   display: none;
@@ -139,7 +139,12 @@ body {
 
   display: block;
 }
-
+.Down_nav{
+  display: none;
+}
+.Menu{
+  display: none;
+}
 /* nav바 반응형 */
 @media (max-width: 1120px) {
   .Down_nav {
@@ -247,10 +252,7 @@ body {
     background-color: black;
 
     border: 2px solid white;
-<<<<<<< HEAD
-=======
 
->>>>>>> 14f65a3402c3639842f6aceff828b377d88ea19e
   }
 }
 

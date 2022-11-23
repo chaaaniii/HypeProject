@@ -125,8 +125,8 @@ export const socialLogin = (str) => {
 // };
 
 // const login = document.querySelector(".login");
-// const nav_menu = document.querySelector(".nav_menu");
-// const navBar = document.querySelector(".navBar");
+
+
 // const body = document.querySelector("body");
 // const change = document.getElementById("csschange");
 
@@ -138,3 +138,4 @@ export const socialLogin = (str) => {
 //     navBar.style.visibility = "hidden";
 //     body.style.backgroundColor = "white";
 //   }
+
