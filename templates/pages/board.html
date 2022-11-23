@@ -14,6 +14,7 @@
 <body> -->
 
     <div class="warp">
+        <div class="glasswarp">
 
         <div class="heart-btn1">
             <div class="content1">
@@ -74,9 +75,9 @@
                     <p class="commentname">픠에엥</p>
                     <div>
                         <p class="comment_text" id="comment_text">amldpdpdpdp</p>
-                            <div class="comment_input_container">
-                                <input type="text" class="comment_input" id="comment_input" />
-                                <button  id="comment_save" onclick="comment_save()">버른</button>
+                            <div class="comment_input_container" style="display: flex;">
+                                <input type="text" class="comment_input_inside" id="comment_input" />
+                                <button  id="comment_save" class="comment_save" onclick="comment_save()">버른</button>
                             </div>
                     </div>
                 </div>
@@ -93,8 +94,8 @@
                 <div class="buttons1">
                     <button href="#" class="top_btn1" id="search_input1" onclick="show1()">...</button>
                         <ul class="hide_bar1" id="search_history1" >
-                            <li id="comment_modify" onclick="comment_modifyed()">수정</li>
-                            <li id="comment_delete" onclick="comment_delete()">삭제</li>
+                            <li class="comment_modify" id="comment_modify" onclick="comment_modifyed()">수정</li>
+                            <li class="comment_modify" id="comment_delete" onclick="comment_delete()">삭제</li>
                         </ul>
                 </div>
 
@@ -102,7 +103,7 @@
         
     </div>
     </div>
-
+        </div>
         </div>
     
 
