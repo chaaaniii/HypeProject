@@ -9,6 +9,49 @@
 body {
   font-family: "SLEIGothicTTF";
 }
+
+/* html background */
+.fashion_b {
+  background: rgb(253, 246, 237);
+  height: 92vh;
+  width: 108rem;
+  padding-top: 1px;
+  margin-top: 13px;
+  margin-left: 192px;
+}
+.food_b {
+  background: rgb(237, 191, 213);
+  height: 92vh;
+  width: 108rem;
+  padding-top: 1px;
+  margin-top: 13px;
+  margin-left: 192px;
+}
+.tarvel_b {
+  background: rgb(237, 122, 59);
+  height: 92vh;
+  width: 108rem;
+  padding-top: 1px;
+  margin-top: 13px;
+  margin-left: 192px;
+}
+.sports_b {
+  background: rgb(250, 255, 93);
+  height: 92vh;
+  width: 108rem;
+  padding-top: 1px;
+  margin-top: 13px;
+  margin-left: 192px;
+}
+.ent_b {
+  background: rgb(79, 158, 247);
+  height: 92vh;
+  width: 108rem;
+  padding-top: 1px;
+  margin-top: 13px;
+  margin-left: 192px;
+}
+
 /* 카테고리&새글작성버튼 */
 .category {
   margin-top: 3em;
