@@ -9,14 +9,15 @@
 body {
   font-family: "SLEIGothicTTF";
 }
+
 /* 이미지&글정보 */
 .wrap_list {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
   justify-content: center;
+  padding-left: 3%;
 }
-
 .wrap_box {
   display: flex;
   justify-content: center;
