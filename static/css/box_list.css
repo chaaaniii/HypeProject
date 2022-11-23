@@ -16,19 +16,26 @@ body {
   flex-wrap: wrap;
   margin: 0 auto;
   justify-content: center;
-  padding-left: 3%;
+  padding: 0 3% 10% 3%;
 }
+
 .wrap_box {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   max-width: 30rem;
-  margin: 2rem;
+  margin: 3rem;
+  box-shadow: 0 4px 16px 0 #ddd;
+  transform: translateY(0);
+  /* transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s; */
 }
-
+.wrap_box:hover {
+  transform: translateY(-5%);
+  box-shadow: rgb(0 0 0 / 20%) 0px 4px 16px 0px;
+}
 .wrap_box > .img_area img {
-  width: 100%;
+  width: 34rem;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -39,7 +46,8 @@ body {
   display: flex;
   flex: 1 1 0%;
   flex-direction: column;
-  padding: 1rem;
+  padding: 1.7rem;
+  background-color: white;
 }
 .txt_area ul {
   display: block;
@@ -69,6 +77,7 @@ body {
   border-radius: 50%;
 }
 .author_index span {
+  width: 5rem;
   padding-left: 5px;
 }
 
