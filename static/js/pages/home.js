@@ -5,6 +5,7 @@ const TypeText = () => {
 Hype함을 배달합니다.`;
 
   let counter = 0;
+  
   // 출력할 내용
   setInterval(() => {
     // 글자가 모두 출력되면 setInterval을 멈출 것
