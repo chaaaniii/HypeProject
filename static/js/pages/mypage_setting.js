@@ -1,9 +1,14 @@
-const imgUpload = document.querySelector('.img_upload');
-const imgChoose = document.querySelector('#imgUpload');
+// const imgUpload = document.querySelector('.img_upload');
+// const imgChoose = document.querySelector('#imgUpload');
 
-imgUpload.addEventListener('click',()=>{
-	imgChoose.click();
-});
+// imgUpload.addEventListener('click',()=>{
+// 	imgChoose.click();
+// });
+
+function upload_img() {
+    const imgChoose = document.querySelector('#imgUpload');
+    imgChoose.click();
+}
 
 function mod() {
     info.style.visibility = 'hidden';

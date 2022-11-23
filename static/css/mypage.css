@@ -1,7 +1,7 @@
 .background{
     background: rgb(89, 100, 217);
-    height: 90vh;
-    width: 106.96rem;
+    height: 92vh;
+    width: 108rem;
     padding-top: 1px;
     margin-top: 13px;
     margin-left: 192px;
@@ -135,7 +135,7 @@
     background: white;
     color: black;
     border-radius: 1rem;
-    padding: 0px 1.25rem;
+    width: 2rem;
     height: 2rem;
     font-size: 1rem;
     transition: background-color 0.3s ease-in-out 0s;
@@ -206,15 +206,17 @@
     display: inline;
     font-size: 1rem;
     line-height: 1.5;
-    color: white;
+    color: rgb(255 255 255 / 80%);
     text-decoration: underline;
     background: none;
     cursor: pointer;
     width: 5rem;
     height: 2.5rem;
+    transition: transform,color 0.3s ease-in-out 0s;;
 }
 .profile_info_area button:hover {
-    color: red;
+    transform: scale(1.05);
+    color: white;
 }
 .profile_text {
     display: block;
