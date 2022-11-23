@@ -17,6 +17,8 @@ a {
 body {
   background-color: black;
   font-family: "SLEIGothicTTF";
+
+  overflow-y: hidden;
 }
 
 /* 내비바 */
@@ -28,9 +30,15 @@ body {
 
   height: 4rem;
 
-  padding: 1rem 1.5rem;
-
   box-sizing: border-box;
+}
+
+.logo {
+  height: 4rem;
+  width: 8rem;
+
+  padding: 1rem 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .nav_menu {
@@ -44,12 +52,13 @@ body {
   box-sizing: border-box;
 }
 
-.nav_lis{
+.nav_lis {
   display: flex;
   flex-direction: row;
+  position: relative;
 }
 
-.nav_btns{
+.nav_btns {
   display: flex;
   flex-direction: row;
 
@@ -67,23 +76,23 @@ body {
   height: 1.6rem;
 }
 
-.nav_button{
+.nav_button {
   display: flex;
-  justify-content:end;
+  justify-content: end;
   align-items: center;
 
   width: 8rem;
-  
+
   margin: 0 0.5rem 0 0.5rem;
 }
 
-.nav_btn{
+.nav_btn {
   font-size: 1.3rem;
   font-weight: 600;
   color: black;
 }
 
-.nav_btn:hover{
+.nav_btn:hover {
   color: #fff;
   background-color: black;
 
@@ -129,17 +138,113 @@ body {
   display: block;
 }
 
-.nav_title {
-  font-size: 2.1rem;
-  font-weight: 500;
-  color: #482ff7;
-
-  margin: 3rem 3rem 3rem 3rem;
-}
 /* nav바 반응형 */
 @media (max-width: 1120px) {
-  .navBar{
-    display: none;
+  .Down_nav {
+    background-color: green;
+    color: #fff;
+    margin-top: -95px;
+
+    display: flex;
+    justify-content: center;
+
+    position: absolute;
+    right: 0;
+
+    font-size: 2.5rem;
+    padding: 1rem 1.5rem 2rem 1rem;
+
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+
+    width: 8rem;
+    height: 1.6rem;
+
+    cursor: pointer;
+  }
+
+  .Menu {
+    background-color: green;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    font-size: 2.5rem;
+    padding: 1rem 1.5rem 2rem 1rem;
+
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+
+    width: 8rem;
+    height: 1.6rem;
+
+    cursor: pointer;
+  }
+
+  .nav_menu {
+    display: fixed;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: absolute;
+
+    bottom: 0;
+    width: 100%;
+    background-color: green;
+
+    margin-bottom: -50rem;
+    transition: 0.5s;
+
+    z-index: 9;
+  }
+  .nav_lis {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .nav_item {
+    padding: 1rem 1.5rem 1rem 1rem;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+    border-bottom: 3px dashed white;
+    border-radius: 0;
+
+    width: 100%;
+    height: 3rem;
+  }
+
+  .nav_link {
+    font-size: 3rem;
+    font-weight: 600;
+    color: black;
+
+    display: block;
+  }
+
+  .nav_item:hover {
+    height: 100%;
+    margin-top: 0;
+
+    cursor: pointer;
+  }
+
+  .nav_btn {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: black;
+
+    margin: 30px 0 30px 0;
+  }
+
+  .nav_btn:hover {
+    color: #fff;
+    background-color: black;
+
+    border: 2px solid white;
   }
 }
 
@@ -159,10 +264,8 @@ body {
   letter-spacing: 0.3rem;
 }
 
-
 /* 네온사인 플리커 */
 .flicker {
-
   margin-top: 2.5rem;
   margin-left: 10rem;
 
@@ -177,84 +280,83 @@ body {
   animation: text-flicker 5s linear infinite;
 }
 
-.offset{
+.offset {
   animation: letter-flicker 3s linear infinite;
 }
 
 @keyframes text-flicker {
   0% {
-    opacity:0.1;
+    opacity: 0.1;
     text-shadow: 0px 0px 22px gray;
   }
   2% {
-    opacity:1;
+    opacity: 1;
     text-shadow: 0px 0px 22px gray;
   }
   6% {
-    opacity:0.1;
+    opacity: 0.1;
     text-shadow: 0px 0px 22px gray;
   }
   8% {
-    opacity:0.1;
+    opacity: 0.1;
     text-shadow: 0px 0px 22px gray;
   }
   9% {
-    opacity:1;
+    opacity: 1;
     text-shadow: 0px 0px 22px gray;
   }
   12% {
-    opacity:0.1;
+    opacity: 0.1;
     text-shadow: 0px 0px 22px gray;
   }
   20% {
-    opacity:1;
+    opacity: 1;
     text-shadow: 0px 0px 22px gray;
   }
   100% {
-    opacity:.9;
+    opacity: 0.9;
     text-shadow: 0px 0px 22px gray;
   }
 }
 
 @keyframes letter-flicker {
   0% {
-    opacity:0.1;
+    opacity: 0.1;
     text-shadow: 0px 0px 22px gray;
   }
   2% {
-    opacity:0.1;
+    opacity: 0.1;
     text-shadow: 0px 0px 22px gray;
   }
   4% {
-    opacity:1;
+    opacity: 1;
     text-shadow: 0px 0px 22px gray;
   }
   19% {
-    opacity:1;
+    opacity: 1;
     text-shadow: 0px 0px 22px gray;
   }
   21% {
-    opacity:0.1;
+    opacity: 0.1;
     text-shadow: 0px 0px 22px gray;
   }
   23% {
-    opacity:1;
+    opacity: 1;
     text-shadow: 0px 0px 22px gray;
   }
   80% {
-    opacity:1;
+    opacity: 1;
     text-shadow: 0px 0px 22px gray;
   }
   83% {
-    opacity:0.4;
+    opacity: 0.4;
     text-shadow: 0px 0px 22px gray;
   }
   87% {
-    opacity:1;
+    opacity: 1;
     text-shadow: 0px 0px 22px gray;
   }
 }
-
 
 /* express 슬라이드 */
 .slide {
