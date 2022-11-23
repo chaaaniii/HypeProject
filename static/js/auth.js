@@ -119,24 +119,10 @@ export const logout = () => {
       localStorage.clear();
       console.log("로그아웃 성공");
       document.querySelector("#login_out").innerText = "Log In";
-      window.location.hash = "/";
+      // window.location.hash = "/";
     })
     .catch((error) => {
       // An error happened.
       console.log("error:", error);
     });
 };
-
-// const nav_menu = document.querySelector(".nav_menu");
-// const navBar = document.querySelector(".navBar");
-// const body = document.querySelector("body");
-// const loginBtn = document.getElementById("loginBtn");
-
-// loginBtn.addEventListener("click", () => {
-//   let path = window.location.hash.replace("#", "");
-//   if (path === "#login") {
-//     nav_menu.style.visibility = "hidden";
-//     navBar.style.visibility = "hidden";
-//     body.style.backgroundColor = "white";
-//   }
-// });

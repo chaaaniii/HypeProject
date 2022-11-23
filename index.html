@@ -22,6 +22,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- <script src="./summernote-lite.js"></script>
     <script src="./summernote-ko-KR.js"></script> -->
+    <!-- <script src="./summernote-lite.js"></script> -->
+    <!-- <script src="./summernote-ko-KR.js"></script> -->
 
     <script
       src="https://kit.fontawesome.com/96c0010bf4.js"
@@ -72,10 +74,22 @@
           </div>
           <div class="nav_btns">
             <li class="nav_button">
-              <button class="nav_btn" id="sign_in">Sign In</button>
+              <button
+                class="nav_btn"
+                id="sign_in"
+                onclick="location.href='#signin'; nav_visi_sign()"
+              >
+                Sign In
+              </button>
             </li>
             <li class="nav_button login">
-              <button id="login_out" class="nav_btn">Log In</button>
+              <button
+                id="login_out"
+                class="nav_btn"
+                onclick=" location.href='#login'; nav_visi()"
+              >
+                Log In
+              </button>
             </li>
           </div>
         </ul>
