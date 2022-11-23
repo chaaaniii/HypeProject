@@ -19,7 +19,7 @@ const routes = {
   signin: "/templates/pages/signin.html",
   // 게시판 글 하고 등록
   board : "/templates/pages/board.html"
-  // : "/templates/pages/write_board.html"
+  // : "/templates/pages/wt_board.html"
 };
 
 export const handleLocation = async () => {
