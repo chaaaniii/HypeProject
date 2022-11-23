@@ -8,7 +8,6 @@ export const route = (event) => {
 const routes = {
   404: "/templates/pages/404.html",
   "/": "/templates/pages/main.html",
-  list: "/templates/pages/list.html",
   fashion: "/templates/pages/fashion.html",
   food: "/templates/pages/food.html",
   travel: "/templates/pages/travel.html",
@@ -17,7 +16,7 @@ const routes = {
   mypage: "/templates/pages/mypage.html",
   login: "/templates/pages/login.html",
   signin: "/templates/pages/signin.html",
-  board: "/board/main_board/index.html"
+  board: "/board/main_board/index.html",
 };
 
 export const handleLocation = async () => {
