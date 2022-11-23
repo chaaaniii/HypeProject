@@ -14,8 +14,8 @@ a {
   width: 80rem;
   height: 80%;
   position: absolute;
-  padding-top: 20px;
-  margin-bottom: 50px;
+
+  margin-bottom: 10px;
 }
 
 .tittle {
@@ -23,16 +23,15 @@ a {
   font-size: 40px;
 }
 .top_btn1 {
-  margin-top: 15px;
+  /* margin-top: px; */
   background:rgba(125, 125, 125, 0.7)
 }
 
 .buttons1 {
-  /* display: flex; */
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 28px;
+  margin-top: 20px;
 }
 
 .buttons button {
@@ -61,6 +60,7 @@ a {
   align-items: center;
   z-index: 1;
 }
+
 
 .buttons ul li {
   text-indent: 15px;
@@ -99,6 +99,7 @@ a {
   padding-top: 3px;
   padding-bottom: 3px;
   color: white;
+  width: 50px;
 }
 
 .buttons1 ul li:hover {
@@ -119,18 +120,36 @@ a {
 
 .buttons {
   position: absolute;
-  margin-bottom: 550px;
+  margin-bottom: 570px;
   margin-left: 800px;
 }
 
 .warp {
   margin-top: 13px;
-  width: 100%;
+  float: right;
+  width: 87.71%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
+}
+
+.glasswarp{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 720px;
+  width: 85%;
+  margin-bottom: 100px;
+
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .warp_btn {
@@ -180,6 +199,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .photo {
@@ -206,7 +226,9 @@ a {
   margin-top: 20px;
   width: 79%;
   margin-left: 40px;
+  margin-bottom: 20px;
 }
+
 
 .text12{
   display: flex;
@@ -228,7 +250,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 20p
+  x;
 }
 
 .comment_input1 {
@@ -261,7 +284,7 @@ a {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  margin-right: 40px;
+  margin-right: 20px;
 }
 
 .comment {
@@ -272,7 +295,7 @@ a {
 }
 
 .comment_text {
-  width: 400px;
+  width: 450px;
 }
 
 .comment_btn {
@@ -359,8 +382,8 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1300px;
-  margin-right: 400px;
+  margin-bottom: 1000px;
+  margin-right: 2200px;
   background: rgba(125, 125, 125, 0.7);
   height: 90px;
   width: 40px;
@@ -436,3 +459,34 @@ a {
 .comment_input_container {
   display: none;
 }
+
+.comment_input_container input{
+  width: 380px;
+  margin-left: 15px;
+  border-radius: 10px;
+  text-indent: 10px;
+}
+
+.comment_input_container input:focus{
+  outline: none;
+  border-radius: 10px;
+  padding-right: 5px;
+}
+
+.comment_input_container button{
+  width: 40px;
+  height: 30px;
+  background-color: black;
+  color: white;
+  margin-left: 5px;
+}
+
+.name{
+  padding-right: 10px;
+}
+
+.comment p{
+  font-size: 15px;
+}
+
+
