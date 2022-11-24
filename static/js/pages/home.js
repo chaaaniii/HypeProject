@@ -42,11 +42,15 @@ const nav_menu = document.querySelector(".nav_menu");
 const navBar = document.querySelector(".navBar");
 
 const nav_visi = () => {
+  console.log("a");
   let path = window.location.hash.replace("#", "");
-  if (path === "#signin") {
+
+  if (path === "" || path !== "login") {
+    window.location.href = "#login";
     nav_menu.style.visibility = "hidden";
     navBar.style.backgroundColor = "white";
   } else {
+    console.log("aa");
     nav_menu.style.visibility = "visible";
     navBar.style.backgroundColor = "black";
   }
@@ -54,7 +58,8 @@ const nav_visi = () => {
 
 const nav_visi_sign = () => {
   let path = window.location.hash.replace("#", "");
-  if (path === "#login") {
+  if (path === "" || path !== "signin") {
+    window.location.href = "#signin";
     nav_menu.style.visibility = "hidden";
     navBar.style.backgroundColor = "white";
   } else {

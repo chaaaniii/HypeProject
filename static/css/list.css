@@ -12,50 +12,63 @@ body {
 
 /* html background */
 .fashion_b {
+  position: relative;
   background: rgb(253, 246, 237);
-  height: 100vh;
-  width: 108rem;
+  height: 90vh;
   padding-top: 1px;
-  margin-top: 13px;
+  margin-top: 12px;
   margin-left: 176px;
   overflow: scroll;
 }
 .food_b {
+  position: relative;
   background: rgb(237, 191, 213);
   height: 100vh;
-  width: 108rem;
   padding-top: 1px;
-  margin-top: 13px;
+  margin-top: 12px;
   margin-left: 176px;
   overflow: scroll;
 }
 
 .tarvel_b {
+  position: relative;
   background: rgb(237, 122, 59);
   height: 100vh;
-  width: 108rem;
   padding-top: 1px;
-  margin-top: 13px;
+  margin-top: 12px;
   margin-left: 176px;
   overflow: scroll;
 }
 .sports_b {
+  position: relative;
   background: rgb(250, 255, 93);
   height: 100vh;
-  width: 108rem;
   padding-top: 1px;
-  margin-top: 13px;
+  margin-top: 12px;
   margin-left: 176px;
   overflow: scroll;
 }
 .ent_b {
+  position: relative;
   background: rgb(79, 158, 247);
   height: 100vh;
-  width: 108rem;
   padding-top: 1px;
-  margin-top: 13px;
+  margin-top: 12px;
   margin-left: 176px;
   overflow: scroll;
+}
+
+/* glassmorphism */
+.glass {
+  position: absolute;
+  margin: 3%;
+  padding-bottom: 10%;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 /* 카테고리&새글작성버튼 */
