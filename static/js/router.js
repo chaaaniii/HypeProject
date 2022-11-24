@@ -46,14 +46,8 @@ export const handleLocation = async () => {
       authService.currentUser.photoURL ?? "/static/img/empty_profile.png";
   };
 
-  if (path === "mypage") {
-    load_nickname();
-  }
-  if (path === "like") {
-    load_nickname();
-  }
-  if (path === "scrap") {
-    load_nickname();
+  if (path === "mypage" || path === "scrab" || path === "like") {
+    load_nickname()
   }
 
   if (path === "setting") {
@@ -66,4 +60,23 @@ export const handleLocation = async () => {
     document.getElementById("urnameinput").placeholder =
       authService.currentUser.displayName ?? "닉네임 없음";
   }
+
+  if (path === "signin" || path === "login") {
+    hide_nav_bar()
+  } else {
+    show_nav_bar()
+  }
 };
+
+const show_nav_bar = () => {
+  const nav_menu = document.querySelector(".nav_menu");
+  const navBar = document.querySelector(".navBar");
+  nav_menu.style.visibility = "visible";
+  navBar.style.backgroundColor = "black";
+}
+const hide_nav_bar = () => {
+  const nav_menu = document.querySelector(".nav_menu");
+  const navBar = document.querySelector(".navBar");
+  nav_menu.style.visibility = "hidden";
+  navBar.style.backgroundColor = "white";
+}
