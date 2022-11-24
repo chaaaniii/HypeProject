@@ -4,6 +4,8 @@ import {
     query,
     orderBy,
     getDocs,
+    doc,
+    updateDoc,
 
     } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 import { dbService, authService } from "../firebase.js";
@@ -136,12 +138,13 @@ window.comment_modifyed = function comment_modifyed(){
     
 }
 
-window.comment_save = function comment_save(){
+window.comment_save =  function comment_save(event){
+    update_comment(event)
     const comment_box = document.getElementById('comment_text');
     const comment_input = document.getElementById('comment_input');
     const comment_input_container = document.querySelector('.comment_input_container')
     const comment_text_value = comment_input.value
-
+    
     console.log(comment_text_value)
     comment_box.innerHTML = comment_text_value
     comment_input_container.style.display = 'none'
@@ -149,6 +152,7 @@ window.comment_save = function comment_save(){
     // window.location.reload()
 
     //댓글수정한값이 db에 정상적으로 올라갔을때 수정할떄쓰는 input값을 수정한댓글위치에 삭제하고 붙여준다
+    
 }   
 
 // ============================commet_delete
@@ -189,9 +193,9 @@ window.comment_delete = function comment_delete(event){
             <p class="commentname">${item.nickname}</p>
             <div>
                 <p class="comment_text" id="comment_text">${item.value}</p>
-                    <div class="comment_input_container">
+                    <div class="comment_input_container" id="${item.id}">
                         <input type="text" class="comment_input_inside" id="comment_input" />
-                        <button  id="comment_save" class="comment_save" onclick="comment_save()">버른</button>
+                        <button  id="comment_save" class="comment_save" onclick="comment_save(event)">버른</button>
                     </div>
             </div>
         </div>
@@ -229,23 +233,25 @@ window.addEventListener('hashchange', ()=>{
 })
 
 // ====================Update comment
-// export const update_comment = async (event) => {
-//     event.preventDefault();
-//     const newComment = event.target.parentNode.children[0].value;
-//     const id = event.target.parentNode.id;
+export const update_comment = async (event) => {
+    // event.preventDefault();
+    console.log(event)
+    const comment_input1 = event.target.parentNode.children[0].value;
+    const id = event.target.parentNode.id;
+    console.log(comment_input1, id)
 
-//     const parentNode = event.target.parentNode.parentNode;
-//     const commentText = parentNode.children[0];
-//     commentText.classList.remove("noDisplay");
-//     const commentInputP = parentNode.children[1];
-//     commentInputP.classList.remove("d-flex");
-//     commentInputP.classList.add("noDisplay");
+    // const parentNode = event.target.parentNode.parentNode;
+    // const commentText = parentNode.children[0];
+    // commentText.classList.remove("noDisplay");
+    // const commentInputP = parentNode.children[1];
+    // commentInputP.classList.remove("d-flex");
+    // commentInputP.classList.add("noDisplay");
 
-//     const commentRef = doc(dbService, "comments", id);
-//     try {
-//         await updateDoc(commentRef, { text: newComment });
-//         getCommentList();
-//     } catch (error) {
-//         alert(error);
-//     }
-//   };
+    const commentRef = doc(dbService, "boardcomment", id);
+    try {
+        await updateDoc(commentRef, { value: comment_input1 });
+        // getCommentList();
+    } catch (error) {
+        alert(error);
+    }
+};
