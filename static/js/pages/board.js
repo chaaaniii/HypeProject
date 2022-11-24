@@ -28,8 +28,6 @@ import { dbService, authService } from "../firebase.js";
 };
 window.writecomment = writecomment
 
-
-//  user : uuid 박아라 영재야 임마!
 // -----------------드롭다운
 window.show = function show(){
     const bar = document.getElementById('search_history');
@@ -230,4 +228,24 @@ window.addEventListener('hashchange', ()=>{
     console.log("a")
 })
 
+// ====================Update comment
+// export const update_comment = async (event) => {
+//     event.preventDefault();
+//     const newComment = event.target.parentNode.children[0].value;
+//     const id = event.target.parentNode.id;
 
+//     const parentNode = event.target.parentNode.parentNode;
+//     const commentText = parentNode.children[0];
+//     commentText.classList.remove("noDisplay");
+//     const commentInputP = parentNode.children[1];
+//     commentInputP.classList.remove("d-flex");
+//     commentInputP.classList.add("noDisplay");
+
+//     const commentRef = doc(dbService, "comments", id);
+//     try {
+//         await updateDoc(commentRef, { text: newComment });
+//         getCommentList();
+//     } catch (error) {
+//         alert(error);
+//     }
+//   };
