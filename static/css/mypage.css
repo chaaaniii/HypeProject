@@ -145,10 +145,14 @@
     background: green;
     color: white;
 }
+.img_btn_wrap {
+    display: flex;
+}
 .profile_img_btn {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 .img_save {
     display: inline-flex;
@@ -164,6 +168,7 @@
     width: 9rem;
     height: 3rem;
     font-size: 1rem;
+    margin-top: 1.5rem;
     padding: .5rem 1.5rem;
     transition: background-color 0.3s ease-in-out 0s;
 }
@@ -197,7 +202,7 @@
 }
 .profile_info_area{
     position: relative;
-    margin-top: 3rem;
+    margin-top: 1rem;
     padding-top: 3rem;
     flex: 1 1 0%;
     border-top: 2px solid black;

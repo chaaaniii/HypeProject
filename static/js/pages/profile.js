@@ -20,9 +20,9 @@ export const changeProfile = async (event) => {
   );
 
   const newNickname = document.getElementById("username").innerText;
-  const newDescription = document.getElementById('userintroduce').innerText;
+  // const newDescription = document.getElementById('userintroduce').innerText;
   console.log(newNickname)
-  console.log(newDescription)
+  // console.log(newDescription)
   // 프로필 이미지 dataUrl을 Storage에 업로드 후 다운로드 링크를 받아서 photoURL에 저장.
   const imgDataUrl = localStorage.getItem("imgDataUrl");
   let downloadUrl;
@@ -31,28 +31,29 @@ export const changeProfile = async (event) => {
     downloadUrl = await getDownloadURL(response.ref);
   }
   await updateProfile(authService.currentUser, {
-    // displayName: newNickname ? newNickname : null,
+    displayName: newNickname ? newNickname : null,
     photoURL: downloadUrl ? downloadUrl : null,
   }) 
 
   .then(() => {
     alert("프로필 수정 완료");
     window.location.hash = "/";
+    console.log(authService.currentUser)
   })
   .catch((error) => {
     alert("프로필 수정 실패");
     console.log("error:", error);
   });
 
-  try {
-  const docRef = await addDoc(collection(dbService, "users"), {
-    displayName: newNickname,
-    introduce: newDescription,
-  });
-    console.log("docRef", docRef);
-  } catch (e) {
-    console.error('e', e);
-  }
+  // try {
+  // const docRef = await addDoc(collection(dbService, "users"), {
+  //   displayName: newNickname,
+  //   introduce: newDescription,
+  // });
+  //   console.log("docRef", docRef);
+  // } catch (e) {
+  //   console.error('e', e);
+  // }
 };
 
 // 미리보기

@@ -1,13 +1,13 @@
 function uploadedPost() {
     const mypost = document.querySelector('#mypost');
     const like = document.querySelector('#like');
-    const scrab = document.querySelector('#scrab');
+    const scrap = document.querySelector('#scrap');
     const tab_underline = document.querySelector('.tab_underline');
     let selected = mypost;
     if (mypost === selected) {
         mypost.classList.add('active');
         like.classList.remove('active');
-        scrab.classList.remove('active');
+        scrap.classList.remove('active');
         tab_underline.style.left = '0';
     }
 }
@@ -15,27 +15,27 @@ function uploadedPost() {
 function likePost() {
     const mypost = document.querySelector('#mypost');
     const like = document.querySelector('#like');
-    const scrab = document.querySelector('#scrab');
+    const scrap = document.querySelector('#scrap');
     const tab_underline = document.querySelector('.tab_underline');
     let selected = like;
     if (like === selected) {
         mypost.classList.remove('active');
         like.classList.add('active');
-        scrab.classList.remove('active');
+        scrap.classList.remove('active');
         tab_underline.style.left = '33.3%';
     }
 }
 
-function scrabPost() {
+function scrapPost() {
     const mypost = document.querySelector('#mypost');
     const like = document.querySelector('#like');
-    const scrab = document.querySelector('#scrab');
+    const scrap = document.querySelector('#scrap');
     const tab_underline = document.querySelector('.tab_underline');
-    let selected = scrab;
-    if (scrab === selected) {
+    let selected = scrap;
+    if (scrap === selected) {
         mypost.classList.remove('active');
         like.classList.remove('active');
-        scrab.classList.add('active');
+        scrap.classList.add('active');
         tab_underline.style.left = '66.6%';
     }
 }
@@ -45,17 +45,17 @@ function scrabPost() {
 //     if (like === selected) {
 //         mypost.classList.remove('active');
 //         like.classList.add('active');
-//         scrab.classList.remove('active');
+//         scrap.classList.remove('active');
 //     }
 //     tab_underline.style.left = '33.3%';
 // }) 
 
-// scrab.addEventListener('click', function() {
-//     let selected = scrab
-//     if (scrab === selected) {
+// scrap.addEventListener('click', function() {
+//     let selected = scrap
+//     if (scrap === selected) {
 //         mypost.classList.remove('active');
 //         like.classList.remove('active');
-//         scrab.classList.add('active');
+//         scrap.classList.add('active');
 //     }
 //     tab_underline.style.left = '66.6%';
 // })
