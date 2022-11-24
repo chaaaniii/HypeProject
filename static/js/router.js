@@ -13,6 +13,8 @@ const routes = {
   travel: "/templates/pages/travel.html",
   sports: "/templates/pages/sports.html",
   entertainment: "/templates/pages/entertainment.html",
+  pop: "/templates/pages/pop.html",
+  recent: "/templates/pages/recent.html",
   mypage: "/templates/pages/mypage.html",
   like: "/templates/pages/like.html",
   scrab: "/templates/pages/scrab.html",
@@ -20,7 +22,7 @@ const routes = {
   login: "/templates/pages/login.html",
   signin: "/templates/pages/signin.html",
   // 게시판 글 하고 등록
-  board : "/templates/pages/board.html"
+  board: "/templates/pages/board.html",
   // : "/templates/pages/wt_board.html"
 };
 
