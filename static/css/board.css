@@ -130,13 +130,17 @@ a {
 
 .warp {
   margin-top: 13px;
-  float: right;
+  /* float: right;
   width: 101rem;
-  height: 100vh;
+  height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
+  height: 90vh;
+  padding-top: 1px;
+  margin-top: 12px;
+  margin-left: 176px;
 }
 
 .glasswarp{
@@ -377,88 +381,56 @@ a {
   }
 }
 
-@import url("https://fonts.googleapis.com/css?family=Montserrat:600&display=swap");
-.heart-btn1 {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1000px;
-  margin-right: 2300px;
-  background: rgba(125, 125, 125, 0.7);
-  height: 90px;
-  width: 40px;
-  border-radius: 20px;
-  z-index: 100;
-
-  /* transform: translate(-50%,-50%); */
-}
-.content1 {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  /* border: 2px solid #eae2e1; */
-  border-radius: 5px;
-  cursor: pointer;
-}
-.content1.heart-active1 {
-  border-color: #eae2e1;
-  background: transparent;
-}
-.heart1 {
-  /* position: relative; */
-  background: url("img.png") no-repeat;
+/* ================= */
+.like-button .heart-icon {
+  height: 100px;
+  width: 100px;
+  background: url("heart.png");
   background-position: left;
-  background-size: 2900%;
-  height: 30px;
-  width: 70px;
-  top: 50%;
-  left: 50%;
-  /* transform: translate(-50%,-50%); */
+  cursor: pointer;
+  position: absolute;
 }
-.tex1 {
-  font-size: 16px;
-  color: grey;
-  font-family: "Montserrat", sans-serif;
+
+.like-button .heart-icon.liked {
+  animation: like-anim 0.7s steps(28) forwards;
 }
-.numb1:before {
-  content: "0";
-  font-size: 16px;
-  /* font-weight: 600; */
-  color: #9c9496;
-  font-family: sans-serif;
-  right: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.numb1.heart-active1:before {
-  content: "1";
-  color: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.text1.heart-active1 {
-  color: #000;
-}
-.heart1.heart-active1 {
-  animation: animate 0.5s steps(28) 1;
-  background-position: right;
-}
-@keyframes animate {
-  0% {
-    background-position: left;
-  }
-  100% {
+
+@keyframes like-anim {
+  to {
     background-position: right;
   }
 }
+
+.like-button .heart-bg {
+  background: rgba(255, 192, 200, 0);
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 100ms ease;
+}
+
+/* .like-button .heart-bg:hover {
+  background: rgba(255, 192, 200, 0.7);
+} */
+
+.like-button {
+  display: flex;
+  align-items: center;
+  margin-right: 80rem;
+  margin-bottom: 30rem;
+}
+
+.like-button .likes-amount {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  color: #888;
+  font-weight: 900;
+  margin-left: 6px;
+}
+/* =================== */
 
 .comment_input_container {
   display: none;
