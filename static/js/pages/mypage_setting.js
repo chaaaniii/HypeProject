@@ -19,9 +19,9 @@ function mod() {
 
 function save() {
     const urname = document.querySelector('#urnameinput').value;
-    const urintroduce = document.querySelector('#urintroduceinput').value;
+    // const urintroduce = document.querySelector('#urintroduceinput').value;
     const username = document.querySelector('#username');
-    const userintroduce = document.querySelector('#userintroduce');
+    // const userintroduce = document.querySelector('#userintroduce');
     const info = document.querySelector('#info')
     const modify = document.querySelector('#modify')
     if (urname === '') {
@@ -29,11 +29,7 @@ function save() {
         onclick.preventDefault();
     }
     username.innerHTML = urname;
-    userintroduce.innerHTML = urintroduce;
+    // userintroduce.innerHTML = urintroduce;
     info.style.visibility = 'visible';
     modify.style.visibility = 'hidden';
-}
-
-function changeProfile() {
-    console.log(asdf)
 }
