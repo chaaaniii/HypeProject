@@ -144,7 +144,7 @@ window.comment_save = function comment_save(){
     comment_box.innerHTML = comment_text_value
     comment_input_container.style.display = 'none'
     comment_box.style.display = 'block'
-    window.location.reload()
+    // window.location.reload()
 
     //댓글수정한값이 db에 정상적으로 올라갔을때 수정할떄쓰는 input값을 수정한댓글위치에 삭제하고 붙여준다
 }   
@@ -184,34 +184,32 @@ window.comment_delete = function comment_delete(event){
 
         <div class="comment">
             <img src="/static/css/다운로드.jpeg" alt="" class="comment_img">
-            <p class="name">픠에엥</p>
+            <p class="commentname">픠에엥</p>
             <div>
                 <p class="comment_text" id="comment_text">${item.value}</p>
                     <div class="comment_input_container">
-                        <input type="text" class="comment_input" id="comment_input" />
-                        <button  id="comment_save" onclick="comment_save()">버른</button>
+                        <input type="text" class="comment_input_inside" id="comment_input" />
+                        <button  id="comment_save" class="comment_save" onclick="comment_save()">버른</button>
                     </div>
             </div>
         </div>
 
 
-        <div class="heart-btn">
-            <div class="content">
-                <span class="heart"></span>
-                <span class="tex"></span>
-                <span class="numb"></span>
+        <div class="like-button1">
+            <div class="heart-bg" onclick="heartIcon1()">
+                <div class="heart-icon1"></div>
             </div>
+            <div class="likes-amount1">0</div>
         </div>
     
         <div class="buttons1">
             <button href="#" class="top_btn1" id="search_input1" onclick="show1()">...</button>
                 <ul class="hide_bar1" id="search_history1" >
-                    <li id="comment_modify" onclick="comment_modifyed()">수정</li>
-                    <li id="comment_delete" onclick="comment_delete()">삭제</li>
+                    <li class="comment_modify" id="comment_modify" onclick="comment_modifyed()">수정</li>
+                    <li class="comment_modify" id="comment_delete" onclick="comment_delete()">삭제</li>
                 </ul>
         </div>
-
-</div>`
+`
         const div = document.createElement('div')
         div.classList.add("box");
         div.innerHTML = temp_html;
