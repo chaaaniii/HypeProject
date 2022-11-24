@@ -21,7 +21,7 @@ export const save_comment = async (event) => {
   }
 };
 
-// 게시글 불러오기
+// 게시글 박스로 불러오기
 const commnetList = document.getElementById("comment-list");
 const currentUid = authService.currentUser.uid;
 commnetList.innerHTML = "";

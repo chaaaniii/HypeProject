@@ -44,13 +44,12 @@ export const handleLocation = async () => {
 
     document.getElementById("profileImg").src =
       authService.currentUser.photoURL ?? "/static/img/empty_profile.png";
-
-  }
+  };
 
   if (path === "mypage" || path === "scrab" || path === "like") {
     load_nickname()
   }
-  
+
   if (path === "setting") {
     document.getElementById("username").textContent =
       authService.currentUser.displayName ?? "닉네임 없음";
@@ -59,7 +58,7 @@ export const handleLocation = async () => {
       authService.currentUser.photoURL ?? "/static/img/empty_profile.png";
 
     document.getElementById("urnameinput").placeholder =
-    authService.currentUser.displayName ?? "닉네임 없음";
+      authService.currentUser.displayName ?? "닉네임 없음";
   }
 
   if (path === "signin" || path === "login") {

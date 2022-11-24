@@ -34,7 +34,8 @@ body {
   transform: translateY(-5%);
   box-shadow: rgb(0 0 0 / 20%) 0px 4px 16px 0px;
 }
-.wrap_box > .img_area img {
+
+.img_area img {
   width: 34rem;
   height: 100%;
   display: flex;
@@ -42,6 +43,7 @@ body {
   align-items: center;
   object-fit: cover;
 }
+
 .write {
   width: 34rem;
 }
