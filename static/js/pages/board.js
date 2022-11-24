@@ -59,7 +59,19 @@ window.heartIcon = function heartIcon(){
         likesAmountLabel.innerHTML = likesAmount; // + - 된값을 데이터에 업데이트해주는 곳 Html에 넣어줘야함
     }
 
-    
+    let likesAmount1 = 0;
+window.heartIcon1 = function heartIcon1(){
+    const heartIcon1 = document.querySelector(".like-button1 .heart-icon1");
+    const likesAmountLabel1 = document.querySelector(".like-button1 .likes-amount1");
+
+            heartIcon1.classList.toggle("liked1");
+            if (heartIcon1.classList.contains("liked1")) {
+            likesAmount1++;
+            } else {
+            likesAmount1--;
+        }
+        likesAmountLabel1.innerHTML = likesAmount1; // + - 된값을 데이터에 업데이트해주는 곳 Html에 넣어줘야함
+    }
 
 // =======================외부클릭시 지워짐
 document.addEventListener('click', function handleClickOutsideBox(event) {
@@ -132,7 +144,7 @@ window.comment_save = function comment_save(){
     comment_box.innerHTML = comment_text_value
     comment_input_container.style.display = 'none'
     comment_box.style.display = 'block'
-    window.location.reload()
+    // window.location.reload()
 
     //댓글수정한값이 db에 정상적으로 올라갔을때 수정할떄쓰는 input값을 수정한댓글위치에 삭제하고 붙여준다
 }   
