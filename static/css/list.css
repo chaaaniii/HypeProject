@@ -72,6 +72,10 @@ body {
 }
 
 /* 카테고리&새글작성버튼 */
+/* .wrap_h {
+  position: fixed;
+  height : 100%
+} */
 .category {
   margin-top: 3em;
   display: flex;
@@ -116,17 +120,19 @@ body {
   width: 500px;
   height: 10%;
   margin: 2em 0 2em 6.5em;
+  text-align: center;
 }
 .clock {
   width: 30%;
   display: flex;
   align-items: center;
-  text-align: center;
+  margin: 0 5% 0 0%;
 }
 .fire {
   width: 30%;
   display: flex;
   align-items: center;
+  margin: 0 5% 0 0%;
 }
 .btn_switch img {
   display: flex;
@@ -134,9 +140,10 @@ body {
   width: 2rem;
   height: 2rem;
 }
-.btn_switch p {
+.btn_switch a {
   width: 5rem;
   height: 2rem;
   text-align: center;
   font-size: 1.5rem;
+  color: black;
 }
