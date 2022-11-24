@@ -198,13 +198,7 @@ window.comment_delete = function comment_delete(event){
             </div>
         </div>
 
-
-        <div class="like-button1">
-            <div class="heart-bg" onclick="heartIcon1()">
-                <div class="heart-icon1"></div>
-            </div>
-            <div class="likes-amount1">0</div>
-        </div>
+        
     
         <div class="buttons1">
             <button href="#" class="top_btn1" id="search_input1" onclick="show1()">...</button>
@@ -220,6 +214,14 @@ window.comment_delete = function comment_delete(event){
         comment_box.appendChild(div);
     })
 }
+
+
+        // <div class="like-button1">
+        //     <div class="heart-bg" onclick="heartIcon1()">
+        //         <div class="heart-icon1"></div>
+        //     </div>
+        //     <div class="likes-amount1">0</div>
+        // </div>
 
 window.getfire = getfire
 
