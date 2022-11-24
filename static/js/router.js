@@ -20,8 +20,8 @@ const routes = {
   login: "/templates/pages/login.html",
   signin: "/templates/pages/signin.html",
   // 게시판 글 하고 등록
-  board : "/templates/pages/board.html"
-  // : "/templates/pages/wt_board.html"
+  board : "/templates/pages/board.html",
+  wt_board : "/templates/pages/wt_board.html"
 };
 
 export const handleLocation = async () => {
