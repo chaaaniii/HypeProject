@@ -17,19 +17,19 @@
                 </div>
                 <input onchange="onFileChange(event)" type="file" id="imgUpload" accept="img/*" style="display: none;">
                 <div class="profile_info_area">
-                    <div id="info" class="info" style="visibility: hidden;">
+                    <div id="info" class="info" style="visibility: visible;">
                         <div id="username" class="username">이름</div>
                         <!-- <p id="userintroduce">소개가 들어갑니다.</p> -->
                         <div class="modify_button">
                             <button type="button" id="modify_btn" class="modify" onclick="mod()">수정</button>
                         </div>
                     </div>
-                    <div id="modify" class="profile_modify" style="visibility: visible;">
+                    <div id="modify" class="profile_modify" style="visibility: hidden;">
                         <input placeholder="닉네임" id="urnameinput" class="profile_text display_name" value="" />
                         <!-- <input placeholder="소개" id="urintroduceinput" class="profile_text info" value="" /> -->
                         <!-- <div class="save_button">
                             <button type="button" id="save_btn" class="save" type="button" onclick="save()">저장</button> -->
-                        <input id="profileBtn" class="img_save" type="submit" value="프로필 변경" />
+                        <input id="profileBtn" class="img_save" type="submit" onclick="save()" value="프로필 변경" />
                         </div>
                     </div>
                 
