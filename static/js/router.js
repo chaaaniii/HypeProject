@@ -36,6 +36,9 @@ export const handleLocation = async () => {
   const html = await fetch(route).then((data) => data.text());
 
   document.getElementById("main-page").innerHTML = html;
+  if(path === 'wt_board'){
+    CKEDITOR.replace('myeditor');
+  }
   if (path === "/") TypeText();
 
   const load_nickname = () => {
