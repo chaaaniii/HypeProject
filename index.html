@@ -20,12 +20,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- <script src="./summernote-lite.js"></script>
+    <script src="./summernote-ko-KR.js"></script> -->
     <!-- <script src="./summernote-lite.js"></script> -->
     <!-- <script src="./summernote-ko-KR.js"></script> -->
-    
-    <script src="https://kit.fontawesome.com/96c0010bf4.js" crossorigin="anonymous"></script>
-    
 
+    <script
+      src="https://kit.fontawesome.com/96c0010bf4.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
@@ -71,29 +74,17 @@
           </div>
           <div class="nav_btns">
             <li class="nav_button">
-              <button
-                class="nav_btn"
-                id="sign_in"
-                onclick="location.href='#signin';nav_visi_sign()"
-              >
+              <button class="nav_btn" id="sign_in" onclick="nav_visi_sign()">
                 Sign In
               </button>
             </li>
             <li class="nav_button login">
-              <button
-                id="log_in"
-                class="nav_btn"
-                onclick="nav_visi()"
-              >
+              <button id="log_in" class="nav_btn" onclick="nav_visi()">
                 Log In
               </button>
             </li>
             <li class="nav_button logout">
-              <button
-                id="logout"
-                class="nav_btn"
-                onclick="logout()"
-              >
+              <button id="logout" class="nav_btn" onclick="logout()">
                 Logout
               </button>
             </li>

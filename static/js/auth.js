@@ -112,13 +112,14 @@ export const socialLogin = (str) => {
     });
 };
 
-export const logout = async() => {
+export const logout = async () => {
   signOut(authService)
     .then(() => {
       // Sign-out successful.
-      console.log("a1")
+      console.log("a1");
       localStorage.clear();
       console.log("로그아웃 성공");
+
       window.location.href = "/";
     })
     .catch((error) => {
