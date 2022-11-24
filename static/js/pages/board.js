@@ -39,25 +39,27 @@ window.show1 = function show1(){
 
 
 // --------------------라이크버튼
-$(document).ready(function(){
-    $('.content').click(function(){
-        $('.content').toggleClass("heart-active")
-        $('.tex').toggleClass("heart-active")
-        $('.numb').toggleClass("heart-active")
-        $('.heart').toggleClass("heart-active")
-    });
-});
 
+// const heartIcon = document.querySelector(".like-button .heart-icon");
+// const likesAmountLabel = document.querySelector(".like-button .likes-amount");
 
+// let likesAmount = 7;
 
-$(document).ready(function(){
-    $('.content1').click(function(){
-        $('.content1').toggleClass("heart-active1")
-        $('.tex1').toggleClass("heart-active1")
-        $('.numb1').toggleClass("heart-active1")
-        $('.heart1').toggleClass("heart-active1")
-    });
-});
+let likesAmount = 0;
+window.heartIcon = function heartIcon(){
+    const heartIcon = document.querySelector(".like-button .heart-icon");
+    const likesAmountLabel = document.querySelector(".like-button .likes-amount");
+
+            heartIcon.classList.toggle("liked");
+            if (heartIcon.classList.contains("liked")) {
+            likesAmount++;
+            } else {
+            likesAmount--;
+        }
+        likesAmountLabel.innerHTML = likesAmount; // + - 된값을 데이터에 업데이트해주는 곳 Html에 넣어줘야함
+    }
+
+    
 
 // =======================외부클릭시 지워짐
 document.addEventListener('click', function handleClickOutsideBox(event) {
@@ -130,7 +132,9 @@ window.comment_save = function comment_save(){
     comment_box.innerHTML = comment_text_value
     comment_input_container.style.display = 'none'
     comment_box.style.display = 'block'
+    window.location.reload()
 
+    //댓글수정한값이 db에 정상적으로 올라갔을때 수정할떄쓰는 input값을 수정한댓글위치에 삭제하고 붙여준다
 }   
 
 // ============================commet_delete
@@ -161,6 +165,7 @@ window.comment_delete = function comment_delete(event){
         list.push(obj)
     })
     const comment_box = document.getElementById('comment_list')
+    console.log(comment_box)
     comment_box.innerHTML = ''
     list.forEach((item) => {
         const temp_html = `<div class="comment_box" id="comment_box" >
@@ -201,7 +206,11 @@ window.comment_delete = function comment_delete(event){
         comment_box.appendChild(div);
     })
 }
+
 window.getfire = getfire
-getfire()
+
+document.addEventListener('DOMContentLoaded', ()=>{
+    if(window.location.hash === "#board") getfire()
+})
 
 
