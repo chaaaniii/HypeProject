@@ -229,23 +229,23 @@ window.addEventListener('hashchange', ()=>{
 })
 
 // ====================Update comment
-// export const update_comment = async (event) => {
-//     event.preventDefault();
-//     const newComment = event.target.parentNode.children[0].value;
-//     const id = event.target.parentNode.id;
+export const update_comment = async (event) => {
+    event.preventDefault();
+    const comment_input1 = event.target.parentNode.children[0].value;
+    const id = event.target.parentNode.id;
 
-//     const parentNode = event.target.parentNode.parentNode;
-//     const commentText = parentNode.children[0];
-//     commentText.classList.remove("noDisplay");
-//     const commentInputP = parentNode.children[1];
-//     commentInputP.classList.remove("d-flex");
-//     commentInputP.classList.add("noDisplay");
+    const parentNode = event.target.parentNode.parentNode;
+    const commentText = parentNode.children[0];
+    commentText.classList.remove("noDisplay");
+    const commentInputP = parentNode.children[1];
+    commentInputP.classList.remove("d-flex");
+    commentInputP.classList.add("noDisplay");
 
-//     const commentRef = doc(dbService, "comments", id);
-//     try {
-//         await updateDoc(commentRef, { text: newComment });
-//         getCommentList();
-//     } catch (error) {
-//         alert(error);
-//     }
-//   };
+    const commentRef = doc(dbService, "comments", id);
+    try {
+        await updateDoc(commentRef, { text: comment_input1 });
+        getCommentList();
+    } catch (error) {
+        alert(error);
+    }
+};
