@@ -23,7 +23,7 @@ body {
 .food_b {
   position: relative;
   background: rgb(237, 191, 213);
-  height: 100vh;
+  height: 90vh;
   padding-top: 1px;
   margin-top: 12px;
   margin-left: 176px;
@@ -33,7 +33,7 @@ body {
 .tarvel_b {
   position: relative;
   background: rgb(237, 122, 59);
-  height: 100vh;
+  height: 90vh;
   padding-top: 1px;
   margin-top: 12px;
   margin-left: 176px;
@@ -42,7 +42,7 @@ body {
 .sports_b {
   position: relative;
   background: rgb(250, 255, 93);
-  height: 100vh;
+  height: 90vh;
   padding-top: 1px;
   margin-top: 12px;
   margin-left: 176px;
@@ -51,7 +51,7 @@ body {
 .ent_b {
   position: relative;
   background: rgb(79, 158, 247);
-  height: 100vh;
+  height: 90vh;
   padding-top: 1px;
   margin-top: 12px;
   margin-left: 176px;

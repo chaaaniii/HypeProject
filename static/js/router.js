@@ -14,12 +14,14 @@ const routes = {
   sports: "/templates/pages/sports.html",
   entertainment: "/templates/pages/entertainment.html",
   mypage: "/templates/pages/mypage.html",
+  like: "/templates/pages/like.html",
+  scrab: "/templates/pages/scrab.html",
   setting: "/templates/pages/setting.html",
   login: "/templates/pages/login.html",
   signin: "/templates/pages/signin.html",
   // 게시판 글 하고 등록
   board : "/templates/pages/board.html"
-  // : "/templates/pages/write_board.html"
+  // : "/templates/pages/wt_board.html"
 };
 
 export const handleLocation = async () => {
