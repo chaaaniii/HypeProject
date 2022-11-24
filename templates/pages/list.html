@@ -1,16 +1,20 @@
-<header class="category" id="category">
-  <h3>패션</h3>
-  <button type="button" class="bt_new"><a href="#">{write}</a></button>
-</header>
-<nav class="write_switch">
-  <div class="btn_switch">
-    <div onclick="recent(event)" class="clock">
+<div class="wrap_h">
+  <header class="category" id="category">
+    <h3>패션</h3>
+    <button type="button" class="bt_new">
+      <a href="#board" class="board_w" onclick="route(board)">새글작성</a>
+    </button>
+  </header>
+  <nav class="write_switch">
+    <div class="btn_switch">
+      <!-- <div class="clock" id="clock">
       <img src="/static/img/clock.png" alt="clock" />
-      <p>최신글</p>
+      <a href="#recent" onclick="route(recent)">최신글</a>
     </div>
-    <div onclick="pop(event)" class="fire">
+    <div class="fire" id="fire">
       <img src="/static/img/flame.png" alt="fire" />
-      <p>인기글</p>
+      <a href="#pop" onclick="route(pop)">인기글</a>
+    </div> -->
     </div>
-  </div>
-</nav>
+  </nav>
+</div>

@@ -42,6 +42,9 @@ body {
   align-items: center;
   object-fit: cover;
 }
+.write {
+  width: 34rem;
+}
 .txt_area {
   display: flex;
   flex: 1 1 0%;
