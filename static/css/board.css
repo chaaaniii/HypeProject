@@ -11,16 +11,16 @@ a {
 
 .bigcontainer {
   overflow: scroll;
-  width: 80rem;
+  width: 1280px;
   height: 80%;
   position: absolute;
 
-  margin-bottom: 10px;
+  margin-bottom: .625rem;
 }
 
 .tittle {
-  margin-bottom: 10px;
-  font-size: 40px;
+  margin-bottom: .625rem;
+  font-size: 2.5rem;
 }
 .top_btn1 {
   /* margin-top: px; */
@@ -31,7 +31,7 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }
 
 .buttons button {
@@ -39,8 +39,8 @@ a {
   color: black;
   background-color: white;
   border: none;
-  width: 40px;
-  height: 30px;
+  width: 2.5rem;
+  height: 1.875rem;
   font-size: xx-large;
   display: flex;
   justify-content: center;
@@ -52,8 +52,8 @@ a {
   color: black;
   background-color: white;
   border: none;
-  width: 40px;
-  height: 30px;
+  width: 2.5rem;
+  height: 1.875rem;
   font-size: xx-large;
   display: flex;
   justify-content: center;
@@ -63,84 +63,84 @@ a {
 
 
 .buttons ul li {
-  text-indent: 15px;
+  text-indent: .9375rem;
   display: flex;
   flex-direction: column;
-  padding-right: 40px;
+  padding-right: 2.5rem;
   margin-left: 0%;
-  border-radius: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  border-radius: .625rem;
+  padding-top: .3125rem;
+  padding-bottom: .3125rem;
   color: white;
 
 }
 
 .buttons ul li:hover {
   background: green;
-  padding-right: 40px;
+  padding-right: 2.5rem;
   
 }
 
 .buttons ul {
   background: black;
   margin-left: 0;
-  border-radius: 10px;
-  padding-top: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-bottom: 5px;
+  border-radius: .625rem;
+  padding-top: .3125rem;
+  padding-left: .3125rem;
+  padding-right: .3125rem;
+  padding-bottom: .3125rem;
 }
 
 .buttons1 ul li {
-  text-indent: 15px;
+  text-indent: .9375rem;
   display: flex;
   flex-direction: column;
-  padding-right: 40px;
+  padding-right: 2.5rem;
   margin-left: 0%;
-  border-radius: 10px;
-  padding-top: 3px;
-  padding-bottom: 3px;
+  border-radius: .625rem;
+  padding-top: .1875rem;
+  padding-bottom: .1875rem;
   color: white;
-  width: 50px;
+  width: 3.125rem;
 }
 
 .buttons1 ul li:hover {
   background: green;
-  padding-right: 40px;
+  padding-right: 2.5rem;
 }
 
 .buttons1 ul {
   background: black;
   margin-left: 0;
-  border-radius: 10px;
-  padding-top: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-bottom: 5px;
+  border-radius: .625rem;
+  padding-top: .3125rem;
+  padding-left: .3125rem;
+  padding-right: .3125rem;
+  padding-bottom: .3125rem;
   position: relative;
   z-index: 100;
 }
 
 .buttons {
   position: absolute;
-  margin-bottom: 570px;
-  margin-left: 910px;
+  margin-bottom: 35.625rem;
+  margin-left: 56.875rem;
   z-index: 100;
 }
 
 .warp {
-  margin-top: 13px;
+  margin-top: .8125rem;
   /* float: right;
-  width: 101rem;
+  width: 1616px;
   height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
   height: 90vh;
-  padding-top: 1px;
-  margin-top: 12px;
-  margin-left: 176px;
+  padding-top: .0625rem;
+  margin-top: .75rem;
+  margin-left: 11rem;
 }
 
 .glasswarp{
@@ -148,16 +148,16 @@ a {
   justify-content: center;
   align-items: center;
   position: relative;
-  height: 720px;
+  height: 45rem;
   width: 90%;
-  margin-bottom: 100px;
+  margin-bottom: 6.25rem;
 
   background-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 .5rem 2rem 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(.3125rem);
+  -webkit-backdrop-filter: blur(.3125rem);
+  border-radius: .625rem;
+  border: .0625rem solid rgba(255, 255, 255, 0.18);
 }
 
 .warp_btn {
@@ -166,11 +166,11 @@ a {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  margin-right: 630px;
+  margin-right: 39.375rem;
   background-color: gray;
-  width: 40px;
-  height: 100px;
-  border-radius: 30px;
+  width: 2.5rem;
+  height: 6.25rem;
+  border-radius: 1.875rem;
 }
 
 .hide_bar {
@@ -188,26 +188,26 @@ a {
 .warp_btn_like {
   background-color: transparent;
   color: white;
-  width: 30px;
-  height: 30px;
-  border-radius: 30px;
-  border: 2px solid white;
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: 1.875rem;
+  border: .125rem solid white;
 }
 
 .warp_btn_scrap {
   background-color: transparent;
   color: white;
-  width: 30px;
-  height: 30px;
-  border-radius: 30px;
-  border: 2px solid white;
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: 1.875rem;
+  border: .125rem solid white;
 }
 
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 .photo {
@@ -217,13 +217,13 @@ a {
 }
 
 .image {
-  width: 600px;
-  height: 400px;
+  width: 37.5rem;
+  height: 25rem;
 }
 
 .image1 {
-  width: 600px;
-  height: 400px;
+  width: 37.5rem;
+  height: 25rem;
   background-size: cover;
 }
 
@@ -231,17 +231,17 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 1.25rem;
   width: 79%;
-  margin-left: 40px;
-  margin-bottom: 20px;
+  margin-left: 2.5rem;
+  margin-bottom: 1.25rem;
 }
 
 
 .text12{
   display: flex;
   width: 80%;
-  margin-left:200px;
+  margin-left:12.5rem;
 }
 
 .text123{
@@ -250,8 +250,8 @@ a {
 
 .comment_list {
   width: 80%;
-  height: 250px;
-  margin-left: 120px;
+  height: 15.625rem;
+  /* margin-left: 7.5rem; */
 }
 
 .comment_input {
@@ -263,55 +263,56 @@ a {
 }
 
 .comment_input1 {
-  width: 600px;
-  height: 30px;
-  border-radius: 30px;
-  text-indent: 30px;
-  border: 2px solid gray;
+  width: 37.5rem;
+  height: 1.875rem;
+  border-radius: 1.875rem;
+  text-indent: 1.875rem;
+  border: .125rem solid gray;
 }
 
 .comment_input_btn {
-  width: 60px;
-  height: 35px;
-  border-radius: 30px;
+  width: 3.75rem;
+  height: 2.1875rem;
+  border-radius: 1.875rem;
   background: black;
   color: white;
-  border: 2px solid black;
+  border: .125rem solid black;
 }
 
 .comment_box {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-top: 10px;
-  margin-left: 50px;
-  height: 50px;
+  /* justify-content: center; */
+  margin-top: .625rem;
+  margin-left: 11.25rem;
+  height: 3.125rem;
 }
 
 .comment_img {
-  width: 50px;
-  height: 50px;
+  width: 3.125rem;
+  height: 3.125rem;
   border-radius: 50%;
-  margin-right: 20px;
+  margin-right: 1.25rem;
 }
 
 .comment {
   display: flex;
   align-items: center;
   /* background-color: gray; */
-  width: 600px;
+  width: 35rem;
 }
 
 .comment_text {
-  width: 450px;
+  width: 26.125rem;
+  margin-left: .3125rem;
 }
 
 .comment_btn {
-  margin-left: 120px;
+  margin-left: 7.5rem;
 }
 
 .commentname {
-  width: 80px;
+  width: 10rem;
   
 }
 
@@ -320,8 +321,8 @@ a {
 
 /* ================= */
 .like-button .heart-icon {
-  height: 40px;
-  width: 100px;
+  height: 3.5rem;
+  width: 6.25rem;
   background: url("heart.png");
   background-position: left;
   cursor: pointer;
@@ -339,14 +340,14 @@ a {
 }
 
 .heart-bg{
-  margin-top: 6px;
+  margin-top: 5px;
 }
 
 .like-button .heart-bg {
   background: rgba(255, 192, 200, 0);
   border-radius: 50%;
-  height: 40px;
-  width: 60px;
+  height: 2.5rem;
+  width: 3.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -361,32 +362,36 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 55rem;
-  margin-bottom: 20rem;
+  margin-right: 880px;
+  margin-bottom: 320px;
   background-color: gray;
-  border-radius: 30px;
+  border-radius: 1.875rem;
   z-index: 100;
-  width: 40px;
+  width: 2.5rem;
 }
 
 .like-button .likes-amount {
-  /* font-size: 20px; */
+  /* font-size: 1.25rem; */
   font-family: "Roboto", sans-serif;
   color: #888;
   /* font-weight: 900; */
-  /* margin-left: 6px; */
+  /* margin-left: .375rem; */
 }
 
 
 /* ------------------------ */
 
 .like-button1 .heart-icon1 {
-  height: 40px;
-  width: 100px;
+  height: 3.5rem;
+  width: 6.25rem;
   background: url("heart.png");
   background-position: left;
   cursor: pointer;
-  position: fixed;
+  /* position: relative; */
+}
+
+.heart-icon1.liked1{
+  display: flex;
 }
 
 .like-button1 .heart-icon1.liked1 {
@@ -400,14 +405,14 @@ a {
 }
 
 .heart-bg1{
-  margin-top: 6px;
+
 }
 
 .like-button1 .heart-bg1 {
-  background: rgba(255, 192, 200, 0);
+  /* background: rgba(255, 192, 200, 0);
   border-radius: 50%;
-  height: 40px;
-  width: 60px;
+  height: 2.5rem; */
+  width: 2.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -420,22 +425,17 @@ a {
 
 .like-button1 {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
-  margin-right: 55rem;
-  margin-bottom: 30rem;
-  background-color: gray;
-  border-radius: 30px;
-  z-index: 100;
-  width: 40px;
+  width: 6.5rem;
 }
 
 .like-button1 .likes-amount1 {
-  /* font-size: 20px; */
+  /* font-size: 1.25rem; */
   font-family: "Roboto", sans-serif;
   color: #888;
   /* font-weight: 900; */
-  /* margin-left: 6px; */
+  /* margin-left: .375rem; */
 }
 
 /* =================== */
@@ -445,32 +445,32 @@ a {
 }
 
 .comment_input_container input{
-  width: 380px;
-  margin-left: 15px;
-  border-radius: 10px;
-  text-indent: 10px;
+  width: 23.75rem;
+  margin-left: .9375rem;
+  border-radius: .625rem;
+  text-indent: .625rem;
 }
 
 .comment_input_container input:focus{
   outline: none;
-  border-radius: 10px;
-  padding-right: 5px;
+  border-radius: .625rem;
+  padding-right: .3125rem;
 }
 
 .comment_input_container button{
-  width: 40px;
-  height: 30px;
+  width: 2.5rem;
+  height: 1.875rem;
   background-color: black;
   color: white;
-  margin-left: 5px;
+  margin-left: .3125rem;
 }
 
 .name{
-  padding-right: 10px;
+  padding-right: .625rem;
 }
 
 .comment p{
-  font-size: 15px;
+  font-size: .9375rem;
 }
 
 
