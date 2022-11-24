@@ -144,7 +144,7 @@ window.comment_save = function comment_save(){
     comment_box.innerHTML = comment_text_value
     comment_input_container.style.display = 'none'
     comment_box.style.display = 'block'
-    // window.location.reload()
+    window.location.reload()
 
     //댓글수정한값이 db에 정상적으로 올라갔을때 수정할떄쓰는 input값을 수정한댓글위치에 삭제하고 붙여준다
 }   
@@ -221,8 +221,9 @@ window.comment_delete = function comment_delete(event){
 
 window.getfire = getfire
 
-document.addEventListener('DOMContentLoaded', ()=>{
+window.addEventListener('hashchange', ()=>{
     if(window.location.hash === "#board") getfire()
+    console.log("a")
 })
 
 
