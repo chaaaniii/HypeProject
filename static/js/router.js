@@ -13,16 +13,18 @@ const routes = {
   travel: "/templates/pages/travel.html",
   sports: "/templates/pages/sports.html",
   entertainment: "/templates/pages/entertainment.html",
+  pop: "/templates/pages/pop.html",
+  recent: "/templates/pages/recent.html",
   mypage: "/templates/pages/mypage.html",
   like: "/templates/pages/like.html",
-  scrab: "/templates/pages/scrab.html",
+  scrap: "/templates/pages/scrap.html",
   setting: "/templates/pages/setting.html",
   login: "/templates/pages/login.html",
   signin: "/templates/pages/signin.html",
   // 게시판 글 하고 등록
   board : "/templates/pages/board.html",
   wt_board : "/templates/pages/wt_board.html"
-};
+}
 
 export const handleLocation = async () => {
   let path = window.location.hash.replace("#", "");
@@ -35,4 +37,34 @@ export const handleLocation = async () => {
 
   document.getElementById("main-page").innerHTML = html;
   if (path === "/") TypeText();
+
+  const load_nickname = () => {
+    document.getElementById("nickname").textContent =
+      authService.currentUser.displayName ?? "닉네임 없음";
+
+    document.getElementById("profileImg").src =
+      authService.currentUser.photoURL ?? "/static/img/empty_profile.png";
+
+  }
+
+  if (path === "mypage") {
+    load_nickname()
+  }
+  if (path === "like") {
+    load_nickname()
+  }
+  if (path === "scrap") {
+    load_nickname()
+  }
+  
+  if (path === "setting") {
+    document.getElementById("username").textContent =
+      authService.currentUser.displayName ?? "닉네임 없음";
+
+    document.getElementById("profileView").src =
+      authService.currentUser.photoURL ?? "/static/img/empty_profile.png";
+
+    document.getElementById("urnameinput").placeholder =
+    authService.currentUser.displayName ?? "닉네임 없음";
+  }
 };

@@ -59,7 +59,19 @@ window.heartIcon = function heartIcon(){
         likesAmountLabel.innerHTML = likesAmount; // + - 된값을 데이터에 업데이트해주는 곳 Html에 넣어줘야함
     }
 
-    
+    let likesAmount1 = 0;
+window.heartIcon1 = function heartIcon1(){
+    const heartIcon1 = document.querySelector(".like-button1 .heart-icon1");
+    const likesAmountLabel1 = document.querySelector(".like-button1 .likes-amount1");
+
+            heartIcon1.classList.toggle("liked1");
+            if (heartIcon1.classList.contains("liked1")) {
+            likesAmount1++;
+            } else {
+            likesAmount1--;
+        }
+        likesAmountLabel1.innerHTML = likesAmount1; // + - 된값을 데이터에 업데이트해주는 곳 Html에 넣어줘야함
+    }
 
 // =======================외부클릭시 지워짐
 document.addEventListener('click', function handleClickOutsideBox(event) {
@@ -209,8 +221,9 @@ window.comment_delete = function comment_delete(event){
 
 window.getfire = getfire
 
-document.addEventListener('DOMContentLoaded', ()=>{
+window.addEventListener('hashchange', ()=>{
     if(window.location.hash === "#board") getfire()
+    console.log("a")
 })
 
 

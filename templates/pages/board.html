@@ -16,65 +16,93 @@
     <div class="warp">
         <div class="glasswarp">
 
-        <div class="heart-btn1">
-            
-            <!-- <div class="content1">
-                <span class="heart1"></span>
-                <span class="tex1"></span>
-                <span class="numb1"></span>
-            </div> -->
+
             <div class="like-button">
                 <div class="heart-bg" onclick="heartIcon()">
                     <div class="heart-icon"></div>
                 </div>
-                <div class="likes-amount">0</div>
+                <div class="likes-amount" style="color: black;">0</div>
+                <i class="fa-solid fa-bookmark" style="color: rgb(171, 171, 171); margin-top: 2px; margin-bottom: 10px; font-size: 1.3rem;"></i>
             </div>
-
-
-            <i class="fa-solid fa-bookmark" style="color: white; margin-top: 2px; "></i>
-        </div>
-
-        <div class="buttons">
-            <button href="#" class="top_btn" id="search_input" onclick="show()">...</button>
-                <ul class="hide_bar" id="search_history">
-                    <li><a href="" onclick="next(event)">수정</a></li>
-                    <li>삭제</li>
-                </ul>
-        </div>
-        
-        <div class="bigcontainer">
-        <!-- 본문 -->
-        <div class="container">
-            <h1 class="tittle"> Channel 이 공개한 22/23 Cruze Collaction </h1>
-        </div>
-
-        <div class="photo">
-            <div class="image">
-                <img src="/static/css/다운로드.jpeg" alt="" class="image1" />
-            </div>
-        </div>
-
-        <div class="text">
-            <div class="text12">
-            <p class="text123">믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥
-                믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥
-                믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥
-                믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥
-                믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥 </p>
-            </div>
-        </div>
-
-
         
 
-        <!-- 댓글 -->
-        <div class="comment_input">
-            <input type="text" class="comment_input1" placeholder="댓글을 입력하세요..." id="comment_input1"/>
-            <button class="comment_input_btn" onclick="writecomment(event);getfire()">등록</button>
+    <div class="buttons">
+      <button href="#" class="top_btn" id="search_input" onclick="show()">
+        ...
+      </button>
+      <ul class="hide_bar" id="search_history">
+        <li><a href="" onclick="next(event)">수정</a></li>
+        <li>삭제</li>
+      </ul>
+    </div>
 
-            <!-- 홈페이지가 새로고침 또는 랜딩이 될떄마다 뿌려주는 함수는 getfire이다 팀원들이 뿌려주는 먼가를만들면 거기에 넣어주기만하면됨 -->
-            <!-- <button onclick="getfire()">뻐른</button> -->
+    <div class="bigcontainer">
+      <!-- 본문 -->
+      <div class="container">
+        <h1 class="tittle">Channel 이 공개한 22/23 Cruze Collaction</h1>
+      </div>
+
+      <div class="photo">
+        <div class="image">
+          <img src="/static/css/다운로드.jpeg" alt="" class="image1" />
         </div>
+      </div>
+
+      <div class="text">
+        <div class="text12">
+          <p class="text123">
+            믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥
+            믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥
+            믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥
+            믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥
+            믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥믜에에에에에에에엥
+          </p>
+        </div>
+      </div>
+
+      <!-- 댓글 -->
+      <div class="comment_input">
+        <input
+          type="text"
+          class="comment_input1"
+          placeholder="댓글을 입력하세요..."
+          id="comment_input1"
+        />
+        <button
+          class="comment_input_btn"
+          onclick="writecomment(event);getfire()"
+        >
+          등록
+        </button>
+
+        <!-- 홈페이지가 새로고침 또는 랜딩이 될떄마다 뿌려주는 함수는 getfire이다 팀원들이 뿌려주는 먼가를만들면 거기에 넣어주기만하면됨 -->
+        <!-- <button onclick="getfire()">뻐른</button> -->
+      </div>
+
+      <div class="comment_list" id="comment_list">
+        <div class="comment_box" id="comment_box">
+          <div class="comment">
+            <img src="/static/css/다운로드.jpeg" alt="" class="comment_img" />
+            <p class="commentname">픠에엥</p>
+            <div>
+              <p class="comment_text" id="comment_text">amldpdpdpdp</p>
+              <div class="comment_input_container" style="display: flex">
+                <input
+                  type="text"
+                  class="comment_input_inside"
+                  id="comment_input"
+                />
+                <button
+                  id="comment_save"
+                  class="comment_save"
+                  onclick="comment_save()"
+                >
+                  버른
+                </button>
+              </div>
+            </div>
+          </div>
+
 
     <div class="comment_list" id="comment_list">
         <div class="comment_box" id="comment_box" >
@@ -84,7 +112,7 @@
                     <p class="commentname">픠에엥</p>
                     <div>
                         <p class="comment_text" id="comment_text">amldpdpdpdp</p>
-                            <div class="comment_input_container" style="display: flex;">
+                            <div class="comment_input_container">
                                 <input type="text" class="comment_input_inside" id="comment_input" />
                                 <button  id="comment_save" class="comment_save" onclick="comment_save()">버른</button>
                             </div>
@@ -92,12 +120,11 @@
                 </div>
 
 
-                <div class="heart-btn">
-                    <div class="content">
-                        <span class="heart"></span>
-                        <span class="tex"></span>
-                        <span class="numb"></span>
+                <div class="like-button1">
+                    <div class="heart-bg" onclick="heartIcon1()">
+                        <div class="heart-icon1"></div>
                     </div>
+                    <div class="likes-amount1">0</div>
                 </div>
             
                 <div class="buttons1">
@@ -107,14 +134,11 @@
                             <li class="comment_modify" id="comment_delete" onclick="comment_delete()">삭제</li>
                         </ul>
                 </div>
-
         </div>
-        
+      </div>
     </div>
-    </div>
-        </div>
-        </div>
-    
+  </div>
+</div>
 
 <!-- <script src="/static/js/pages/board.js" type="module"></script>
 </body>

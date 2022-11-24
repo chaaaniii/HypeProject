@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/wt_board.css">
     <title>Document</title>
+
 </head>
 <body>
     <div class="wt_wrap">
         <div class="wt_buttons">
             <button>취소</button>
-            <button>등록</button>
+            <button onclick="save_board(event)">등록</button>
         </div>
-
+        <script src="../../static/js/pages/wt_board.js"></script>
         <div class="wt_innerwrap">
         <div class="wt_input_container">
             <input type="text" placeholder="제목을 입력해주세요..."  class="wt_input">

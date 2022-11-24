@@ -3,10 +3,10 @@
         <div class="profile_area">
             <div class="profile_box">
                 <div class="profile">
-                    <img src="/static/img/empty_profile.png" alt="profile_img">
+                    <img id="profileImg" src="/static/img/empty_profile.png" alt="profile_img">
                     <div class="profile_info">
-                        <span class="name">이름</span>
-                        <span class="desc">소개가 들어갑니다.</span>
+                        <span id="nickname" class="name">이름</span>
+                        <!-- <span class="desc">소개가 들어갑니다.</span> -->
                     </div>
 
                 </div>
@@ -21,7 +21,7 @@
             <div class="tab_btn">
                 <a id="mypost" class="mypost" href="#mypage" onclick="uploadedPost(event)">내가 쓴 글</a>
                 <a id="like" class="mypost" href="#like" onclick="likePost(event)">좋아요 한 글</a>
-                <a id="scrab" class="mypost active" href="#scrab" onclick="scrabPost(event)">저장 한 글</a>
+                <a id="scrap" class="mypost active" href="#scrap" onclick="scrapPost(event)">저장 한 글</a>
                 <div class="tab_underline" style="left : 66.6%;"></div>
             </div>
         </div>
