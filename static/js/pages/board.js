@@ -204,4 +204,3 @@ window.comment_delete = function comment_delete(event){
 window.getfire = getfire
 getfire()
 
-
