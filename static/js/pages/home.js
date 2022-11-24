@@ -5,7 +5,7 @@ const TypeText = () => {
 Hype함을 배달합니다.`;
 
   let counter = 0;
-  
+
   // 출력할 내용
   setInterval(() => {
     // 글자가 모두 출력되면 setInterval을 멈출 것
@@ -14,52 +14,56 @@ Hype함을 배달합니다.`;
     }
     // 문자열 하나하나 h2의 텍스트 컨텐츠로 추가한다
     h2.innerHTML += txt[counter] === "\n" ? `<br>` : txt[counter];
-      // 카운터 증산
-      counter++;
-    }, 60);
-  };
+    // 카운터 증산
+    counter++;
+  }, 60);
+};
 //반응형일 때 우측하단에 NAV바 올리는 버튼
 const UptoMenu = () => {
-  let nav = document.querySelector('.nav_menu')
-  nav.style.transform = 'translateY(-50rem)'
-}
+  let nav = document.querySelector(".nav_menu");
+  nav.style.transform = "translateY(-50rem)";
+};
 //반응형일 때 NAV바 올라온걸 내리는 버튼
 const DowntoMenu = () => {
-  let nav = document.querySelector('.nav_menu')
-  nav.style.transform = 'translateY(0rem)'
-}
+  let nav = document.querySelector(".nav_menu");
+  nav.style.transform = "translateY(0rem)";
+};
 //width가 1120이 아닐경우 네비바 위쪽에 고정
-let nav = document.querySelector('.nav_menu');
-let Down = document.querySelector('.Down_nav');
-window.onresize = function(){
+let nav = document.querySelector(".nav_menu");
+let Down = document.querySelector(".Down_nav");
+window.onresize = function () {
   var innerWidth = window.innerWidth;
-  innerWidth <= '1120'? nav.style.transform = 'translateY(0)'   : console.log('반응');
-}
+  innerWidth <= "1120"
+    ? (nav.style.transform = "translateY(0)")
+    : console.log("반응");
+};
+
 const nav_menu = document.querySelector(".nav_menu");
 const navBar = document.querySelector(".navBar");
 
 const nav_visi = () => {
-  console.log("a")
+  console.log("a");
   let path = window.location.hash.replace("#", "");
-if(path === '' || path !=='login'){
-  window.location.href='#login';
-  nav_menu.style.visibility = "hidden";
-  navBar.style.backgroundColor='white';
-}else{
-  console.log('aa')
-  nav_menu.style.visibility = "visible";
-  navBar.style.backgroundColor="black";
-}
-}
+
+  if (path === "" || path !== "login") {
+    window.location.href = "#login";
+    nav_menu.style.visibility = "hidden";
+    navBar.style.backgroundColor = "white";
+  } else {
+    console.log("aa");
+    nav_menu.style.visibility = "visible";
+    navBar.style.backgroundColor = "black";
+  }
+};
 
 const nav_visi_sign = () => {
   let path = window.location.hash.replace("#", "");
-if(path === 'signin'){
-  nav_menu.style.visibility = "hidden";
-  navBar.style.backgroundColor='white';
-}else{
-  nav_menu.style.visibility = "visible";
-  navBar.style.backgroundColor="black";
-}
-}
-
+  if (path === "" || path !== "signin") {
+    window.location.href = "#signin";
+    nav_menu.style.visibility = "hidden";
+    navBar.style.backgroundColor = "white";
+  } else {
+    nav_menu.style.visibility = "visible";
+    navBar.style.backgroundColor = "black";
+  }
+};
