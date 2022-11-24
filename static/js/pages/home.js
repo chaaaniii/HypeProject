@@ -41,6 +41,7 @@ const navBar = document.querySelector(".navBar");
 const nav_visi = () => {
   let path = window.location.hash.replace("#", "");
 if(path === '' || path !=='login'){
+  console.log('a')
   window.location.href='#login';
   nav_menu.style.visibility = "hidden";
   navBar.style.backgroundColor='white';
@@ -52,7 +53,6 @@ if(path === '' || path !=='login'){
 
 const nav_visi_sign = () => {
   let path = window.location.hash.replace("#", "");
-  debugger;
 if(path === '' || path !=='signin'){
   window.location.href='#signin';
   nav_menu.style.visibility = "hidden";
