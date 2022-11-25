@@ -37,7 +37,11 @@ export const handleLocation = async () => {
 
   document.getElementById("main-page").innerHTML = html;
   if(path === 'wt_board'){
-    CKEDITOR.replace('myeditor');
+    CKEDITOR.replace("myeditor",{
+    height:"300"
+    ,filebrowserImageUploadUrl: '파일업로드 작업을 할 URL 혹은 파일 경로 ex)./aaa.php 이런식으로 ',
+    filebrowserUploadMethod: 'form',
+    });
   }
   if (path === "/") TypeText();
 
