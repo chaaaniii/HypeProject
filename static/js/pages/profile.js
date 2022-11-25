@@ -113,9 +113,9 @@ export const onFileChange = (event) => {
 //                 </div>
 //             </a>
 //         </div>`;
-//       const div1 = document.createElement("div1");
-//       div1.innerHTML = temp_html;
-//       HypeList.appendChild(div1);
+//       const main = document.createElement("main");
+//       main.innerHTML = temp_html;
+//       iWrotePost.appendChild(main);
 //     }
 //   });
 // };

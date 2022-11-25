@@ -60,7 +60,7 @@ export const handleLocation = async () => {
   };
 
   if (path === "mypage" || path === "scrap" || path === "like") {
-    load_nickname();
+    load_nickname()
   }
 
   if (path === "setting") {
@@ -75,9 +75,9 @@ export const handleLocation = async () => {
   }
 
   if (path === "signin" || path === "login") {
-    hide_nav_bar();
+    hide_nav_bar()
   } else {
-    show_nav_bar();
+    show_nav_bar()
   }
 
   if (path === "mypage") {
@@ -114,10 +114,11 @@ const getHypeList = async () => {
     console.log(hypeList);
   });
   const iWrotePost = document.getElementById("iWrotePost");
-  // const currentUid = authService.currentUser.uid;
+  const currentUid = authService.currentUser.uid;
   iWrotePost.innerHTML = "";
   hypeList.forEach((hypeObject) => {
-    const temp_html = `
+    if (currentUid === hypeObject.creatorId) {
+      const temp_html = `
     <div class="mypage_wrap_box">
           <a href="#board" class="board_w" onclick="route(board)">
               <div class="img_area">
@@ -138,16 +139,14 @@ const getHypeList = async () => {
                       <div class="author_index">
                           <img src="${hypeObject.profileImg}" alt="autor_index" />
                           <span>by ${hypeObject.nickname}</span>
-                          <!-- <div class="like">
-                  <img src="/img/heart.png" alt="like" />
-                  <span>250</span>
-                </div> -->
                       </div>
                   </div>
               </div>
           </a>
       </div>`;
-    const main = document.createElement("main");
-    main.innerHTML = temp_html;
+      const main = document.createElement("main");
+      main.innerHTML = temp_html;
+      iWrotePost.appendChild(main);
+    }
   });
 };
