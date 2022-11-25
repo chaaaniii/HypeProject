@@ -4,6 +4,7 @@ import {
   query,
   orderBy,
   getDocs,
+  getDoc,
   doc,
   updateDoc,
   deleteDoc,
@@ -165,6 +166,24 @@ window.comment_delete = function comment_delete(event) {
 // var elem = document.querySelector('#some-element');
 //     elem.parentNode.removeChild(elem);
 
+// =======================================
+// const get_board = async function(id){
+//   const docSnap = await getDoc(
+//     doc(dbService, "wt_board", id)
+//   )
+//   const title = docSnap.data()["title"]
+//   const contents = docSnap.data()["contents"]
+//   const createdAt = docSnap.data()["createdAt"]
+//   const creatorId = docSnap.data()["creatorId"]
+//   const likes = docSnap.data()["likes"]
+//   const nickname = docSnap.data()["nickname"]
+//   const profileImg = docSnap.data()["profileImg"]
+
+
+  
+
+// }
+
 // commtnt_firebase=============================
 
 const getfire = async () => {
@@ -186,7 +205,7 @@ const getfire = async () => {
   console.log(authService.currentUser);
   comment_box.innerHTML = "";
   list.forEach((item) => {
-    const temp_html = `<div class="comment_box" id="comment_box" >
+    const temp_html = `
 
         <div class="comment">
             <img src="${item.profileImg}" alt="" class="comment_img">
