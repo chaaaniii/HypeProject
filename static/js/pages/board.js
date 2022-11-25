@@ -11,6 +11,8 @@ import {
     } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 import { dbService, authService } from "../firebase.js";
 
+console.log(authService.currentUser)
+
     const writecomment = async(event) => {
     event.preventDefault()
     const comment = document.getElementById('comment_input1');
@@ -37,9 +39,19 @@ window.show = function show(){
     bar.classList.toggle('hide_bar')
 }
 
-window.show1 = function show1(){
+window.show1 = function show1(event){
     const bar1 = document.getElementById('search_history1');
+    const postcreatid = event.target.id
     bar1.classList.toggle('hide_bar1')
+    //postcreatid 는 게시글을 작성한 사람의 id
+    //currentuser 는 현재 로그인이 되어있는 유저의 아이디
+    console.log(postcreatid);
+    console.log(authService.currentUser);
+    if( postcreatid === authService.currentUser.uid){
+        console.log('아무거나')
+        bar1.classList.toggle('hide_bar1')
+        console.log(bar1)
+    } 
 }
 
 
@@ -79,21 +91,7 @@ window.heartIcon1 = function heartIcon1(){
     }
 
 // =======================외부클릭시 지워짐
-document.addEventListener('click', function handleClickOutsideBox(event) {
-    // 👇️ the element the user clicked
 
-    const box = document.getElementById('search_history');
-    const button = document.getElementById('search_input');
-    const isBoxShowing = !box.classList.contains('hide_bar');
-    const isButtonClicked = button.contains(event.target);
-    
-
-    //if 문에서 false가 나오면 return으로 아무것도 반환하지않는다
-    if(isBoxShowing && !isButtonClicked ){
-        box.classList.add('hide_bar');
-    }  
-    return
-});
 
     document.addEventListener('click', function handleClickOutsideBox(event) {
         // 👇️ the element the user clicked
@@ -185,7 +183,7 @@ window.comment_delete = function comment_delete(event){
         list.push(obj)
     })
     const comment_box = document.getElementById('comment_list')
-    console.log(comment_box)
+    console.log(authService.currentUser)
     comment_box.innerHTML = ''
     list.forEach((item) => {
         const temp_html = `<div class="comment_box" id="comment_box" >
@@ -205,7 +203,7 @@ window.comment_delete = function comment_delete(event){
         
     
         <div class="buttons1">
-            <button href="#" class="top_btn1" id="search_input1" onclick="show1()">...</button>
+            <button href="#" class="top_btn1" id="${item.creatorId}" onclick="show1(event)">...</button>
                 <ul class="hide_bar1" id="search_history1" >
                     <li class="comment_modify" id="comment_modify" onclick="comment_modifyed()">수정</li>
                     <li class="comment_modify" id="${item.id}" onclick="comment_delete(event)">삭제</li>
