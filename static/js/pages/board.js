@@ -206,7 +206,7 @@ const getfire = async () => {
   comment_box.innerHTML = "";
   list.forEach((item) => {
     const temp_html = `
-
+      
         <div class="comment">
             <img src="${item.profileImg}" alt="" class="comment_img">
             <p class="commentname">${item.nickname}</p>
@@ -219,8 +219,6 @@ const getfire = async () => {
             </div>
         </div>
 
-        
-    
         <div class="buttons1" id="${item.creatorId}">
             <button href="#" class="top_btn1" id="${item.creatorId}" name="${item.id}" onclick="show1(event)">...</button>
                 <ul class="hide_bar1" id="search_history1-${item.id}" >
@@ -228,6 +226,7 @@ const getfire = async () => {
                     <li class="comment_modify" id="${item.id}" onclick="comment_delete(event)">삭제</li>
                 </ul>
         </div>
+        
 `;
     const div = document.createElement("div");
     div.classList.add("box");

@@ -470,3 +470,9 @@
 }
 
 
+.box {
+  width: 768px;
+  margin-left: auto;
+  display: flex;
+  /* margin-right: auto; */
+}
