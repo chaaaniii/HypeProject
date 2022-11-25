@@ -50,8 +50,8 @@ window.show1 = function show1(event) {
         .querySelector(`#search_history1-${postId}`) // 고유아이디로 변경
         .classList.toggle("hide_bar1");
     } else if (postcreatid !== authService.currentUser.uid){
-        document.getElementById(`buttons1`)
-        .style.display = 'none'
+        document.querySelector(`#`)
+        .style.visibility = 'hidden'
     }
 
     document.addEventListener("click", function handleClickOutsideBox(event) {
