@@ -4,7 +4,6 @@ import {
   query,
   orderBy,
   getDocs,
-  getDoc,
   doc,
   updateDoc,
   deleteDoc,
@@ -133,24 +132,18 @@ window.comment_modifyed = function comment_modifyed(event) {
 
 window.comment_save = function comment_save(event) {
   update_comment(event);
-  const postid = event.target.id
-  console.log(postid)
-  const comment_save = document.querySelector(".comment_save")
-  const comment_box = document.getElementById(`comment_text-${postid}`);
-  const comment_input = document.querySelector(`.comment_input_inside-${postid}`);
+  const comment_box = document.getElementById("comment_text");
+  const comment_input = document.getElementById("comment_input");
   const comment_input_container = document.querySelector(
     ".comment_input_container"
-
   );
 
   const comment_text_value = comment_input.value;
 
-  console.log(comment_input);
+  console.log(comment_text_value);
   comment_box.innerHTML = comment_text_value;
-  comment_input.style.display = "none";
-  comment_box.style.display = "flex";
-  event.target.style.display = "none";
-  console.log(comment_save)
+  comment_input_container.style.display = "none";
+  comment_box.style.display = "block";
   // window.location.reload()
 
   //댓글수정한값이 db에 정상적으로 올라갔을때 수정할떄쓰는 input값을 수정한댓글위치에 삭제하고 붙여준다
@@ -165,24 +158,6 @@ window.comment_delete = function comment_delete(event) {
 
 // var elem = document.querySelector('#some-element');
 //     elem.parentNode.removeChild(elem);
-
-// =======================================
-// const get_board = async function(id){
-//   const docSnap = await getDoc(
-//     doc(dbService, "wt_board", id)
-//   )
-//   const title = docSnap.data()["title"]
-//   const contents = docSnap.data()["contents"]
-//   const createdAt = docSnap.data()["createdAt"]
-//   const creatorId = docSnap.data()["creatorId"]
-//   const likes = docSnap.data()["likes"]
-//   const nickname = docSnap.data()["nickname"]
-//   const profileImg = docSnap.data()["profileImg"]
-
-
-  
-
-// }
 
 // commtnt_firebase=============================
 
@@ -205,8 +180,8 @@ const getfire = async () => {
   console.log(authService.currentUser);
   comment_box.innerHTML = "";
   list.forEach((item) => {
-    const temp_html = `
-      
+    const temp_html = `<div class="comment_box" id="comment_box" >
+
         <div class="comment">
             <img src="${item.profileImg}" alt="" class="comment_img">
             <p class="commentname">${item.nickname}</p>
@@ -214,11 +189,13 @@ const getfire = async () => {
                 <p class="comment_text" id="comment_text-${item.id}">${item.value}</p>
                     <div class="comment_input_container comment_input_container-${item.id}" id="${item.id}">
                         <input type="text" class="comment_input_inside-${item.id}" id="${item.id}" />
-                        <button  id="${item.id}" class="comment_save" onclick="comment_save(event)">완료</button>
+                        <button  id="comment_save" class="comment_save" onclick="comment_save(event)">완료</button>
                     </div>
             </div>
         </div>
 
+        
+    
         <div class="buttons1" id="${item.creatorId}">
             <button href="#" class="top_btn1" id="${item.creatorId}" name="${item.id}" onclick="show1(event)">...</button>
                 <ul class="hide_bar1" id="search_history1-${item.id}" >
@@ -226,7 +203,6 @@ const getfire = async () => {
                     <li class="comment_modify" id="${item.id}" onclick="comment_delete(event)">삭제</li>
                 </ul>
         </div>
-        
 `;
     const div = document.createElement("div");
     div.classList.add("box");
