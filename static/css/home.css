@@ -1,7 +1,6 @@
 @font-face {
   font-family: "SLEIGothicTTF";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff")
-    format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -20,7 +19,7 @@ body {
 
   overflow-y: hidden;
 }
-#logout{
+#logout {
   display: none;
 }
 /* 내비바 */
@@ -36,11 +35,10 @@ body {
 }
 
 .logo {
-  height: 4rem;
-  width: 8rem;
+  width: 5rem;
 
-  padding: 1rem 1.5rem;
-  margin-top: 1.5rem;
+  padding: 2rem 2rem;
+  margin-top: 2.5rem;
 }
 
 .nav_menu {
@@ -139,10 +137,10 @@ body {
 
   display: block;
 }
-.Down_nav{
+.Down_nav {
   display: none;
 }
-.Menu{
+.Menu {
   display: none;
 }
 /* nav바 반응형 */
@@ -287,7 +285,7 @@ body {
 }
 
 .offset {
-  color: #ffffff;
+  color: #fff;
   animation: letter-flicker 3s linear infinite;
 }
 
@@ -374,7 +372,8 @@ body {
 
   font-size: 20rem;
   font-weight: 600;
-  color: rgb(106, 106, 106);
+  color: transparent;
+  -webkit-text-stroke: 0.002rem #1ed760;
   letter-spacing: 1rem;
 
   animation: fadeInRight 1s;
@@ -391,18 +390,18 @@ body {
   }
 }
 
-.last_text{
-display: flex;
-flex-direction: column;
-align-items: flex-end;
+.last_text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 
-  margin-top: 5rem;
+  margin-bottom: 1rem;
   margin-right: 3rem;
 
   float: right;
 }
 
-.lastTxt{
+.lastTxt {
   color: #fff;
   font-size: 5rem;
 }

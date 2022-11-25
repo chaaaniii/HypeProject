@@ -23,7 +23,7 @@ const routes = {
   signin: "/templates/pages/signin.html",
   // 게시판 글 하고 등록
   board: "/templates/pages/board.html",
-  // : "/templates/pages/wt_board.html"
+  wt_board: "/templates/pages/wt_board.html",
 };
 
 export const handleLocation = async () => {
@@ -36,35 +36,33 @@ export const handleLocation = async () => {
   const html = await fetch(route).then((data) => data.text());
 
   document.getElementById("main-page").innerHTML = html;
+  if (path === "wt_board") {
+    CKEDITOR.replace("myeditor");
+  }
   if (path === "/") TypeText();
 
   const load_nickname = () => {
-    document.getElementById("nickname").textContent =
-      authService.currentUser.displayName ?? "닉네임 없음";
+    document.getElementById("nickname").textContent = authService.currentUser.displayName ?? "닉네임 없음";
 
-    document.getElementById("profileImg").src =
-      authService.currentUser.photoURL ?? "/static/img/empty_profile.png";
+    document.getElementById("profileImg").src = authService.currentUser.photoURL ?? "/static/img/empty_profile.png";
   };
 
   if (path === "mypage" || path === "scrab" || path === "like") {
-    load_nickname()
+    load_nickname();
   }
 
   if (path === "setting") {
-    document.getElementById("username").textContent =
-      authService.currentUser.displayName ?? "닉네임 없음";
+    document.getElementById("username").textContent = authService.currentUser.displayName ?? "닉네임 없음";
 
-    document.getElementById("profileView").src =
-      authService.currentUser.photoURL ?? "/static/img/empty_profile.png";
+    document.getElementById("profileView").src = authService.currentUser.photoURL ?? "/static/img/empty_profile.png";
 
-    document.getElementById("urnameinput").placeholder =
-      authService.currentUser.displayName ?? "닉네임 없음";
+    document.getElementById("urnameinput").placeholder = authService.currentUser.displayName ?? "닉네임 없음";
   }
 
   if (path === "signin" || path === "login") {
-    hide_nav_bar()
+    hide_nav_bar();
   } else {
-    show_nav_bar()
+    show_nav_bar();
   }
 };
 
@@ -73,10 +71,10 @@ const show_nav_bar = () => {
   const navBar = document.querySelector(".navBar");
   nav_menu.style.visibility = "visible";
   navBar.style.backgroundColor = "black";
-}
+};
 const hide_nav_bar = () => {
   const nav_menu = document.querySelector(".nav_menu");
   const navBar = document.querySelector(".navBar");
   nav_menu.style.visibility = "hidden";
   navBar.style.backgroundColor = "white";
-}
+};
