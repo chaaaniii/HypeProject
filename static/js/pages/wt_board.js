@@ -26,7 +26,6 @@ export const save_board = async (event) => {
       profileImg: photoURL,
       nickname: displayName,
     });
-    wt_title();
   } catch (error) {
     alert(error);
     console.log("error in addDoc:", error);
