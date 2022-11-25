@@ -47,27 +47,27 @@ export const readDataCollection = async () => {
 
   list.forEach((item) => {
     const temp_html = `<div class="wrap_box">
-                        <div class="img_area">
-                          <img src="${item.picture}}" alt="img_area" />
-                        </div>
-                        <div class="write">
-                          <div class="txt_area">
-                            <ul>
-                              <h4>${item.title}</h4>
-                              <span>
-                                <p>${item.text}</p>
-                              </span>
-                            </ul>
-                            <div class="date">
-                              <span>${item.createdAt}</span>
-                            </div>
-                            <div class="author_index">
-                              <img src=${item.profileImg} alt="autor_index" />
-                              <span>by ${item.nickname}</span>
+                          <div class="img_area">
+                            <img src="${item.picture}}" alt="img_area" />
+                          </div>
+                          <div class="write">
+                            <div class="txt_area">
+                              <ul>
+                                <h4>${item.title}</h4>
+                                <span>
+                                  <p>${item.text}</p>
+                                </span>
+                              </ul>
+                              <div class="date">
+                                <span>${item.createdAt}</span>
+                              </div>
+                              <div class="author_index">
+                                <img src=${item.profileImg} alt="autor_index" />
+                                <span>by ${item.nickname}</span>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </div>`;
+                        </div>`;
     const div = document.createElement("div");
     div.classList.add(".wrap_list");
     div.innerHTML = temp_html;
