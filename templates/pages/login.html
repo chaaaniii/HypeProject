@@ -62,17 +62,23 @@
               비밀번호 <input type="password" id="LoginInPassword" />
             </div>
             <section id="loginBtnSection">
-              <button id="loginBtn" onclick="nav_visi();handleAuth(event)">
+              <button id="loginBtn" onclick="handleAuth(event)">
                 로그인하기
               </button>
             </section>
             <hr class="loginLine" />
             <h2 id="loginSubtitle">계정이 없나요?</h2>
-            <section id="signinBtnSection"></section>
+
+            <section id="signinBtnSection">
+            </section>
           </form>
-          <button id="signinBtn" onclick="location.href='#signin'">
-            HYPE EXPRESS에 가입하기
-          </button>
+          <button
+                id="signinBtn"
+                onclick="nav_visi_sign()"
+              >
+                HYPE EXPRESS에 가입하기
+              </button>
+
         </div>
       </div>
     </div>

@@ -22,9 +22,9 @@ const routes = {
   login: "/templates/pages/login.html",
   signin: "/templates/pages/signin.html",
   // 게시판 글 하고 등록
-  board: "/templates/pages/board.html",
-  // : "/templates/pages/wt_board.html"
-};
+  board : "/templates/pages/board.html",
+  wt_board : "/templates/pages/wt_board.html"
+}
 
 export const handleLocation = async () => {
   let path = window.location.hash.replace("#", "");
@@ -36,6 +36,13 @@ export const handleLocation = async () => {
   const html = await fetch(route).then((data) => data.text());
 
   document.getElementById("main-page").innerHTML = html;
+  if(path === 'wt_board'){
+    CKEDITOR.replace("myeditor",{
+    height:"300"
+    ,filebrowserImageUploadUrl: '파일업로드 작업을 할 URL 혹은 파일 경로 ex)./aaa.php 이런식으로 ',
+    filebrowserUploadMethod: 'form',
+    });
+  }
   if (path === "/") TypeText();
 
   const load_nickname = () => {
@@ -44,19 +51,12 @@ export const handleLocation = async () => {
 
     document.getElementById("profileImg").src =
       authService.currentUser.photoURL ?? "/static/img/empty_profile.png";
+  };
 
+  if (path === "mypage" || path === "scrap" || path === "like") {
+    load_nickname()
   }
 
-  if (path === "mypage") {
-    load_nickname()
-  }
-  if (path === "like") {
-    load_nickname()
-  }
-  if (path === "scrap") {
-    load_nickname()
-  }
-  
   if (path === "setting") {
     document.getElementById("username").textContent =
       authService.currentUser.displayName ?? "닉네임 없음";
@@ -65,6 +65,25 @@ export const handleLocation = async () => {
       authService.currentUser.photoURL ?? "/static/img/empty_profile.png";
 
     document.getElementById("urnameinput").placeholder =
-    authService.currentUser.displayName ?? "닉네임 없음";
+      authService.currentUser.displayName ?? "닉네임 없음";
+  }
+
+  if (path === "signin" || path === "login") {
+    hide_nav_bar()
+  } else {
+    show_nav_bar()
   }
 };
+
+const show_nav_bar = () => {
+  const nav_menu = document.querySelector(".nav_menu");
+  const navBar = document.querySelector(".navBar");
+  nav_menu.style.visibility = "visible";
+  navBar.style.backgroundColor = "black";
+}
+const hide_nav_bar = () => {
+  const nav_menu = document.querySelector(".nav_menu");
+  const navBar = document.querySelector(".navBar");
+  nav_menu.style.visibility = "hidden";
+  navBar.style.backgroundColor = "white";
+}

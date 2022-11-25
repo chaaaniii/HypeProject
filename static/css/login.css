@@ -88,6 +88,21 @@ button {
   justify-content: center;
   letter-spacing: 1px;
 }
+
+.nav_btn {
+  border-radius: 50px;
+  border-style: none;
+  width: 500px;
+  height: 50px;
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  letter-spacing: 1px;
+  background-color: #f0f0f0;
+}
+
 .googleBtn {
   background-color: white;
   border: 1px solid rgb(135, 136, 136);
