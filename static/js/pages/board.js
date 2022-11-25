@@ -112,15 +112,9 @@ window.heartIcon1 = function heartIcon1() {
 
 const comment_modify = document.getElementById("comment_modify");
 window.comment_modifyed = function comment_modifyed(event) {
-  const postid = event.target.id.split("-")[1]
-  console.log(postid)
+  const postid = event.target.id.split("-")[1];
   const comment_text = document.querySelector(`#comment_text-${postid}`);
-  console.log(comment_text)
   const comment_text_value = comment_text.innerHTML;
-
-
-
-  console.log(comment_text);
 
   const comment_input_container = document.querySelector(
     `.comment_input_container-${postid}`
@@ -129,27 +123,33 @@ window.comment_modifyed = function comment_modifyed(event) {
 
   comment_text.style.display = "none";
 
-  const comment_input = document.getElementById("comment_input");
-  const comment_input_inside = document.querySelector(`#comment_input_inside-${item.id}`)
+  const comment_input = document.querySelector(
+    `.comment_input_inside-${postid}`
+  );
+
   comment_input.value = comment_text_value;
-  comment_input_inside.value = comment_text_value;
 };
 
 window.comment_save = function comment_save(event) {
   update_comment(event);
-  const comment_box = document.getElementById("comment_text");
-  const comment_input = document.getElementById("comment_input");
+  const postid = event.target.id
+  console.log(postid)
+  const comment_save = document.querySelector(".comment_save")
+  const comment_box = document.getElementById(`comment_text-${postid}`);
+  const comment_input = document.querySelector(`.comment_input_inside-${postid}`);
   const comment_input_container = document.querySelector(
     ".comment_input_container"
-  );
 
+  );
 
   const comment_text_value = comment_input.value;
 
-  console.log(comment_text_value);
+  console.log(comment_input);
   comment_box.innerHTML = comment_text_value;
-  comment_input_container.style.display = "none";
-  comment_box.style.display = "block";
+  comment_input.style.display = "none";
+  comment_box.style.display = "flex";
+  event.target.style.display = "none";
+  console.log(comment_save)
   // window.location.reload()
 
   //댓글수정한값이 db에 정상적으로 올라갔을때 수정할떄쓰는 input값을 수정한댓글위치에 삭제하고 붙여준다
@@ -195,7 +195,7 @@ const getfire = async () => {
                 <p class="comment_text" id="comment_text-${item.id}">${item.value}</p>
                     <div class="comment_input_container comment_input_container-${item.id}" id="${item.id}">
                         <input type="text" class="comment_input_inside-${item.id}" id="${item.id}" />
-                        <button  id="comment_save" class="comment_save" onclick="comment_save(event)">완료</button>
+                        <button  id="${item.id}" class="comment_save" onclick="comment_save(event)">완료</button>
                     </div>
             </div>
         </div>
