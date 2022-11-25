@@ -141,6 +141,7 @@
 }
 
 .glasswarp{
+  margin-top: 5.625rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -274,6 +275,7 @@
   background: black;
   color: white;
   border: .125rem solid black;
+  margin-left: 0.6rem;
 }
 
 .comment_box {
@@ -309,7 +311,7 @@
 }
 
 .commentname {
-  width: 10rem;
+  width: 12rem;
   
 }
 
@@ -320,7 +322,7 @@
 .like-button .heart-icon {
   height: 3.5rem;
   width: 6.25rem;
-  background: url("heart.png");
+  background: url("/static/img/heart1.png");
   background-position: left;
   cursor: pointer;
   position: fixed;
@@ -381,7 +383,7 @@
 .like-button1 .heart-icon1 {
   height: 3.5rem;
   width: 6.25rem;
-  background: url("heart.png");
+  background: url("/static/img/heart1.png");
   background-position: left;
   cursor: pointer;
   /* position: relative; */
@@ -441,8 +443,8 @@
 
 .comment_input_container input{
   width: 23.75rem;
-  margin-left: .9375rem;
-  border-radius: .625rem;
+  /* margin-left: .9375rem; */
+  border-radius: 1.875rem;
   text-indent: .625rem;
 }
 
@@ -453,7 +455,7 @@
 }
 
 .comment_input_container button{
-  width: 2.5rem;
+  width: 3.75rem;
   height: 1.875rem;
   background-color: black;
   color: white;
@@ -469,3 +471,9 @@
 }
 
 
+.box {
+  width: 768px;
+  margin-left: auto;
+  display: flex;
+  /* margin-right: auto; */
+}

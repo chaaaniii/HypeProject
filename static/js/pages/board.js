@@ -111,20 +111,21 @@ window.heartIcon1 = function heartIcon1() {
 // ===========================modify
 
 const comment_modify = document.getElementById("comment_modify");
-window.comment_modifyed = function comment_modifyed() {
-  const comment_text = document.querySelector("#comment_text");
+window.comment_modifyed = function comment_modifyed(event) {
+  const postid = event.target.id.split("-")[1];
+  const comment_text = document.querySelector(`#comment_text-${postid}`);
   const comment_text_value = comment_text.innerHTML;
 
-  console.log(comment_text);
-
   const comment_input_container = document.querySelector(
-    ".comment_input_container"
+    `.comment_input_container-${postid}`
   );
   comment_input_container.style.display = "flex";
 
   comment_text.style.display = "none";
 
-  const comment_input = document.getElementById("comment_input");
+  const comment_input = document.querySelector(
+    `.comment_input_inside-${postid}`
+  );
 
   comment_input.value = comment_text_value;
 };
@@ -136,6 +137,7 @@ window.comment_save = function comment_save(event) {
   const comment_input_container = document.querySelector(
     ".comment_input_container"
   );
+
   const comment_text_value = comment_input.value;
 
   console.log(comment_text_value);
@@ -184,10 +186,10 @@ const getfire = async () => {
             <img src="${item.profileImg}" alt="" class="comment_img">
             <p class="commentname">${item.nickname}</p>
             <div>
-                <p class="comment_text" id="comment_text">${item.value}</p>
-                    <div class="comment_input_container" id="${item.id}">
-                        <input type="text" class="comment_input_inside" id="comment_input" />
-                        <button  id="comment_save" class="comment_save" onclick="comment_save(event)">버른</button>
+                <p class="comment_text" id="comment_text-${item.id}">${item.value}</p>
+                    <div class="comment_input_container comment_input_container-${item.id}" id="${item.id}">
+                        <input type="text" class="comment_input_inside-${item.id}" id="${item.id}" />
+                        <button  id="comment_save" class="comment_save" onclick="comment_save(event)">완료</button>
                     </div>
             </div>
         </div>
@@ -197,7 +199,7 @@ const getfire = async () => {
         <div class="buttons1" id="${item.creatorId}">
             <button href="#" class="top_btn1" id="${item.creatorId}" name="${item.id}" onclick="show1(event)">...</button>
                 <ul class="hide_bar1" id="search_history1-${item.id}" >
-                    <li class="comment_modify" id="comment_modify" onclick="comment_modifyed()">수정</li>
+                    <li class="comment_modify" id="comment_modify-${item.id}" name="${item.id}" onclick="comment_modifyed(event)">수정</li>
                     <li class="comment_modify" id="${item.id}" onclick="comment_delete(event)">삭제</li>
                 </ul>
         </div>
