@@ -13,14 +13,10 @@ import { dbService, authService } from "../firebase.js";
     const writecomment = async(event) => {
     event.preventDefault()
     const comment = document.getElementById('comment_input1');
-    const { uid, photoURL, displayName } = authService.currentUser;
     try{ 
         await addDoc(collection(dbService, "boardcomment"), {
             value : comment.value,
             createAt : Date.now(),
-            creatorId: uid,
-            profileImg: photoURL,
-            nickname: displayName,
         })
         comment.value = ""
     }
@@ -83,7 +79,7 @@ document.addEventListener('click', function handleClickOutsideBox(event) {
 
     const box = document.getElementById('search_history');
     const button = document.getElementById('search_input');
-    const isBoxShowing = !box.classList.contains('hide_bar');
+    // const isBoxShowing = !box.classList.contains('hide_bar');
     const isButtonClicked = button.contains(event.target);
     
 
@@ -189,8 +185,8 @@ window.comment_delete = function comment_delete(event){
         const temp_html = `<div class="comment_box" id="comment_box" >
 
         <div class="comment">
-            <img src="${item.profileImg}" alt="" class="comment_img">
-            <p class="commentname">${item.nickname}</p>
+            <img src="/static/css/다운로드.jpeg" alt="" class="comment_img">
+            <p class="commentname">픠에엥</p>
             <div>
                 <p class="comment_text" id="comment_text">${item.value}</p>
                     <div class="comment_input_container" id="${item.id}">

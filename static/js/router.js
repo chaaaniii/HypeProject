@@ -22,9 +22,9 @@ const routes = {
   login: "/templates/pages/login.html",
   signin: "/templates/pages/signin.html",
   // 게시판 글 하고 등록
-  board: "/templates/pages/board.html",
-  // : "/templates/pages/wt_board.html"
-};
+  board : "/templates/pages/board.html",
+  wt_board : "/templates/pages/wt_board.html"
+}
 
 export const handleLocation = async () => {
   let path = window.location.hash.replace("#", "");
@@ -36,6 +36,13 @@ export const handleLocation = async () => {
   const html = await fetch(route).then((data) => data.text());
 
   document.getElementById("main-page").innerHTML = html;
+  if(path === 'wt_board'){
+    CKEDITOR.replace("myeditor",{
+    height:"300"
+    ,filebrowserImageUploadUrl: '파일업로드 작업을 할 URL 혹은 파일 경로 ex)./aaa.php 이런식으로 ',
+    filebrowserUploadMethod: 'form',
+    });
+  }
   if (path === "/") TypeText();
 
   const load_nickname = () => {

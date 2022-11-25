@@ -1,25 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/wt_board.css">
-    <title>Document</title>
-</head>
-<body>
-    <div class="wt_wrap">
-        <div class="wt_buttons">
-            <button>취소</button>
-            <button>등록</button>
-        </div>
-
-        <div class="wt_innerwrap">
-        <div class="wt_input_container">
-            <input type="text" placeholder="제목을 입력해주세요..."  class="wt_input">
-            <textarea placeholder="본문을 입력해주세요..." name="" id="" cols="30" rows="10" class="wt_textarea"></textarea>
-        </div>
-        </div>
+<div class="wt_wrap">
+    <div class="wt_buttons">
+      <button>취소</button>
+      <button onclick="save_board(event)">등록</button>
     </div>
-</body>
-</html>
+    <div class="wt_innerwrap">
+      <div class="wt_input_container">
+        <input
+          id="wt_title"
+          type="text"
+          placeholder="제목을 입력해주세요..."
+          class="wt_input"
+        />
+        <textarea
+          name="myeditor"
+          id="myeditor"
+          placeholder="Product Details"
+          class="form-control"
+          rows="12"
+          cols="50"
+        ></textarea>
+      </div>
+    </div>
+  </div>
