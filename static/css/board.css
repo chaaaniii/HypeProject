@@ -274,6 +274,7 @@
   background: black;
   color: white;
   border: .125rem solid black;
+  margin-left: 0.6rem;
 }
 
 .comment_box {
@@ -309,7 +310,7 @@
 }
 
 .commentname {
-  width: 10rem;
+  width: 12rem;
   
 }
 
@@ -441,8 +442,8 @@
 
 .comment_input_container input{
   width: 23.75rem;
-  margin-left: .9375rem;
-  border-radius: .625rem;
+  /* margin-left: .9375rem; */
+  border-radius: 1.875rem;
   text-indent: .625rem;
 }
 
@@ -453,7 +454,7 @@
 }
 
 .comment_input_container button{
-  width: 2.5rem;
+  width: 3.75rem;
   height: 1.875rem;
   background-color: black;
   color: white;
