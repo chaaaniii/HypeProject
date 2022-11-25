@@ -1,4 +1,10 @@
-import { authService } from "./firebase.js";
+import { dbService, authService } from "./firebase.js";
+import {
+  collection,
+  orderBy,
+  query,
+  getDocs,
+} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
 export const route = (event) => {
   event.preventDefault();
@@ -54,12 +60,12 @@ export const handleLocation = async () => {
   };
 
   if (path === "mypage" || path === "scrap" || path === "like") {
-    load_nickname()
+    load_nickname();
   }
 
   if (path === "setting") {
-    document.getElementById("username").textContent =
-      authService.currentUser.displayName ?? "닉네임 없음";
+    // document.getElementById("username").textContent =
+    //   authService.currentUser.displayName ?? "닉네임 없음";
 
     document.getElementById("profileView").src =
       authService.currentUser.photoURL ?? "/static/img/empty_profile.png";
@@ -69,9 +75,13 @@ export const handleLocation = async () => {
   }
 
   if (path === "signin" || path === "login") {
-    hide_nav_bar()
+    hide_nav_bar();
   } else {
-    show_nav_bar()
+    show_nav_bar();
+  }
+
+  if (path === "mypage") {
+    getHypeList();
   }
 };
 
@@ -87,3 +97,57 @@ const hide_nav_bar = () => {
   nav_menu.style.visibility = "hidden";
   navBar.style.backgroundColor = "white";
 }
+
+const getHypeList = async () => {
+  let hypeList = [];
+  const q = query(
+    collection(dbService, "wt_board"),
+    orderBy("createdAt", "desc")
+  );
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    const hypeObj = {
+      id: doc.id,
+      ...doc.data(),
+    };
+    hypeList.push(hypeObj);
+    console.log(hypeList);
+  });
+  const iWrotePost = document.getElementById("iWrotePost");
+  // const currentUid = authService.currentUser.uid;
+  iWrotePost.innerHTML = "";
+  hypeList.forEach((hypeObject) => {
+    const temp_html = `
+    <div class="mypage_wrap_box">
+          <a href="#board" class="board_w" onclick="route(board)">
+              <div class="img_area">
+                  <img src="/static/img/img2.png" alt="img_area" />
+              </div>
+              <div class="write">
+                  <div class="txt_area">
+                      <ul>
+                          <h4>${hypeObject.title}</h4>
+                          <span>
+                              <p>${hypeObject.title}</p>
+                          </span>
+                      </ul>
+                      <div class="date">
+                          <span>YYYY년 MM월 DD일</span>
+                          <!-- <span>* 12개의 댓글</span> -->
+                      </div>
+                      <div class="author_index">
+                          <img src="${hypeObject.profileImg}" alt="autor_index" />
+                          <span>by ${hypeObject.nickname}</span>
+                          <!-- <div class="like">
+                  <img src="/img/heart.png" alt="like" />
+                  <span>250</span>
+                </div> -->
+                      </div>
+                  </div>
+              </div>
+          </a>
+      </div>`;
+    const main = document.createElement("main");
+    main.innerHTML = temp_html;
+  });
+};
