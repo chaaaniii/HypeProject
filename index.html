@@ -2,9 +2,9 @@
 <html>
   <head>
     <script defer src="https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js">
-      config.filebrowserUploadUrl      = '/upload.do?type=Files',
-	    config.filebrowserImageUploadUrl = '/upload.do?type=Images',
-	    config.filebrowserUploadMethod='form'; //파일 오류났을때 alert띄워줌
+       config.filebrowserUploadUrl      = '/upload.do?type=Files',
+      config.filebrowserImageUploadUrl = '/upload.do?type=Images',
+      config.filebrowserUploadMethod='form'; //파일 오류났을때 alert띄워줌
     </script>
     <title>Hype Express</title>
     <meta charset="UTF-8" />
@@ -21,7 +21,6 @@
     ></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-
 
     <script
       src="https://kit.fontawesome.com/96c0010bf4.js"
@@ -72,12 +71,22 @@
           </div>
           <div class="nav_btns">
             <li class="nav_button">
-              <a href="#signin" class="nav_btn" id="sign_in" onclick="route(event)">
+              <a
+                href="#signin"
+                class="nav_btn"
+                id="sign_in"
+                onclick="route(event)"
+              >
                 Sign In
               </a>
             </li>
             <li class="nav_button login">
-              <a href="#login" id="log_in" class="nav_btn" onclick="route(event)">
+              <a
+                href="#login"
+                id="log_in"
+                class="nav_btn"
+                onclick="route(event)"
+              >
                 Log In
               </a>
             </li>
@@ -99,5 +108,6 @@
     <!-- board scripts -->
     <script src="static/js/pages/board.js" type="module"></script>
     <script src="static/js/pages/wt_board.js" type="module"></script>
+    <script src="static/js/pages/food.js" type="module"></script>
   </body>
 </html>

@@ -28,9 +28,9 @@ const routes = {
   login: "/templates/pages/login.html",
   signin: "/templates/pages/signin.html",
   // 게시판 글 하고 등록
-  board : "/templates/pages/board.html",
-  wt_board : "/templates/pages/wt_board.html"
-}
+  board: "/templates/pages/board.html",
+  wt_board: "/templates/pages/wt_board.html",
+};
 
 export const handleLocation = async () => {
   let path = window.location.hash.replace("#", "");
@@ -42,11 +42,12 @@ export const handleLocation = async () => {
   const html = await fetch(route).then((data) => data.text());
 
   document.getElementById("main-page").innerHTML = html;
-  if(path === 'wt_board'){
-    CKEDITOR.replace("myeditor",{
-    height:"300"
-    ,filebrowserImageUploadUrl: '파일업로드 작업을 할 URL 혹은 파일 경로 ex)./aaa.php 이런식으로 ',
-    filebrowserUploadMethod: 'form',
+  if (path === "wt_board") {
+    CKEDITOR.replace("myeditor", {
+      height: "300",
+      filebrowserImageUploadUrl:
+        "파일업로드 작업을 할 URL 혹은 파일 경로 ex)./aaa.php 이런식으로 ",
+      filebrowserUploadMethod: "form",
     });
   }
   if (path === "/") TypeText();
@@ -60,7 +61,7 @@ export const handleLocation = async () => {
   };
 
   if (path === "mypage" || path === "scrap" || path === "like") {
-    load_nickname()
+    load_nickname();
   }
 
   if (path === "setting") {
@@ -75,9 +76,13 @@ export const handleLocation = async () => {
   }
 
   if (path === "signin" || path === "login") {
-    hide_nav_bar()
+    hide_nav_bar();
   } else {
-    show_nav_bar()
+    show_nav_bar();
+  }
+
+  if (path === "mypage") {
+    getHypeList();
   }
 
   if (path === "mypage") {
@@ -90,13 +95,13 @@ const show_nav_bar = () => {
   const navBar = document.querySelector(".navBar");
   nav_menu.style.visibility = "visible";
   navBar.style.backgroundColor = "black";
-}
+};
 const hide_nav_bar = () => {
   const nav_menu = document.querySelector(".nav_menu");
   const navBar = document.querySelector(".navBar");
   nav_menu.style.visibility = "hidden";
   navBar.style.backgroundColor = "white";
-}
+};
 
 const getHypeList = async () => {
   let hypeList = [];
