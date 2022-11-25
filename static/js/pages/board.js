@@ -3,22 +3,20 @@ import {
     collection,
     query,
     orderBy,
-    getDocs
+    getDocs,
+    doc,
+    updateDoc,
 
     } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
-import { dbService,authService } from "../firebase.js";
+import { dbService, authService } from "../firebase.js";
 
     const writecomment = async(event) => {
     event.preventDefault()
     const comment = document.getElementById('comment_input1');
-    const { uid, photoURL, displayName } = authService.currentUser;
     try{ 
         await addDoc(collection(dbService, "boardcomment"), {
             value : comment.value,
             createAt : Date.now(),
-            creatorId: uid,
-            profileImg: photoURL,
-            nickname: displayName,
         })
         comment.value = ""
     }
@@ -28,8 +26,6 @@ import { dbService,authService } from "../firebase.js";
 };
 window.writecomment = writecomment
 
-
-//  user : uuid 박아라 영재야 임마!
 // -----------------드롭다운
 window.show = function show(){
     const bar = document.getElementById('search_history');
@@ -138,12 +134,13 @@ window.comment_modifyed = function comment_modifyed(){
     
 }
 
-window.comment_save = function comment_save(){
+window.comment_save =  function comment_save(event){
+    update_comment(event)
     const comment_box = document.getElementById('comment_text');
     const comment_input = document.getElementById('comment_input');
     const comment_input_container = document.querySelector('.comment_input_container')
     const comment_text_value = comment_input.value
-
+    
     console.log(comment_text_value)
     comment_box.innerHTML = comment_text_value
     comment_input_container.style.display = 'none'
@@ -151,6 +148,7 @@ window.comment_save = function comment_save(){
     // window.location.reload()
 
     //댓글수정한값이 db에 정상적으로 올라갔을때 수정할떄쓰는 input값을 수정한댓글위치에 삭제하고 붙여준다
+    
 }   
 
 // ============================commet_delete
@@ -187,24 +185,18 @@ window.comment_delete = function comment_delete(event){
         const temp_html = `<div class="comment_box" id="comment_box" >
 
         <div class="comment">
-            <img src="${item.profileImg}" alt="" class="comment_img">
-            <p class="commentname">${item.nickname}</p>
+            <img src="/static/css/다운로드.jpeg" alt="" class="comment_img">
+            <p class="commentname">픠에엥</p>
             <div>
                 <p class="comment_text" id="comment_text">${item.value}</p>
-                    <div class="comment_input_container">
+                    <div class="comment_input_container" id="${item.id}">
                         <input type="text" class="comment_input_inside" id="comment_input" />
-                        <button  id="comment_save" class="comment_save" onclick="comment_save()">버른</button>
+                        <button  id="comment_save" class="comment_save" onclick="comment_save(event)">버른</button>
                     </div>
             </div>
         </div>
 
-
-        <div class="like-button1">
-            <div class="heart-bg" onclick="heartIcon1()">
-                <div class="heart-icon1"></div>
-            </div>
-            <div class="likes-amount1">0</div>
-        </div>
+        
     
         <div class="buttons1">
             <button href="#" class="top_btn1" id="search_input1" onclick="show1()">...</button>
@@ -221,6 +213,14 @@ window.comment_delete = function comment_delete(event){
     })
 }
 
+
+        // <div class="like-button1">
+        //     <div class="heart-bg" onclick="heartIcon1()">
+        //         <div class="heart-icon1"></div>
+        //     </div>
+        //     <div class="likes-amount1">0</div>
+        // </div>
+
 window.getfire = getfire
 
 window.addEventListener('hashchange', ()=>{
@@ -228,4 +228,26 @@ window.addEventListener('hashchange', ()=>{
     console.log("a")
 })
 
+// ====================Update comment
+export const update_comment = async (event) => {
+    // event.preventDefault();
+    console.log(event)
+    const comment_input1 = event.target.parentNode.children[0].value;
+    const id = event.target.parentNode.id;
+    console.log(comment_input1, id)
 
+    // const parentNode = event.target.parentNode.parentNode;
+    // const commentText = parentNode.children[0];
+    // commentText.classList.remove("noDisplay");
+    // const commentInputP = parentNode.children[1];
+    // commentInputP.classList.remove("d-flex");
+    // commentInputP.classList.add("noDisplay");
+
+    const commentRef = doc(dbService, "boardcomment", id);
+    try {
+        await updateDoc(commentRef, { value: comment_input1 });
+        // getCommentList();
+    } catch (error) {
+        alert(error);
+    }
+};
