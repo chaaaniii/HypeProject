@@ -4,8 +4,24 @@
 }
 
 .wt_wrap{
-    width: 100%;
-    height: 100%;
+    margin-top: 12px;
+    margin-left: 176px;
+    padding-top: 72px;
+    padding-bottom: 50px;
+    height: 92vh;
+    position: relative;
+    background: rgb(253, 246, 237);
+}
+
+.wt_glass {
+    width: 2218px;
+    height: 85vh;
+    margin-left: 70px;
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .wt_innerwrap{
@@ -13,8 +29,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background-color: gray; */
-    margin-top: 3rem;
+    margin-top: 5rem;
 }
 
 .wt_input_container{
@@ -24,33 +39,50 @@
     align-items: center;
 }
 
+.thumbnail_img {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    width: 18.125rem;
+    height: 10.625rem;
+    object-fit: cover;
+}
+
 .wt_buttons{
-    margin-top: 2rem;
-    margin-left: 80rem;
+    width: 107.2rem;
+    margin-top: 1rem;
+    display: inline-flex;
+    justify-content: end;
 }
 
 .wt_buttons button{
     width: 100px;
     height: 50px;
-    background-color: white;
+    background-color: black;
+    color: white;
     border: 1px solid gray;
     border-radius: 20px;
     font-size: 18px;
 }
 
 .wt_buttons button:hover{
-    background-color: black;
+    background-color: white;
     border: 3px solid black;
-    color: white;
+    color: black;
     border-radius: 20px;
     transition: 0.4s;
 }
 
+.cancel {
+    margin-right: 10px;
+}
+
 .wt_input{
-    width: 60rem;
+    width: 75rem;
     height: 4rem;
     border: none;
-    border-bottom: 1px solid gray;
+    border-radius: 50px;
+    box-shadow: 10px 8px rgba(0 0 0 / 40%);
     margin-bottom: 2rem;
     text-indent: 2rem;
     font-size: 30px;
