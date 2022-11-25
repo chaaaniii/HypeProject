@@ -1,4 +1,10 @@
 import { authService, storageService } from "../firebase.js";
+// import {
+//   collection,
+//   orderBy,
+//   query,
+//   getDocs,
+// } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 import {
   ref,
   uploadString,
@@ -15,7 +21,8 @@ export const changeProfile = async (event) => {
     `${authService.currentUser.uid}/${uuidv4()}`
   );
 
-  const newNickname = document.getElementById("username").innerText;
+  const newNickname = document.getElementById("urnameinput").value;
+  console.log(newNickname)
   // const newDescription = document.getElementById('userintroduce').innerText;
   console.log(newNickname)
   // console.log(newDescription)
@@ -33,23 +40,12 @@ export const changeProfile = async (event) => {
 
   .then(() => {
     alert("프로필 수정 완료");
-    window.location.hash = "/";
-    console.log(authService.currentUser)
+    window.location.hash = "#mypage";
   })
   .catch((error) => {
     alert("프로필 수정 실패");
     console.log("error:", error);
   });
-
-  // try {
-  // const docRef = await addDoc(collection(dbService, "users"), {
-  //   displayName: newNickname,
-  //   introduce: newDescription,
-  // });
-  //   console.log("docRef", docRef);
-  // } catch (e) {
-  //   console.error('e', e);
-  // }
 };
 
 // 미리보기
@@ -64,3 +60,62 @@ export const onFileChange = (event) => {
     document.getElementById("profileView").src = imgDataUrl;
   };
 };
+
+// export const getHypeList = async () => {
+//   let hypeList = [];
+//   const q = query(
+//     collection(dbService, "wt_board"),
+//     orderBy("createdAt", "desc")
+//   );
+//   const querySnapshot = await getDocs(q);
+//   querySnapshot.forEach((doc) => {
+//     const hypeObj = {
+//       id: doc.id,
+//       ...doc.data(),
+//     };
+//     hypeList.push(hypeObj);
+//     console.log(hypeList);
+//   });
+//   const iWrotePost = document.getElementById("iWrotePost");
+//   const currentUid = authService.currentUser.uid;
+//   iWrotePost.innerHTML = "";
+//   hypeList.forEach((hypeObject) => {
+//     const isOwner = currentUid === hypeObject.creatorId;
+//     console.log(isOwner)
+//     if (currentUid === hypeObject.creatorId) {
+//       const temp_html = `
+//       <div class="mypage_wrap_box">
+//             <a href="#board" class="board_w" onclick="route(board)">
+//                 <div class="img_area">
+//                     <img src="/static/img/img2.png" alt="img_area" />
+//                 </div>
+//                 <div class="write">
+//                     <div class="txt_area">
+//                         <ul>
+//                             <h4>${hypeObject.title}</h4>
+//                             <span>
+//                                 <p>${hypeObject.title}</p>
+//                             </span>
+//                         </ul>
+//                         <div class="date">
+//                             <span>YYYY년 MM월 DD일</span>
+//                             <!-- <span>* 12개의 댓글</span> -->
+//                         </div>
+//                         <div class="author_index">
+//                             <img src="${hypeObject.profileImg}" alt="autor_index" />
+//                             <span>by ${hypeObject.nickname}</span>
+//                             <!-- <div class="like">
+//                     <img src="/img/heart.png" alt="like" />
+//                     <span>250</span>
+//                   </div> -->
+//                         </div>
+//                     </div>
+//                 </div>
+//             </a>
+//         </div>`;
+//       const main = document.createElement("main");
+//       main.innerHTML = temp_html;
+//       iWrotePost.appendChild(main);
+//     }
+//   });
+// };
