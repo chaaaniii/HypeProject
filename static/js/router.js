@@ -46,7 +46,7 @@ export const handleLocation = async () => {
       authService.currentUser.photoURL ?? "/static/img/empty_profile.png";
   };
 
-  if (path === "mypage" || path === "scrab" || path === "like") {
+  if (path === "mypage" || path === "scrap" || path === "like") {
     load_nickname()
   }
 
