@@ -6,6 +6,7 @@ import {
     getDocs,
     doc,
     updateDoc,
+    deleteDoc,
 
     } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 import { dbService, authService } from "../firebase.js";
@@ -157,6 +158,7 @@ window.comment_save =  function comment_save(event){
 
 // ============================commet_delete
 window.comment_delete = function comment_delete(event){
+    delete_comment(event)
     const comment_delete = document.querySelector('#comment_box');
     comment_delete.parentNode.removeChild(comment_delete);
 }
@@ -206,7 +208,7 @@ window.comment_delete = function comment_delete(event){
             <button href="#" class="top_btn1" id="search_input1" onclick="show1()">...</button>
                 <ul class="hide_bar1" id="search_history1" >
                     <li class="comment_modify" id="comment_modify" onclick="comment_modifyed()">수정</li>
-                    <li class="comment_modify" id="comment_delete" onclick="comment_delete()">삭제</li>
+                    <li class="comment_modify" id="${item.id}" onclick="comment_delete(event)">삭제</li>
                 </ul>
         </div>
 `
@@ -255,3 +257,18 @@ export const update_comment = async (event) => {
         alert(error);
     }
 };
+
+export const delete_comment = async (event) => {
+    event.preventDefault();
+    const id = event.target.id;
+    console.log(id)
+    const ok = window.confirm("해당 응원글을 정말 삭제하시겠습니까?");
+    if (ok) {
+        try {
+        await deleteDoc(doc(dbService, "boardcomment", id));
+        // getCommentList();
+        } catch (error) {
+        alert(error);
+        }
+    }
+    };
