@@ -16,6 +16,19 @@ import {
     const wt_contents = CKEDITOR.instances.myeditor.getData();
     console.log(wt_contents)
     console.log(wt_title)
-    // const { uid, photoURL, displayName } = authService.currentUser;
+    const { uid, photoURL, displayName } = authService.currentUser;
+    try {
+        await addDoc(collection(dbService, "wt_board"), {
+          title: wt_title,
+          contents: wt_contents,
+          createdAt: Date.now(),
+          creatorId: uid,
+          profileImg: photoURL,
+          nickname: displayName,
+        });
+      } catch (error) {
+        alert(error);
+        console.log("error in addDoc:", error);
+      }
+    };
     
-  }
