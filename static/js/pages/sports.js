@@ -59,10 +59,15 @@ export const readDataCollection = async () => {
                                   </span>
                                 </ul>
                                 <div class="date">
-                                  <span>${item.createdAt}</span>
+                                <span>${new Date(item.createdAt)
+                                  .toString()
+                                  .slice(0, 16)}</div></footer>
+                              <div class="author_index">
                                 </div>
                                 <div class="author_index">
-                                  <img src=${item.profileImg} alt="autor_index" />
+                                  <img src=${
+                                    item.profileImg
+                                  } alt="autor_index" />
                                   <span>by ${item.nickname}</span>
                                 </div>
                               </div>

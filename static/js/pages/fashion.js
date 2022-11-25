@@ -17,11 +17,12 @@ export const save_comment = async (event) => {
       picture: picture.value,
       title: title.value,
       text: text.value,
-      createdAt: Date.now(),
+      createdAt: new Date(),
       creatorId: uid,
       profileImg: photoURL,
       nickname: displayName,
     });
+
     comment.value = "";
     getCommentList();
   } catch (error) {
@@ -46,6 +47,7 @@ export const readDataCollection = async () => {
   commentList.innerHTML = "";
 
   list.forEach((item) => {
+    console.log(Date.now());
     const temp_html = `<div class="wrap_box">
                             <div class="img_area">
                               <img src="${item.picture}}" alt="img_area" />
@@ -59,10 +61,14 @@ export const readDataCollection = async () => {
                                   </span>
                                 </ul>
                                 <div class="date">
-                                  <span>${item.createdAt}</span>
-                                </div>
+                                <span>${new Date(item.createdAt)
+                                  .toString()
+                                  .slice(0, 16)}</div></footer>
+                                
                                 <div class="author_index">
-                                  <img src=${item.profileImg} alt="autor_index" />
+                                  <img src=${
+                                    item.profileImg
+                                  } alt="autor_index" />
                                   <span>by ${item.nickname}</span>
                                 </div>
                               </div>
