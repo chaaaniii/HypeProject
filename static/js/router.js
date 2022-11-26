@@ -94,6 +94,7 @@ export const handleLocation = async () => {
   }
 
   if (path === "board") {
+    getPost();
     getFire();
   }
 
@@ -154,7 +155,7 @@ const getHypeList = async () => {
     if (currentUid === hypeObject.creatorId) {
       const temp_html = `
     <div class="mypage_wrap_box">
-          <a href="#board" class="board_w" onclick="route(board)">
+          <a href="?${hypeObject.id}#board" class="board_w";">
               <div class="img_area">
                   <img src="${hypeObject.thumbnail ?? "static/img/No_Thumbnail.png"}" alt="img_area" />
               </div>
@@ -201,7 +202,7 @@ const getFashion = async () => {
     if (fashionObject.category === "#f_wt_board") {
       const temp_html = `
     <div class="wrap_box">
-      <a href="#board" class="board_w" onclick="route(board)">
+      <a href="?${fashionObject.id}#board" class="board_w">
           <div class="img_area">
               <img src="${fashionObject.thumbnail ?? "static/img/No_Thumbnail.png"}" alt="img_area" />
           </div>
@@ -230,6 +231,77 @@ const getFashion = async () => {
   });
 };
 
+const getPost = async () => {
+  const descWrap = document.getElementById("desc_wrap")
+  let postList = [];
+  const q = query(collection(dbService, "wt_board"), orderBy("createdAt", "desc"));
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    const postObj = {
+      id: doc.id,
+      ...doc.data(),
+    };
+    postList.push(postObj);
+  });
+  const showPost = document.getElementById("description");
+  showPost.innerHTML = "";
+  postList.forEach((postObject) => {
+    let param = window.location.search.replace("?", "");
+    if (postObject.id === param) {
+      const temp_html = `
+          <!-- 본문 -->
+          <div class="container">
+            <h1 class="tittle">${postObject.title}</h1>
+          </div>
+  
+          <div class="photo">
+            <div class="image">
+              <img src="${postObject.thumbnail ?? "static/img/No_Thumbnail.png"}" alt="" class="image1" />
+            </div>
+          </div>
+        <div class="text">
+          <div class="text12">
+            <p class="text123">
+              ${postObject.contents}
+            </p>
+          </div>
+        </div>
+        <!-- 댓글 -->
+        <div class="comment_input">
+          <input
+            type="text"
+            class="comment_input1"
+            placeholder="댓글을 입력하세요..."
+            id="comment_input1"
+          />
+          <button
+            class="comment_input_btn"
+            onclick="writecomment(event);getfire()"
+          >
+            등록
+          </button>
+          <!-- 홈페이지가 새로고침 또는 랜딩이 될떄마다 뿌려주는 함수는 getfire이다 팀원들이 뿌려주는 먼가를만들면 거기에 넣어주기만하면됨 -->
+        </div>
+        <div class="comment_list" id="comment_list">
+        </div>>`;
+      const div = document.createElement("div");
+      if (postObject.category === "#f_wt_board") {
+        descWrap.style.background = "rgb(253, 246, 237)"
+      } else if (postObject.category === "#fo_wt_board") {
+        descWrap.style.background = "rgb(237, 191, 213)"
+      } else if (postObject.category === "#t_wt_board") {
+        descWrap.style.background = "rgb(237, 122, 59)"
+      } else if (postObject.category === "#s_wt_board") {
+        descWrap.style.background = "rgb(250, 255, 93)"
+      } else if (postObject.category === "#e_wt_board") {
+        descWrap.style.background = "rgb(79, 158, 247)"
+      }
+      div.innerHTML = temp_html;
+      showPost.appendChild(div); 
+    }
+})
+}
+
 const getFood = async () => {
   let foodList = [];
   const q = query(collection(dbService, "wt_board"), orderBy("createdAt", "desc"));
@@ -247,7 +319,7 @@ const getFood = async () => {
     if (foodObject.category === "#fo_wt_board") {
       const temp_html = `
     <div class="wrap_box">
-      <a href="#board" class="board_w" onclick="route(board)">
+      <a href="?${foodObject.id}#board" class="board_w">
         <div class="img_area">
             <img src="${foodObject.thumbnail ?? "static/img/No_Thumbnail.png"}" alt="img_area" />
         </div>
@@ -293,7 +365,7 @@ const getSports = async () => {
     if (sportsObject.category === "#s_wt_board") {
       const temp_html = `
     <div class="wrap_box">
-      <a href="#board" class="board_w" onclick="route(board)">  
+      <a href="?${sportsObject.id}#board" class="board_w">  
         <div class="img_area">
             <img src="${sportsObject.thumbnail ?? "static/img/No_Thumbnail.png"}" alt="img_area" />
         </div>
@@ -339,7 +411,7 @@ const getTravel = async () => {
     if (travelObject.category === "#t_wt_board") {
       const temp_html = `
     <div class="wrap_box">
-      <a href="#board" class="board_w" onclick="route(board)">
+      <a href="?${travelObject.id}#board" class="board_w">
         <div class="img_area">
             <img src="${travelObject.thumbnail ?? "static/img/No_Thumbnail.png"}" alt="img_area" />
         </div>
@@ -385,7 +457,7 @@ const getEnt = async () => {
     if (entObject.category === "#e_wt_board") {
       const temp_html = `
     <div class="wrap_box">
-      <a href="#board" class="board_w" onclick="route(board)">
+      <a href="?${entObject.id}#board" class="board_w">
         <div class="img_area">
             <img src="${entObject.thumbnail ?? "static/img/No_Thumbnail.png"}" alt="img_area" />
         </div>
@@ -430,36 +502,37 @@ export const getFire = async () => {
     list.push(obj);
   });
   const comment_box = document.getElementById("comment_list");
-  comment_box.innerHTML = "";
   list.forEach((item) => {
-    const temp_html = `<div class="comment_box" id="comment_box" >
-
-        <div class="comment">
-            <img src="${item.profileImg ?? "static/img/empty_profile.png"}" alt="" class="comment_img">
-            <p class="commentname">${item.nickname ?? "닉네임없음"}</p>
-            <div>
-                <p class="comment_text" id="comment_text-${item.id}">${item.value}</p>
-                    <div class="comment_input_container comment_input_container-${item.id}" id="${item.id}">
-                        <input type="text" class="comment_input_inside-${item.id}" id="${item.id}" />
-                        <button  id="comment_save" class="comment_save" onclick="comment_save(event)">완료</button>
-                    </div>
-            </div>
-        </div>
-
-        
-    
-        <div class="buttons1" id="${item.creatorId}">
-            <button href="#" class="top_btn1" id="${item.creatorId}" name="${item.id}" onclick="show1(event)">...</button>
-                <ul class="hide_bar1" id="search_history1-${item.id}" >
-                    <li class="comment_modify" id="comment_modify-${item.id}" name="${item.id}" onclick="comment_modifyed(event)">수정</li>
-                    <li class="comment_modify" id="${item.id}" onclick="comment_delete(event)">삭제</li>
-                </ul>
-        </div>
-`;
-    const div = document.createElement("div");
-    div.classList.add("box");
-    div.innerHTML = temp_html;
-    comment_box.appendChild(div);
+    if(window.location.search === item.post){
+      const temp_html = `<div class="comment_box" id="comment_box" >
+  
+          <div class="comment">
+              <img src="${item.profileImg ?? "static/img/empty_profile.png"}" alt="" class="comment_img">
+              <p class="commentname">${item.nickname ?? "닉네임없음"}</p>
+              <div>
+                  <p class="comment_text" id="comment_text-${item.id}">${item.value}</p>
+                      <div class="comment_input_container comment_input_container-${item.id}" id="${item.id}">
+                          <input type="text" class="comment_input_inside-${item.id}" id="${item.id}" />
+                          <button  id="comment_save" class="comment_save" onclick="comment_save(event)">완료</button>
+                      </div>
+              </div>
+          </div>
+  
+          
+      
+          <div class="buttons1" id="${item.creatorId}">
+              <button href="#" class="top_btn1" id="${item.creatorId}" name="${item.id}" onclick="show1(event)">...</button>
+                  <ul class="hide_bar1" id="search_history1-${item.id}" >
+                      <li class="comment_modify" id="comment_modify-${item.id}" name="${item.id}" onclick="comment_modifyed(event)">수정</li>
+                      <li class="comment_modify" id="${item.id}" onclick="comment_delete(event)">삭제</li>
+                  </ul>
+          </div>
+  `;
+      const div = document.createElement("div");
+      div.classList.add("box");
+      div.innerHTML = temp_html;
+      comment_box.appendChild(div);
+    }
   });
 
   // 버그가 있어서 나중에 풀어보기
