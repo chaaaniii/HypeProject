@@ -24,7 +24,11 @@ const routes = {
   signin: "/templates/pages/signin.html",
   // 게시판 글 하고 등록
   board: "/templates/pages/board.html",
-  wt_board: "/templates/pages/wt_board.html",
+  f_wt_board: "/templates/pages/wt_board.html",
+  fo_wt_board: "/templates/pages/wt_board.html",
+  t_wt_board: "/templates/pages/wt_board.html",
+  s_wt_board: "/templates/pages/wt_board.html",
+  e_wt_board: "/templates/pages/wt_board.html",
 };
 
 export const handleLocation = async () => {
@@ -37,7 +41,7 @@ export const handleLocation = async () => {
   const html = await fetch(route).then((data) => data.text());
 
   document.getElementById("main-page").innerHTML = html;
-  if (path === "wt_board") {
+  if (path === "f_wt_board" || path === "fo_wt_board" || path === "t_wt_board" || path === "s_wt_board" || path === "e_wt_board") {
     CKEDITOR.replace("myeditor", {
       width: "1200",
       height: "500",
@@ -76,22 +80,43 @@ export const handleLocation = async () => {
     getHypeList();
   }
 
-  if (path === "mypage") {
-    getHypeList();
+  if (path === "f_wt_board") {
+    const wt_background = document.getElementById("wt_background");
+    wt_background.style.background = "rgb(253, 246, 237)";
+  }
+  if (path === "fo_wt_board") {
+    let wt_background = document.getElementById("wt_background");
+    wt_background.style.background = "rgb(237, 191, 213)";
+  }
+  if (path === "t_wt_board") {
+    let wt_background = document.getElementById("wt_background");
+    wt_background.style.background = "rgb(237, 122, 59)";
+  }
+  if (path === "s_wt_board") {
+    let wt_background = document.getElementById("wt_background");
+    wt_background.style.background = "rgb(250, 255, 93)";
+  }
+  if (path === "e_wt_board") {
+    let wt_background = document.getElementById("wt_background");
+    wt_background.style.background = "rgb(79, 158, 247)";
   }
 };
 
 const show_nav_bar = () => {
+  const logo = document.querySelector("#logoya");
   const nav_menu = document.querySelector(".nav_menu");
   const navBar = document.querySelector(".navBar");
   nav_menu.style.visibility = "visible";
   navBar.style.backgroundColor = "black";
+  logo.style.visibility = "visible";
 };
 const hide_nav_bar = () => {
+  const logo = document.querySelector("#logoya");
   const nav_menu = document.querySelector(".nav_menu");
   const navBar = document.querySelector(".navBar");
   nav_menu.style.visibility = "hidden";
   navBar.style.backgroundColor = "white";
+  logo.style.visibility = "hidden";
 };
 
 const getHypeList = async () => {
@@ -121,11 +146,11 @@ const getHypeList = async () => {
                       <ul>
                           <h4>${hypeObject.title}</h4>
                           <span>
-                              <p>${hypeObject.title}</p>
+                              <p>${hypeObject.contents}</p>
                           </span>
                       </ul>
                       <div class="date">
-                          <span>YYYY년 MM월 DD일</span>
+                          <span>${new Date(hypeObject.createdAt).toString().slice(0, 16)}</span>
                           <!-- <span>* 12개의 댓글</span> -->
                       </div>
                       <div class="author_index">

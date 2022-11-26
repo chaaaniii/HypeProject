@@ -3,7 +3,6 @@ import { changeProfile, onFileChange, changeThumbnail, onThumbnailChange } from 
 import { handleLocation, route } from "./router.js";
 import { logout } from "./auth.js";
 import { socialLogin, handleAuth } from "./auth.js";
-// import { save_board } from "./pages/wt_board.js";
 
 // hash url 변경 시 처리
 window.addEventListener("hashchange", handleLocation);
@@ -43,7 +42,6 @@ window.socialLogin = socialLogin;
 window.logout = logout;
 window.onFileChange = onFileChange;
 window.changeProfile = changeProfile;
-// window.save_board = save_board;
 window.changeThumbnail = changeThumbnail;
 window.onThumbnailChange = onThumbnailChange;
 // window.writecomment = writecomment;

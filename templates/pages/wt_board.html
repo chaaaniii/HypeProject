@@ -1,4 +1,4 @@
-<div class="wt_wrap">
+<div id="wt_background" class="wt_wrap" style="background-color: rgb(0 0 0)">
   <div class="wt_glass">
     <form id="thumbnail_form" onsubmit="changeThumbnail(event)">
       <div class="wt_innerwrap">
@@ -12,7 +12,7 @@
         <input onchange="onThumbnailChange(event)" type="file" id="thumbnail_input" accept="images/*" style="display: none" />
       </label>
       <div class="wt_buttons">
-        <button type="button" class="cancel">취소</button>
+        <a href="#t_wt_board" id="back_categori" class="cancel" onclick="cancel()">취소</a>
         <button id="geul_upload">등록</button>
       </div>
     </form>
