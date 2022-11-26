@@ -1,10 +1,5 @@
 import { dbService, authService } from "./firebase.js";
-import {
-  collection,
-  orderBy,
-  query,
-  getDocs,
-} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+import { collection, orderBy, query, getDocs } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
 export const route = (event) => {
   event.preventDefault();
@@ -49,19 +44,16 @@ export const handleLocation = async () => {
     CKEDITOR.replace("myeditor", {
       width: "1200",
       height: "500",
-      filebrowserImageUploadUrl:
-        "파일업로드 작업을 할 URL 혹은 파일 경로 ex)./aaa.php 이런식으로 ",
+      filebrowserImageUploadUrl: "파일업로드 작업을 할 URL 혹은 파일 경로 ex)./aaa.php 이런식으로 ",
       filebrowserUploadMethod: "form",
     });
   }
   if (path === "/") TypeText();
 
   const load_nickname = () => {
-    document.getElementById("nickname").textContent =
-      authService.currentUser.displayName ?? "닉네임 없음";
+    document.getElementById("nickname").textContent = authService.currentUser.displayName ?? "닉네임 없음";
 
-    document.getElementById("profileImg").src =
-      authService.currentUser.photoURL ?? "/static/img/empty_profile.png";
+    document.getElementById("profileImg").src = authService.currentUser.photoURL ?? "/static/img/empty_profile.png";
   };
 
   if (path === "mypage" || path === "scrap" || path === "like") {
@@ -69,12 +61,9 @@ export const handleLocation = async () => {
   }
 
   if (path === "setting") {
+    document.getElementById("profileView").src = authService.currentUser.photoURL ?? "/static/img/empty_profile.png";
 
-    document.getElementById("profileView").src =
-      authService.currentUser.photoURL ?? "/static/img/empty_profile.png";
-
-    document.getElementById("urnameinput").placeholder =
-      authService.currentUser.displayName ?? "닉네임 없음";
+    document.getElementById("urnameinput").placeholder = authService.currentUser.displayName ?? "닉네임 없음";
   }
 
   if (path === "signin" || path === "login") {
@@ -104,47 +93,48 @@ export const handleLocation = async () => {
     getEnt();
   }
 
-  if (path === "f_wt_board"){
+  if (path === "f_wt_board") {
     const wt_background = document.getElementById("wt_background");
     wt_background.style.background = "rgb(253, 246, 237)";
   }
   if (path === "fo_wt_board") {
-    let wt_background = document.getElementById("wt_background")
+    let wt_background = document.getElementById("wt_background");
     wt_background.style.background = "rgb(237, 191, 213)";
   }
   if (path === "t_wt_board") {
-    let wt_background = document.getElementById("wt_background")
+    let wt_background = document.getElementById("wt_background");
     wt_background.style.background = "rgb(237, 122, 59)";
   }
   if (path === "s_wt_board") {
-    let wt_background = document.getElementById("wt_background")
+    let wt_background = document.getElementById("wt_background");
     wt_background.style.background = "rgb(250, 255, 93)";
   }
   if (path === "e_wt_board") {
-    let wt_background = document.getElementById("wt_background")
+    let wt_background = document.getElementById("wt_background");
     wt_background.style.background = "rgb(79, 158, 247)";
   }
 };
 
 const show_nav_bar = () => {
+  const logo = document.querySelector("#logoya");
   const nav_menu = document.querySelector(".nav_menu");
   const navBar = document.querySelector(".navBar");
   nav_menu.style.visibility = "visible";
   navBar.style.backgroundColor = "black";
+  logo.style.visibility = "visible";
 };
 const hide_nav_bar = () => {
+  const logo = document.querySelector("#logoya");
   const nav_menu = document.querySelector(".nav_menu");
   const navBar = document.querySelector(".navBar");
   nav_menu.style.visibility = "hidden";
   navBar.style.backgroundColor = "white";
+  logo.style.visibility = "hidden";
 };
 
 const getHypeList = async () => {
   let hypeList = [];
-  const q = query(
-    collection(dbService, "wt_board"),
-    orderBy("createdAt", "desc")
-  );
+  const q = query(collection(dbService, "wt_board"), orderBy("createdAt", "desc"));
   const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc) => {
     const hypeObj = {
@@ -192,10 +182,7 @@ const getHypeList = async () => {
 
 const getFashion = async () => {
   let fashionList = [];
-  const q = query(
-    collection(dbService, "wt_board"),
-    orderBy("createdAt", "desc")
-  );
+  const q = query(collection(dbService, "wt_board"), orderBy("createdAt", "desc"));
   const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc) => {
     const fashionObj = {
@@ -241,10 +228,7 @@ const getFashion = async () => {
 
 const getFood = async () => {
   let foodList = [];
-  const q = query(
-    collection(dbService, "wt_board"),
-    orderBy("createdAt", "desc")
-  );
+  const q = query(collection(dbService, "wt_board"), orderBy("createdAt", "desc"));
   const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc) => {
     const foodObj = {
@@ -290,10 +274,7 @@ const getFood = async () => {
 
 const getSports = async () => {
   let sportsList = [];
-  const q = query(
-    collection(dbService, "wt_board"),
-    orderBy("createdAt", "desc")
-  );
+  const q = query(collection(dbService, "wt_board"), orderBy("createdAt", "desc"));
   const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc) => {
     const sportsObj = {
@@ -339,10 +320,7 @@ const getSports = async () => {
 
 const getTravel = async () => {
   let travelList = [];
-  const q = query(
-    collection(dbService, "wt_board"),
-    orderBy("createdAt", "desc")
-  );
+  const q = query(collection(dbService, "wt_board"), orderBy("createdAt", "desc"));
   const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc) => {
     const travelObj = {
@@ -388,10 +366,7 @@ const getTravel = async () => {
 
 const getEnt = async () => {
   let entList = [];
-  const q = query(
-    collection(dbService, "wt_board"),
-    orderBy("createdAt", "desc")
-  );
+  const q = query(collection(dbService, "wt_board"), orderBy("createdAt", "desc"));
   const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc) => {
     const entObj = {

@@ -1,13 +1,7 @@
 import { emailRegex, pwRegex } from "./util.js";
 import { authService } from "./firebase.js";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  GoogleAuthProvider,
-  GithubAuthProvider,
-  signInWithPopup,
-  signOut,
-} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, GithubAuthProvider, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+
 //회원가입
 export function handleAuth(event) {
   //회원가입
@@ -16,6 +10,7 @@ export function handleAuth(event) {
     event.preventDefault();
     const signUpEmail = document.getElementById("signUpEmail").value;
     const signUpPassword = document.getElementById("signUpPassword").value;
+
     createUserWithEmailAndPassword(authService, signUpEmail, signUpPassword)
       .then((userCredential) => {
         // Signed in
@@ -37,6 +32,7 @@ export function handleAuth(event) {
     const emailVal = email.value;
     const pw = document.getElementById("LoginInPassword");
     const pwVal = pw.value;
+
     //유효성 검사 진행
     if (!emailVal) {
       alert("이메일을 입력해 주세요");
@@ -48,8 +44,10 @@ export function handleAuth(event) {
       pw.focus();
       return;
     }
+
     const matchedEmail = emailVal.match(emailRegex);
     const matchedPw = pwVal.match(pwRegex);
+
     if (matchedEmail === null) {
       alert("이메일 형식에 맞게 입력해 주세요");
       email.focus();
@@ -60,6 +58,7 @@ export function handleAuth(event) {
       pw.focus();
       return;
     }
+
     event.preventDefault();
     const LoginInEmail = document.getElementById("LoginInEmail").value;
     const LoginInPassword = document.getElementById("LoginInPassword").value;
@@ -82,6 +81,7 @@ export function handleAuth(event) {
       });
   }
 }
+
 export const socialLogin = (str) => {
   let provider;
   if (str === "google") {
@@ -100,6 +100,7 @@ export const socialLogin = (str) => {
       const errorMessage = error.message;
     });
 };
+
 export const logout = async () => {
   signOut(authService)
     .then(() => {
@@ -107,6 +108,7 @@ export const logout = async () => {
       console.log("a1");
       localStorage.clear();
       console.log("로그아웃 성공");
+
       window.location.href = "/";
     })
     .catch((error) => {
