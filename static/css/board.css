@@ -442,7 +442,7 @@
 }
 
 .comment_input_container input{
-  width: 23.75rem;
+  width: 22.75rem;
   /* margin-left: .9375rem; */
   border-radius: 1.875rem;
   text-indent: .625rem;
@@ -450,8 +450,9 @@
 
 .comment_input_container input:focus{
   outline: none;
-  border-radius: .625rem;
+  border-radius: 1.875rem;
   padding-right: .3125rem;
+  width: 22.75rem;
 }
 
 .comment_input_container button{
