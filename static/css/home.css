@@ -37,7 +37,7 @@ body {
 .logo {
   width: 5rem;
 
-  padding: 2rem 2rem;
+  padding: 1rem 3rem;
   margin-top: 2.5rem;
 }
 
@@ -262,7 +262,7 @@ body {
   font-size: 2.5rem;
   font-weight: 100;
 
-  margin-left: 6rem;
+  margin-left: 10rem;
   margin-top: 6rem;
 
   letter-spacing: 0.3rem;
@@ -270,8 +270,9 @@ body {
 
 /* 네온사인 플리커 */
 .flicker {
+  position: absolute;
   margin-top: 2.5rem;
-  margin-left: 10rem;
+  margin-left: 13rem;
 
   color: #fff;
   font-weight: bold;
@@ -365,10 +366,11 @@ body {
 
 /* express 슬라이드 */
 .slide {
-  position: relative;
+  position: absolute;
 
   /* float: right; */
-  margin-left: 10rem;
+  margin-left: 13rem;
+  margin-top: 300px;
 
   font-size: 20rem;
   font-weight: 600;
@@ -391,17 +393,21 @@ body {
 }
 
 .last_text {
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 
-  margin-bottom: 1rem;
-  margin-right: 3rem;
-
+  margin-left: 3rem;
+  margin-bottom: 100rem;
+  width: 98%;
   float: right;
 }
 
 .lastTxt {
-  color: #fff;
-  font-size: 5rem;
+  /* color: rgba(255 255 255/50%); */
+  background: linear-gradient(to right, #000, #212121, #666666);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 10rem;
 }

@@ -1,7 +1,6 @@
 @font-face {
   font-family: "SLEIGothicTTF";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff")
-    format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -87,9 +86,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
-  padding-left: 1em;
+  padding-left: 0.5em;
 }
 .category .bt_new {
   width: 10rem;
@@ -104,7 +103,11 @@ body {
   font-size: 1em;
   font-weight: bold;
 }
-
+.category .bt_new:hover {
+  background-color: #fff;
+  border: 3px solid black;
+  color: black;
+}
 /* 최신글&인기글 */
 .write_switch {
   display: flex;

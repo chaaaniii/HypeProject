@@ -1,74 +1,109 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.wt_wrap{
-    width: 100%;
-    height: 100%;
+.wt_wrap {
+  margin-top: 12px;
+  margin-left: 176px;
+  padding-top: 72px;
+  padding-bottom: 50px;
+  height: 92vh;
+  position: relative;
+  background: rgb(253, 246, 237);
 }
 
-.wt_innerwrap{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* background-color: gray; */
-    margin-top: 3rem;
+.wt_glass {
+  width: 2218px;
+  height: 85vh;
+  margin-left: 70px;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.wt_input_container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.wt_innerwrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
 }
 
-.wt_buttons{
-    margin-top: 2rem;
-    margin-left: 80rem;
+.wt_input_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.thumbnail_wrap {
+  display: flex;
+}
+.thumbnail_img {
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  width: 18.125rem;
+  height: 10.625rem;
+  object-fit: cover;
 }
 
-.wt_buttons button{
-    width: 100px;
-    height: 50px;
-    background-color: white;
-    border: 1px solid gray;
-    border-radius: 20px;
-    font-size: 18px;
+.wt_buttons {
+  width: 107.2rem;
+  margin-top: 1rem;
+  display: inline-flex;
+  justify-content: end;
 }
 
-.wt_buttons button:hover{
-    background-color: black;
-    border: 3px solid black;
-    color: white;
-    border-radius: 20px;
-    transition: 0.4s;
+.wt_buttons button {
+  width: 100px;
+  height: 50px;
+  background-color: black;
+  color: white;
+  border: 1px solid gray;
+  border-radius: 20px;
+  font-size: 18px;
 }
 
-.wt_input{
-    width: 60rem;
-    height: 4rem;
-    border: none;
-    border-bottom: 1px solid gray;
-    margin-bottom: 2rem;
-    text-indent: 2rem;
-    font-size: 30px;
+.wt_buttons button:hover {
+  background-color: white;
+  border: 3px solid black;
+  color: black;
+  border-radius: 20px;
+  transition: 0.4s;
 }
 
-.wt_input:focus{
-    outline: none;
+.cancel {
+  margin-right: 10px;
 }
 
-.wt_textarea{
-    width: 58rem;
-    height: 40rem;
-    overflow: scroll;
-    margin-bottom: 2rem;
-    padding: 1rem;
-    font-size: 18px;
+.wt_input {
+  width: 75rem;
+  height: 4rem;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 10px 8px rgba(0 0 0 / 40%);
+  margin-bottom: 2rem;
+  text-indent: 2rem;
+  font-size: 30px;
 }
 
-.wt_textarea:focus{
-    outline: none;
+.wt_input:focus {
+  outline: none;
+}
+
+.wt_textarea {
+  width: 58rem;
+  height: 40rem;
+  overflow: scroll;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  font-size: 18px;
+  background-color: aliceblue;
+}
+
+.wt_textarea:focus {
+  outline: none;
 }

@@ -33,7 +33,7 @@
 }
 
 .logo3 {
-  width: 400px;
+  width: 220px;
   margin-left: -80px;
   font-size: 40px;
   margin-bottom: 30px;
@@ -90,7 +90,7 @@ button {
   letter-spacing: 1px;
 }
 .googleBtn {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border: 1px solid rgb(135, 136, 136);
   color: rgb(135, 136, 136);
   margin-right: 20px;
