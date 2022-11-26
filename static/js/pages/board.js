@@ -161,6 +161,53 @@ window.comment_delete = function comment_delete(event) {
 
 // commtnt_firebase=============================
 
+// const wrapcontainer = async () => {
+//   const wtlist = [];
+//   const q = query(
+//     collection(dbService, "wt_board"),
+//     //최신순으로 읽어올꺼야~
+//     orderBy("createAt", "desc")
+//   );
+//   const querySnapshot = await getDocs(q);
+//   querySnapshot.forEach((doc) => {
+//     const wtobj = {
+//       id: doc.id,
+//       ...doc.data(),
+//     };
+//     wtlist.push(wtobj);
+//   });
+//   const wrapcontainer = document.getElementById("wrapcontainer");
+//   console.log(authService.currentUser);
+//   wrapcontainer.innerHTML = "";
+//   wtlist.forEach((wtitem) => {
+//     const temp_html = `
+//     <div class="bigcontainer">
+//     <div class="container">
+//       <h1 class="tittle">${wtitem.title}</h1>
+//     </div>
+
+//     <div class="photo">
+//       <div class="image">
+//         <img src="/static/img/다운로드.jpeg" alt="" class="image1" />
+//       </div>
+//     </div>
+
+//     <div class="text">
+//       <div class="text12">
+//         <p class="text123">
+//           ${wtitem.contents}
+//         </p>
+//       </div>
+//     </div>
+//   </div>
+//     `
+//     const wrapcon = document.createElement("wrapcon");
+//     wrapcon.innerHTML = temp_html;
+//     comment_box.appendChild(div);
+// })}
+
+// comment box list ---------------------------------
+
 const getfire = async () => {
   const list = [];
   const q = query(
