@@ -1,13 +1,4 @@
-import {
-  addDoc,
-  collection,
-  query,
-  orderBy,
-  getDocs,
-  doc,
-  updateDoc,
-  deleteDoc,
-} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+import { addDoc, collection, query, orderBy, getDocs, doc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 import { dbService, authService } from "../firebase.js";
 
 const writecomment = async (event) => {
@@ -83,9 +74,7 @@ window.heartIcon = function heartIcon() {
 let likesAmount1 = 0;
 window.heartIcon1 = function heartIcon1() {
   const heartIcon1 = document.querySelector(".like-button1 .heart-icon1");
-  const likesAmountLabel1 = document.querySelector(
-    ".like-button1 .likes-amount1"
-  );
+  const likesAmountLabel1 = document.querySelector(".like-button1 .likes-amount1");
 
   heartIcon1.classList.toggle("liked1");
   if (heartIcon1.classList.contains("liked1")) {
@@ -106,16 +95,12 @@ window.comment_modifyed = function comment_modifyed(event) {
   const comment_text = document.querySelector(`#comment_text-${postid}`);
   const comment_text_value = comment_text.innerHTML;
 
-  const comment_input_container = document.querySelector(
-    `.comment_input_container-${postid}`
-  );
+  const comment_input_container = document.querySelector(`.comment_input_container-${postid}`);
   comment_input_container.style.display = "flex";
 
   comment_text.style.display = "none";
 
-  const comment_input = document.querySelector(
-    `.comment_input_inside-${postid}`
-  );
+  const comment_input = document.querySelector(`.comment_input_inside-${postid}`);
 
   comment_input.value = comment_text_value;
 };
@@ -124,16 +109,15 @@ window.comment_save = function comment_save(event) {
   update_comment(event);
   const comment_box = document.getElementById("comment_text");
   const comment_input = document.getElementById("comment_input");
-  const comment_input_container = document.querySelector(
-    ".comment_input_container"
-  );
+  const comment_input_container = document.querySelector(".comment_input_container");
 
   const comment_text_value = comment_input.value;
 
   comment_box.innerHTML = comment_text_value;
   comment_input_container.style.display = "none";
   comment_box.style.display = "block";
-  // window.location.reload()
+  getfire();
+  // window.location.reload();
 
   //댓글수정한값이 db에 정상적으로 올라갔을때 수정할떄쓰는 input값을 수정한댓글위치에 삭제하고 붙여준다
 };
@@ -206,7 +190,6 @@ const getfire = async () => {
     }
   });
 };
-
 
 window.getfire = getfire;
 
