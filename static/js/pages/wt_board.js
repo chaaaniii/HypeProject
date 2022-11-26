@@ -1,34 +1,14 @@
-// import {
-//   doc,
-//   addDoc,
-//   updateDoc,
-//   deleteDoc,
-//   collection,
-//   orderBy,
-//   query,
-//   getDocs,
-// } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
-// import { dbService, authService } from "../firebase.js";
-
-// export const save_board = async (event) => {
-//   event.preventDefault();
-//   const wt_title = document.getElementById("wt_title").value;
-//   const wt_contents = CKEDITOR.instances.myeditor.getData();
-//   console.log(wt_contents);
-//   console.log(wt_title);
-//   const { uid, photoURL, displayName } = authService.currentUser;
-//   try {
-//     await addDoc(collection(dbService, "wt_board"), {
-//       title: wt_title,
-//       contents: wt_contents,
-//       createdAt: Date.now(),
-//       creatorId: uid,
-//       profileImg: photoURL,
-//       nickname: displayName,
-//     });
-//     // wt_title();
-//   } catch (error) {
-//     alert(error);
-//     console.log("error in addDoc:", error);
-//   }
-// };
+function cancel() {
+    const cancel_btn = document.getElementById("back_categori");
+    if (window.location.hash === "#f_wt_board"){
+        cancel_btn.href = "#fashion"
+    }else if (window.location.hash === "#fo_wt_board") {
+        cancel_btn.href = "#food"
+    }else if (window.location.hash === "#t_wt_board") {
+        cancel_btn.href = "#travel"
+    }else if (window.location.hash === "#s_wt_board") {
+        cancel_btn.href = "#sports"
+    }else if (window.location.hash === "#e_wt_board") {
+        cancel_btn.href = "#entertainment"
+    }
+}

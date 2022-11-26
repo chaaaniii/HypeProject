@@ -8,33 +8,13 @@ import {
 import { dbService, authService } from "../firebase.js";
 import { handleLocation } from "../router.js";
 
-export const save_comment = async (event) => {
-  event.preventDefault();
-  const comment = document.getElementById("comment");
-  const { uid, photoURL, displayName } = authService.currentUser;
-  try {
-    await addDoc(collection(dbService, "comments"), {
-      picture: picture.value,
-      title: title.value,
-      text: text.value,
-      createdAt: Date.now(),
-      creatorId: uid,
-      profileImg: photoURL,
-      nickname: displayName,
-    });
-    comment.value = "";
-    getCommentList();
-  } catch (error) {
-    alert(error);
-    console.log("error in addDoc:", error);
-  }
-};
 export const readDataCollection = async () => {
   const list = [];
-  const querySnapshot = await getDocs(
+  const q = query(
     collection(dbService, "wt_board"),
-    orderBy("createAt", "desc")
+    orderBy("createdAt", "desc")
   );
+  const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc) => {
     const obj = {
       id: doc.id,
@@ -48,7 +28,7 @@ export const readDataCollection = async () => {
   list.forEach((item) => {
     const temp_html = `<div class="wrap_box">
                           <div class="img_area">
-                            <img src="${item.picture}}" alt="img_area" />
+                            <img src="${item.thumbnail ?? "static/img/No_Thumbnail.png"}" alt="img_area" />
                           </div>
                           <div class="write">
                             <div class="txt_area">
@@ -70,7 +50,6 @@ export const readDataCollection = async () => {
                           </div>
                         </div>`;
     const div = document.createElement("div");
-    div.classList.add(".wrap_list");
     div.innerHTML = temp_html;
     commentList.appendChild(div);
   });

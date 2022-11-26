@@ -18,7 +18,6 @@ body {
   padding-top: 1px;
   margin-top: 12px;
   margin-left: 176px;
-  overflow: scroll;
 }
 .food_b {
   position: relative;
@@ -27,7 +26,6 @@ body {
   padding-top: 1px;
   margin-top: 12px;
   margin-left: 176px;
-  overflow: scroll;
 }
 
 .tarvel_b {
@@ -37,7 +35,6 @@ body {
   padding-top: 1px;
   margin-top: 12px;
   margin-left: 176px;
-  overflow: scroll;
 }
 .sports_b {
   position: relative;
@@ -46,7 +43,6 @@ body {
   padding-top: 1px;
   margin-top: 12px;
   margin-left: 176px;
-  overflow: scroll;
 }
 .ent_b {
   position: relative;
@@ -55,11 +51,11 @@ body {
   padding-top: 1px;
   margin-top: 12px;
   margin-left: 176px;
-  overflow: scroll;
 }
 
 /* glassmorphism */
 .glass {
+  height: 60vh;
   position: absolute;
   margin: 3%;
   padding-bottom: 10%;
@@ -69,6 +65,7 @@ body {
   -webkit-backdrop-filter: blur(5px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
+  overflow-y: scroll;
 }
 
 /* 카테고리&새글작성버튼 */
