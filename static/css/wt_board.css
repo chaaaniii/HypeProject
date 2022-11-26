@@ -10,7 +10,6 @@
     padding-bottom: 50px;
     height: 92vh;
     position: relative;
-    background: rgb(253, 246, 237);
 }
 
 .wt_glass {
@@ -53,6 +52,30 @@
     margin-top: 1rem;
     display: inline-flex;
     justify-content: end;
+}
+
+.wt_buttons a {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    letter-spacing: 1px;
+    width: 100px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    border: 1px solid gray;
+    border-radius: 20px;
+    font-size: 18px;
+}
+
+.wt_buttons a:hover {
+    background-color: white;
+    border: 3px solid black;
+    color: black;
+    border-radius: 20px;
+    transition: 0.4s;
 }
 
 .wt_buttons button{
