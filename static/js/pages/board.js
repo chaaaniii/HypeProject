@@ -10,8 +10,6 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 import { dbService, authService } from "../firebase.js";
 
-console.log(authService.currentUser);
-
 const writecomment = async (event) => {
   event.preventDefault();
   const comment = document.getElementById("comment_input1");
@@ -39,11 +37,8 @@ window.show = function show() {
 
 window.show1 = function show1(event) {
   const postcreatid = event.target.id;
-  // bar1.classList.toggle('hide_bar1')
   //postcreatid 는 게시글을 작성한 사람의 id
   //currentuser 는 현재 로그인이 되어있는 유저의 아이디
-  // console.log(postcreatid);
-  // console.log(authService.currentUser);\
   const postId = event.target.name;
   if (postcreatid === authService.currentUser.uid) {
     document
@@ -70,11 +65,6 @@ window.show1 = function show1(event) {
   });
 };
 // --------------------라이크버튼
-
-// const heartIcon = document.querySelector(".like-button .heart-icon");
-// const likesAmountLabel = document.querySelector(".like-button .likes-amount")
-
-// let likesAmount = 7;
 
 let likesAmount = 0;
 window.heartIcon = function heartIcon() {
@@ -140,7 +130,6 @@ window.comment_save = function comment_save(event) {
 
   const comment_text_value = comment_input.value;
 
-  console.log(comment_text_value);
   comment_box.innerHTML = comment_text_value;
   comment_input_container.style.display = "none";
   comment_box.style.display = "block";
@@ -156,55 +145,7 @@ window.comment_delete = function comment_delete(event) {
   comment_delete.parentNode.removeChild(comment_delete);
 };
 
-// var elem = document.querySelector('#some-element');
-//     elem.parentNode.removeChild(elem);
-
 // commtnt_firebase=============================
-
-// const wrapcontainer = async () => {
-//   const wtlist = [];
-//   const q = query(
-//     collection(dbService, "wt_board"),
-//     //최신순으로 읽어올꺼야~
-//     orderBy("createAt", "desc")
-//   );
-//   const querySnapshot = await getDocs(q);
-//   querySnapshot.forEach((doc) => {
-//     const wtobj = {
-//       id: doc.id,
-//       ...doc.data(),
-//     };
-//     wtlist.push(wtobj);
-//   });
-//   const wrapcontainer = document.getElementById("wrapcontainer");
-//   console.log(authService.currentUser);
-//   wrapcontainer.innerHTML = "";
-//   wtlist.forEach((wtitem) => {
-//     const temp_html = `
-//     <div class="bigcontainer">
-//     <div class="container">
-//       <h1 class="tittle">${wtitem.title}</h1>
-//     </div>
-
-//     <div class="photo">
-//       <div class="image">
-//         <img src="/static/img/다운로드.jpeg" alt="" class="image1" />
-//       </div>
-//     </div>
-
-//     <div class="text">
-//       <div class="text12">
-//         <p class="text123">
-//           ${wtitem.contents}
-//         </p>
-//       </div>
-//     </div>
-//   </div>
-//     `
-//     const wrapcon = document.createElement("wrapcon");
-//     wrapcon.innerHTML = temp_html;
-//     comment_box.appendChild(div);
-// })}
 
 // comment box list ---------------------------------
 
@@ -224,7 +165,6 @@ const getfire = async () => {
     list.push(obj);
   });
   const comment_box = document.getElementById("comment_list");
-  console.log(authService.currentUser);
   comment_box.innerHTML = "";
   list.forEach((item) => {
     const temp_html = `<div class="comment_box" id="comment_box" >
@@ -267,39 +207,21 @@ const getfire = async () => {
   });
 };
 
-// <div class="like-button1">
-//     <div class="heart-bg" onclick="heartIcon1()">
-//         <div class="heart-icon1"></div>
-//     </div>
-//     <div class="likes-amount1">0</div>
-// </div>
 
 window.getfire = getfire;
 
 window.addEventListener("hashchange", () => {
   if (window.location.hash === "#board") getfire();
-  console.log("a");
 });
 
 // ====================Update comment
 export const update_comment = async (event) => {
-  // event.preventDefault();
-  console.log(event);
   const comment_input1 = event.target.parentNode.children[0].value;
   const id = event.target.parentNode.id;
-  console.log(comment_input1, id);
-
-  // const parentNode = event.target.parentNode.parentNode;
-  // const commentText = parentNode.children[0];
-  // commentText.classList.remove("noDisplay");
-  // const commentInputP = parentNode.children[1];
-  // commentInputP.classList.remove("d-flex");
-  // commentInputP.classList.add("noDisplay");
 
   const commentRef = doc(dbService, "boardcomment", id);
   try {
     await updateDoc(commentRef, { value: comment_input1 });
-    // getCommentList();
   } catch (error) {
     alert(error);
   }
@@ -308,12 +230,10 @@ export const update_comment = async (event) => {
 export const delete_comment = async (event) => {
   event.preventDefault();
   const id = event.target.id;
-  console.log(id);
   const ok = window.confirm("해당 응원글을 정말 삭제하시겠습니까?");
   if (ok) {
     try {
       await deleteDoc(doc(dbService, "boardcomment", id));
-      // getCommentList();
     } catch (error) {
       alert(error);
     }
