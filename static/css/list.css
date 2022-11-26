@@ -14,7 +14,7 @@ body {
 .fashion_b {
   position: relative;
   background: rgb(253, 246, 237);
-  height: 90vh;
+  height: 95vh;
   padding-top: 1px;
   margin-top: 12px;
   margin-left: 176px;
@@ -22,7 +22,7 @@ body {
 .food_b {
   position: relative;
   background: rgb(237, 191, 213);
-  height: 90vh;
+  height: 95vh;
   padding-top: 1px;
   margin-top: 12px;
   margin-left: 176px;
@@ -31,7 +31,7 @@ body {
 .tarvel_b {
   position: relative;
   background: rgb(237, 122, 59);
-  height: 90vh;
+  height: 95vh;
   padding-top: 1px;
   margin-top: 12px;
   margin-left: 176px;
@@ -39,7 +39,7 @@ body {
 .sports_b {
   position: relative;
   background: rgb(250, 255, 93);
-  height: 90vh;
+  height: 95vh;
   padding-top: 1px;
   margin-top: 12px;
   margin-left: 176px;
@@ -47,7 +47,7 @@ body {
 .ent_b {
   position: relative;
   background: rgb(79, 158, 247);
-  height: 90vh;
+  height: 95vh;
   padding-top: 1px;
   margin-top: 12px;
   margin-left: 176px;
@@ -55,7 +55,8 @@ body {
 
 /* glassmorphism */
 .glass {
-  height: 60vh;
+  width: 2218px;
+  height: 66.5vh;
   position: absolute;
   margin: 3%;
   padding-bottom: 10%;

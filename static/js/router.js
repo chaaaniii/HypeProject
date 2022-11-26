@@ -19,8 +19,6 @@ const routes = {
   travel: "/templates/pages/travel.html",
   sports: "/templates/pages/sports.html",
   entertainment: "/templates/pages/entertainment.html",
-  pop: "/templates/pages/pop.html",
-  recent: "/templates/pages/recent.html",
   mypage: "/templates/pages/mypage.html",
   like: "/templates/pages/like.html",
   scrap: "/templates/pages/scrap.html",
@@ -46,6 +44,7 @@ export const handleLocation = async () => {
   const html = await fetch(route).then((data) => data.text());
 
   document.getElementById("main-page").innerHTML = html;
+
   if (path === "f_wt_board" || path === "fo_wt_board" || path === "t_wt_board" || path === "s_wt_board" || path === "e_wt_board") {
     CKEDITOR.replace("myeditor", {
       width: "1200",
@@ -70,8 +69,6 @@ export const handleLocation = async () => {
   }
 
   if (path === "setting") {
-    // document.getElementById("username").textContent =
-    //   authService.currentUser.displayName ?? "닉네임 없음";
 
     document.getElementById("profileView").src =
       authService.currentUser.photoURL ?? "/static/img/empty_profile.png";
@@ -88,6 +85,23 @@ export const handleLocation = async () => {
 
   if (path === "mypage") {
     getHypeList();
+  }
+
+  if (path === "fashion") {
+    getFashion();
+  }
+
+  if (path === "food") {
+    getFood();
+  }
+  if (path === "travel") {
+    getTravel();
+  }
+  if (path === "sports") {
+    getSports();
+  }
+  if (path === "entertainment") {
+    getEnt();
   }
 
   if (path === "f_wt_board"){
@@ -160,7 +174,6 @@ const getHypeList = async () => {
                       </ul>
                       <div class="date">
                           <span>${new Date(hypeObject.createdAt).toString().slice(0, 16)}</span>
-                          <!-- <span>* 12개의 댓글</span> -->
                       </div>
                       <div class="author_index">
                           <img src="${hypeObject.profileImg}" alt="autor_index" />
@@ -173,6 +186,251 @@ const getHypeList = async () => {
       const main = document.createElement("main");
       main.innerHTML = temp_html;
       iWrotePost.appendChild(main);
+    }
+  });
+};
+
+const getFashion = async () => {
+  let fashionList = [];
+  const q = query(
+    collection(dbService, "wt_board"),
+    orderBy("createdAt", "desc")
+  );
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    const fashionObj = {
+      id: doc.id,
+      ...doc.data(),
+    };
+    fashionList.push(fashionObj);
+  });
+  const fashionPost = document.getElementById("f_wrap_list");
+  fashionPost.innerHTML = "";
+  fashionList.forEach((fashionObject) => {
+    if (fashionObject.category === "#f_wt_board") {
+      const temp_html = `
+    <div class="wrap_box">
+      <a href="#board" class="board_w" onclick="route(board)">
+          <div class="img_area">
+              <img src="${fashionObject.thumbnail ?? "static/img/No_Thumbnail.png"}" alt="img_area" />
+          </div>
+          <div class="write">
+              <div class="txt_area">
+                  <ul>
+                      <h4>${fashionObject.title}</h4>
+                      <span>
+                        <p>${fashionObject.contents}</p>
+                      </span>
+                  </ul>
+                  <div class="date">
+                      <span>${new Date(fashionObject.createdAt).toString().slice(0, 16)}</span>
+                    </div>
+                  <div class="author_index">
+                    <img src=${fashionObject.profileImg} alt="autor_index" />
+                    <span>by ${fashionObject.nickname}</span>
+                  </div>
+              </div>
+          </div>
+    </div>`;
+      const div = document.createElement("div");
+      div.innerHTML = temp_html;
+      fashionPost.appendChild(div);
+    }
+  });
+};
+
+const getFood = async () => {
+  let foodList = [];
+  const q = query(
+    collection(dbService, "wt_board"),
+    orderBy("createdAt", "desc")
+  );
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    const foodObj = {
+      id: doc.id,
+      ...doc.data(),
+    };
+    foodList.push(foodObj);
+  });
+  const foodPost = document.getElementById("fo_wrap_list");
+  foodPost.innerHTML = "";
+  foodList.forEach((foodObject) => {
+    if (foodObject.category === "#fo_wt_board") {
+      const temp_html = `
+    <div class="wrap_box">
+      <a href="#board" class="board_w" onclick="route(board)">
+        <div class="img_area">
+            <img src="${foodObject.thumbnail ?? "static/img/No_Thumbnail.png"}" alt="img_area" />
+        </div>
+        <div class="write">
+            <div class="txt_area">
+                <ul>
+                    <h4>${foodObject.title}</h4>
+                    <span>
+                      <p>${foodObject.contents}</p>
+                    </span>
+                </ul>
+                <div class="date">
+                    <span>${new Date(foodObject.createdAt).toString().slice(0, 16)}</span>
+                  </div>
+                <div class="author_index">
+                  <img src=${foodObject.profileImg} alt="autor_index" />
+                  <span>by ${foodObject.nickname}</span>
+                </div>
+            </div>
+        </div>
+    </div>`;
+      const div = document.createElement("div");
+      div.innerHTML = temp_html;
+      foodPost.appendChild(div);
+    }
+  });
+};
+
+const getSports = async () => {
+  let sportsList = [];
+  const q = query(
+    collection(dbService, "wt_board"),
+    orderBy("createdAt", "desc")
+  );
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    const sportsObj = {
+      id: doc.id,
+      ...doc.data(),
+    };
+    sportsList.push(sportsObj);
+  });
+  const sportsPost = document.getElementById("s_wrap_list");
+  sportsPost.innerHTML = "";
+  sportsList.forEach((sportsObject) => {
+    if (sportsObject.category === "#s_wt_board") {
+      const temp_html = `
+    <div class="wrap_box">
+      <a href="#board" class="board_w" onclick="route(board)">  
+        <div class="img_area">
+            <img src="${sportsObject.thumbnail ?? "static/img/No_Thumbnail.png"}" alt="img_area" />
+        </div>
+        <div class="write">
+            <div class="txt_area">
+                <ul>
+                    <h4>${sportsObject.title}</h4>
+                    <span>
+                      <p>${sportsObject.contents}</p>
+                    </span>
+                </ul>
+                <div class="date">
+                    <span>${new Date(sportsObject.createdAt).toString().slice(0, 16)}</span>
+                  </div>
+                <div class="author_index">
+                  <img src=${sportsObject.profileImg} alt="autor_index" />
+                  <span>by ${sportsObject.nickname}</span>
+                </div>
+            </div>
+        </div>
+    </div>`;
+      const div = document.createElement("div");
+      div.innerHTML = temp_html;
+      sportsPost.appendChild(div);
+    }
+  });
+};
+
+const getTravel = async () => {
+  let travelList = [];
+  const q = query(
+    collection(dbService, "wt_board"),
+    orderBy("createdAt", "desc")
+  );
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    const travelObj = {
+      id: doc.id,
+      ...doc.data(),
+    };
+    travelList.push(travelObj);
+  });
+  const travelPost = document.getElementById("t_wrap_list");
+  travelPost.innerHTML = "";
+  travelList.forEach((travelObject) => {
+    if (travelObject.category === "#t_wt_board") {
+      const temp_html = `
+    <div class="wrap_box">
+      <a href="#board" class="board_w" onclick="route(board)">
+        <div class="img_area">
+            <img src="${travelObject.thumbnail ?? "static/img/No_Thumbnail.png"}" alt="img_area" />
+        </div>
+        <div class="write">
+            <div class="txt_area">
+                <ul>
+                    <h4>${travelObject.title}</h4>
+                    <span>
+                      <p>${travelObject.contents}</p>
+                    </span>
+                </ul>
+                <div class="date">
+                    <span>${new Date(travelObject.createdAt).toString().slice(0, 16)}</span>
+                  </div>
+                <div class="author_index">
+                  <img src=${travelObject.profileImg} alt="autor_index" />
+                  <span>by ${travelObject.nickname}</span>
+                </div>
+            </div>
+        </div>
+    </div>`;
+      const div = document.createElement("div");
+      div.innerHTML = temp_html;
+      travelPost.appendChild(div);
+    }
+  });
+};
+
+const getEnt = async () => {
+  let entList = [];
+  const q = query(
+    collection(dbService, "wt_board"),
+    orderBy("createdAt", "desc")
+  );
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    const entObj = {
+      id: doc.id,
+      ...doc.data(),
+    };
+    entList.push(entObj);
+  });
+  const entPost = document.getElementById("e_wrap_list");
+  entPost.innerHTML = "";
+  entList.forEach((entObject) => {
+    if (entObject.category === "#e_wt_board") {
+      const temp_html = `
+    <div class="wrap_box">
+      <a href="#board" class="board_w" onclick="route(board)">
+        <div class="img_area">
+            <img src="${entObject.thumbnail ?? "static/img/No_Thumbnail.png"}" alt="img_area" />
+        </div>
+        <div class="write">
+            <div class="txt_area">
+                <ul>
+                    <h4>${entObject.title}</h4>
+                    <span>
+                      <p>${entObject.contents}</p>
+                    </span>
+                </ul>
+                <div class="date">
+                    <span>${new Date(entObject.createdAt).toString().slice(0, 16)}</span>
+                  </div>
+                <div class="author_index">
+                  <img src=${entObject.profileImg} alt="autor_index" />
+                  <span>by ${entObject.nickname}</span>
+                </div>
+            </div>
+        </div>
+    </div>`;
+      const div = document.createElement("div");
+      div.innerHTML = temp_html;
+      entPost.appendChild(div);
     }
   });
 };

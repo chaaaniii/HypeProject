@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
       logout.style.display="flex";
     } else {
       // 로그아웃 상태인 경우
-      // window.location.hash = "/"
     }
   });
 });
@@ -44,4 +43,3 @@ window.onFileChange = onFileChange;
 window.changeProfile = changeProfile;
 window.changeThumbnail = changeThumbnail;
 window.onThumbnailChange = onThumbnailChange;
-// window.writecomment = writecomment;

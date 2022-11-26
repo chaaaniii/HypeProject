@@ -20,8 +20,6 @@ export const changeProfile = async (event) => {
   );
 
   const newNickname = document.getElementById("urnameinput").value;
-  // const newDescription = document.getElementById('userintroduce').innerText;
-  // console.log(newDescription)
   // 프로필 이미지 dataUrl을 Storage에 업로드 후 다운로드 링크를 받아서 photoURL에 저장.
   const imgDataUrl = localStorage.getItem("imgDataUrl");
   let downloadUrl;
@@ -56,26 +54,35 @@ export const changeThumbnail = async (event) => {
   if (thumbnailUrl) {
     const thumbnailResponse = await uploadString(thumbnailRef, thumbnailUrl, "data_url");
     downloadThumbnail = await getDownloadURL(thumbnailResponse.ref);
-    console.log(downloadThumbnail);
   }
 
   const wt_title = document.getElementById("wt_title").value;
   const wt_contents = CKEDITOR.instances.myeditor.getData();
-  console.log(wt_contents);
-  console.log(wt_title);
   const { uid, photoURL, displayName } = authService.currentUser;
   try {
     await addDoc(collection(dbService, "wt_board"), {
+      category: window.location.hash,
       title: wt_title,
       contents: wt_contents,
       createdAt: Date.now(),
       creatorId: uid,
       profileImg: photoURL,
       nickname: displayName,
-      thumbnail: downloadThumbnail,
+      thumbnail: downloadThumbnail || null,
     });
     alert("등록 완료")
-    window.location.hash = "#fashion"
+    localStorage.clear()
+    if (window.location.hash === "#f_wt_board") {
+      window.location.hash = "#fashion";
+    } else if (window.location.hash === "#fo_wt_board") {
+      window.location.hash = "#food";
+    } else if (window.location.hash === "#t_wt_board") {
+      window.location.hash = "#travel";
+    } else if (window.location.hash === "#s_wt_board") {
+      window.location.hash = "#sports";
+    } else if (window.location.hash === "#e_wt_board") {
+      window.location.hash = "#entertainment";
+    }
   } catch (error) {
     alert(error);
     console.log("error in addDoc:", error);
@@ -106,61 +113,3 @@ export const onThumbnailChange = (event) => {
     document.getElementById("thumbnail_img").src = thumbnailUrl;
   };
 };
-// export const getHypeList = async () => {
-//   let hypeList = [];
-//   const q = query(
-//     collection(dbService, "wt_board"),
-//     orderBy("createdAt", "desc")
-//   );
-//   const querySnapshot = await getDocs(q);
-//   querySnapshot.forEach((doc) => {
-//     const hypeObj = {
-//       id: doc.id,
-//       ...doc.data(),
-//     };
-//     hypeList.push(hypeObj);
-//     console.log(hypeList);
-//   });
-//   const iWrotePost = document.getElementById("iWrotePost");
-//   const currentUid = authService.currentUser.uid;
-//   iWrotePost.innerHTML = "";
-//   hypeList.forEach((hypeObject) => {
-//     const isOwner = currentUid === hypeObject.creatorId;
-//     console.log(isOwner)
-//     if (currentUid === hypeObject.creatorId) {
-//       const temp_html = `
-//       <div class="mypage_wrap_box">
-//             <a href="#board" class="board_w" onclick="route(board)">
-//                 <div class="img_area">
-//                     <img src="/static/img/img2.png" alt="img_area" />
-//                 </div>
-//                 <div class="write">
-//                     <div class="txt_area">
-//                         <ul>
-//                             <h4>${hypeObject.title}</h4>
-//                             <span>
-//                                 <p>${hypeObject.title}</p>
-//                             </span>
-//                         </ul>
-//                         <div class="date">
-//                             <span>YYYY년 MM월 DD일</span>
-//                             <!-- <span>* 12개의 댓글</span> -->
-//                         </div>
-//                         <div class="author_index">
-//                             <img src="${hypeObject.profileImg}" alt="autor_index" />
-//                             <span>by ${hypeObject.nickname}</span>
-//                             <!-- <div class="like">
-//                     <img src="/img/heart.png" alt="like" />
-//                     <span>250</span>
-//                   </div> -->
-//                         </div>
-//                     </div>
-//                 </div>
-//             </a>
-//         </div>`;
-//       const main = document.createElement("main");
-//       main.innerHTML = temp_html;
-//       iWrotePost.appendChild(main);
-//     }
-//   });
-// };
