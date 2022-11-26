@@ -104,7 +104,6 @@ const getHypeList = async () => {
       ...doc.data(),
     };
     hypeList.push(hypeObj);
-    console.log(hypeList);
   });
   const iWrotePost = document.getElementById("iWrotePost");
   const currentUid = authService.currentUser.uid;
@@ -115,7 +114,7 @@ const getHypeList = async () => {
     <div class="mypage_wrap_box">
           <a href="#board" class="board_w" onclick="route(board)">
               <div class="img_area">
-                  <img src="/static/img/img2.png" alt="img_area" />
+                  <img src="${hypeObject.thumbnail ?? "static/img/No_Thumbnail.png"}" alt="img_area" />
               </div>
               <div class="write">
                   <div class="txt_area">

@@ -7,7 +7,7 @@
 
 .bigcontainer {
   overflow: scroll;
-  width: 1280px;
+  width: 1480px;
   height: 80%;
   position: absolute;
 
@@ -16,7 +16,7 @@
 
 .tittle {
   margin-bottom: .625rem;
-  font-size: 2.5rem;
+  font-size: 4rem;
 }
 .top_btn1 {
   /* margin-top: px; */
@@ -121,7 +121,7 @@
 .buttons {
   position: absolute;
   margin-bottom: 35.625rem;
-  margin-left: 56.875rem;
+  margin-left: 85rem;
   z-index: 100;
 }
 
@@ -141,11 +141,12 @@
 }
 
 .glasswarp{
+  margin-top: 5.625rem;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  height: 45rem;
+  height: 60rem;
   width: 90%;
   margin-bottom: 6.25rem;
 
@@ -214,13 +215,13 @@
 }
 
 .image {
-  width: 37.5rem;
-  height: 25rem;
+  width: 60rem;
+  height: 35rem;
 }
 
 .image1 {
-  width: 37.5rem;
-  height: 25rem;
+  width: 60rem;
+  height: 35rem;
   background-size: cover;
 }
 
@@ -243,12 +244,13 @@
 
 .text123{
   display: flex;
+  font-size: 20px;
 }
 
 .comment_list {
   width: 80%;
   height: 15.625rem;
-  /* margin-left: 7.5rem; */
+  margin-left: 3rem;
 }
 
 .comment_input {
@@ -260,7 +262,7 @@
 }
 
 .comment_input1 {
-  width: 37.5rem;
+  width: 46rem;
   height: 1.875rem;
   border-radius: 1.875rem;
   text-indent: 1.875rem;
@@ -274,6 +276,7 @@
   background: black;
   color: white;
   border: .125rem solid black;
+  margin-left: 0.6rem;
 }
 
 .comment_box {
@@ -309,7 +312,7 @@
 }
 
 .commentname {
-  width: 10rem;
+  width: 12rem;
   
 }
 
@@ -320,7 +323,7 @@
 .like-button .heart-icon {
   height: 3.5rem;
   width: 6.25rem;
-  background: url("heart.png");
+  background: url("/static/img/heart1.png");
   background-position: left;
   cursor: pointer;
   position: fixed;
@@ -359,7 +362,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 880px;
+  margin-right: 1350px;
   margin-bottom: 320px;
   background-color: gray;
   border-radius: 1.875rem;
@@ -381,7 +384,7 @@
 .like-button1 .heart-icon1 {
   height: 3.5rem;
   width: 6.25rem;
-  background: url("heart.png");
+  background: url("/static/img/heart1.png");
   background-position: left;
   cursor: pointer;
   /* position: relative; */
@@ -441,19 +444,22 @@
 
 .comment_input_container input{
   width: 23.75rem;
-  margin-left: .9375rem;
-  border-radius: .625rem;
+  /* margin-left: .9375rem; */
+  border-radius: 1.875rem;
   text-indent: .625rem;
+  
 }
 
 .comment_input_container input:focus{
   outline: none;
   border-radius: .625rem;
   padding-right: .3125rem;
+  width: 23.4rem;
+  border-radius: 1.875rem;
 }
 
 .comment_input_container button{
-  width: 2.5rem;
+  width: 3.75rem;
   height: 1.875rem;
   background-color: black;
   color: white;
@@ -468,4 +474,11 @@
   font-size: .9375rem;
 }
 
+
+.box {
+  width: 768px;
+  margin-left: auto;
+  display: flex;
+  /* margin-right: auto; */
+}
 

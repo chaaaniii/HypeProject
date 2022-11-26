@@ -7,6 +7,7 @@
 }
 .box {
     width: 768px;
+    flex-direction: column;
     margin-left: auto;
     margin-right: auto;
 }
@@ -23,7 +24,6 @@
 }
 .profile_info {
     display: flex;
-    flex-direction: column;
     margin-left: 1.5rem;
 }
 .profile img {
@@ -60,7 +60,7 @@
     margin-bottom: 2rem;
 }
 .tab_area{
-    margin-top: 5rem;
+    margin-top: 3rem;
     margin-bottom: 3rem;
     display: flex;
     justify-content: center;

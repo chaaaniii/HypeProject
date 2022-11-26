@@ -1,10 +1,8 @@
-import { authService, storageService } from "../firebase.js";
-// import {
-//   collection,
-//   orderBy,
-//   query,
-//   getDocs,
-// } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+import { dbService, authService, storageService } from "../firebase.js";
+import {
+  addDoc,
+  collection,
+} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 import {
   ref,
   uploadString,
@@ -22,9 +20,7 @@ export const changeProfile = async (event) => {
   );
 
   const newNickname = document.getElementById("urnameinput").value;
-  console.log(newNickname)
   // const newDescription = document.getElementById('userintroduce').innerText;
-  console.log(newNickname)
   // console.log(newDescription)
   // 프로필 이미지 dataUrl을 Storage에 업로드 후 다운로드 링크를 받아서 photoURL에 저장.
   const imgDataUrl = localStorage.getItem("imgDataUrl");
@@ -48,6 +44,44 @@ export const changeProfile = async (event) => {
   });
 };
 
+export const changeThumbnail = async (event) => {
+  event.preventDefault();
+  document.getElementById("geul_upload").disabled = true;
+  const thumbnailRef = ref(
+    storageService,
+    `thumbnail/${uuidv4()}`
+  );
+  const thumbnailUrl = localStorage.getItem("thumbnailUrl")
+  let downloadThumbnail;
+  if (thumbnailUrl) {
+    const thumbnailResponse = await uploadString(thumbnailRef, thumbnailUrl, "data_url");
+    downloadThumbnail = await getDownloadURL(thumbnailResponse.ref);
+    console.log(downloadThumbnail);
+  }
+
+  const wt_title = document.getElementById("wt_title").value;
+  const wt_contents = CKEDITOR.instances.myeditor.getData();
+  console.log(wt_contents);
+  console.log(wt_title);
+  const { uid, photoURL, displayName } = authService.currentUser;
+  try {
+    await addDoc(collection(dbService, "wt_board"), {
+      title: wt_title,
+      contents: wt_contents,
+      createdAt: Date.now(),
+      creatorId: uid,
+      profileImg: photoURL,
+      nickname: displayName,
+      thumbnail: downloadThumbnail,
+    });
+    alert("등록 완료")
+    window.location.hash = "#fashion"
+  } catch (error) {
+    alert(error);
+    console.log("error in addDoc:", error);
+  }
+}
+
 // 미리보기
 export const onFileChange = (event) => {
   const theFile = event.target.files[0]; // file 객체
@@ -61,6 +95,17 @@ export const onFileChange = (event) => {
   };
 };
 
+export const onThumbnailChange = (event) => {
+  const theFile1 = event.target.files[0]; // file 객체
+  const reader1 = new FileReader();
+  reader1.readAsDataURL(theFile1); // file 객체를 브라우저가 읽을 수 있는 data URL로 읽음.
+  reader1.onloadend = (finished) => {
+    // 파일리더가 파일객체를 data URL로 변환 작업을 끝났을 때
+    const thumbnailUrl = finished.currentTarget.result;
+    localStorage.setItem("thumbnailUrl", thumbnailUrl);
+    document.getElementById("thumbnail_img").src = thumbnailUrl;
+  };
+};
 // export const getHypeList = async () => {
 //   let hypeList = [];
 //   const q = query(

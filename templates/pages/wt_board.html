@@ -1,19 +1,20 @@
 <div class="wt_wrap">
   <div class="wt_glass">
-    <div class="wt_innerwrap">
-      <div class="wt_input_container">
-        <input id="wt_title" type="text" placeholder="Title" class="wt_input" />
-        <textarea name="myeditor" id="myeditor" placeholder="Product Details" class="form-control" rows="12" cols="50"></textarea>
+    <form id="thumbnail_form" onsubmit="changeThumbnail(event)">
+      <div class="wt_innerwrap">
+        <div class="wt_input_container">
+          <input id="wt_title" type="text" placeholder="Title" class="wt_input" />
+          <textarea name="myeditor" id="myeditor" placeholder="Product Details" class="form-control" rows="12" cols="50"></textarea>
+        </div>
       </div>
-    </div>
-    <div class="thumbnail_wrap">
-      <label>
-        <img class="thumbnail_img" src="/static/img/empty_profile.png" alt="thumbnail" />
+      <label id="thumbnail_label">
+        <img id="thumbnail_img" class="thumbnail_img" src="/static/img/upload_thumbnail.png" alt="thumbnail" />
+        <input onchange="onThumbnailChange(event)" type="file" id="thumbnail_input" accept="images/*" style="display: none" />
       </label>
       <div class="wt_buttons">
-        <button class="cancel">취소</button>
-        <button onclick="save_board(event)">등록</button>
+        <button type="button" class="cancel">취소</button>
+        <button id="geul_upload">등록</button>
       </div>
-    </div>
+    </form>
   </div>
 </div>
