@@ -93,6 +93,10 @@ export const handleLocation = async () => {
     getEnt();
   }
 
+  if (path === "board") {
+    getFire();
+  }
+
   if (path === "f_wt_board") {
     const wt_background = document.getElementById("wt_background");
     wt_background.style.background = "rgb(253, 246, 237)";
@@ -166,8 +170,8 @@ const getHypeList = async () => {
                           <span>${new Date(hypeObject.createdAt).toString().slice(0, 16)}</span>
                       </div>
                       <div class="author_index">
-                          <img src="${hypeObject.profileImg}" alt="autor_index" />
-                          <span>by ${hypeObject.nickname}</span>
+                          <img src="${hypeObject.profileImg ?? "static/img/empty_profile.png"}" alt="autor_index" />
+                          <span>by ${hypeObject.nickname ?? "닉네임없음"}</span>
                       </div>
                   </div>
               </div>
@@ -213,8 +217,8 @@ const getFashion = async () => {
                       <span>${new Date(fashionObject.createdAt).toString().slice(0, 16)}</span>
                     </div>
                   <div class="author_index">
-                    <img src=${fashionObject.profileImg} alt="autor_index" />
-                    <span>by ${fashionObject.nickname}</span>
+                    <img src=${fashionObject.profileImg ?? "static/img/empty_profile.png"} alt="autor_index" />
+                    <span>by ${fashionObject.nickname ?? "닉네임없음"}</span>
                   </div>
               </div>
           </div>
@@ -259,8 +263,8 @@ const getFood = async () => {
                     <span>${new Date(foodObject.createdAt).toString().slice(0, 16)}</span>
                   </div>
                 <div class="author_index">
-                  <img src=${foodObject.profileImg} alt="autor_index" />
-                  <span>by ${foodObject.nickname}</span>
+                  <img src=${foodObject.profileImg ?? "static/img/empty_profile.png"} alt="autor_index" />
+                  <span>by ${foodObject.nickname ?? "닉네임없음"}</span>
                 </div>
             </div>
         </div>
@@ -305,8 +309,8 @@ const getSports = async () => {
                     <span>${new Date(sportsObject.createdAt).toString().slice(0, 16)}</span>
                   </div>
                 <div class="author_index">
-                  <img src=${sportsObject.profileImg} alt="autor_index" />
-                  <span>by ${sportsObject.nickname}</span>
+                  <img src=${sportsObject.profileImg ?? "static/img/empty_profile.png"} alt="autor_index" />
+                  <span>by ${sportsObject.nickname ?? "닉네임없음"}</span>
                 </div>
             </div>
         </div>
@@ -351,8 +355,8 @@ const getTravel = async () => {
                     <span>${new Date(travelObject.createdAt).toString().slice(0, 16)}</span>
                   </div>
                 <div class="author_index">
-                  <img src=${travelObject.profileImg} alt="autor_index" />
-                  <span>by ${travelObject.nickname}</span>
+                  <img src=${travelObject.profileImg ?? "static/img/empty_profile.png"} alt="autor_index" />
+                  <span>by ${travelObject.nickname ?? "닉네임없음"}</span>
                 </div>
             </div>
         </div>
@@ -397,8 +401,8 @@ const getEnt = async () => {
                     <span>${new Date(entObject.createdAt).toString().slice(0, 16)}</span>
                   </div>
                 <div class="author_index">
-                  <img src=${entObject.profileImg} alt="autor_index" />
-                  <span>by ${entObject.nickname}</span>
+                  <img src=${entObject.profileImg ?? "static/img/empty_profile.png"} alt="autor_index" />
+                  <span>by ${entObject.nickname ?? "닉네임없음"}</span>
                 </div>
             </div>
         </div>
@@ -406,6 +410,64 @@ const getEnt = async () => {
       const div = document.createElement("div");
       div.innerHTML = temp_html;
       entPost.appendChild(div);
+    }
+  });
+};
+
+export const getFire = async () => {
+  const list = [];
+  const q = query(
+    collection(dbService, "boardcomment"),
+    //최신순으로 읽어올꺼야~
+    orderBy("createAt", "desc")
+  );
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    const obj = {
+      id: doc.id,
+      ...doc.data(),
+    };
+    list.push(obj);
+  });
+  const comment_box = document.getElementById("comment_list");
+  comment_box.innerHTML = "";
+  list.forEach((item) => {
+    const temp_html = `<div class="comment_box" id="comment_box" >
+
+        <div class="comment">
+            <img src="${item.profileImg ?? "static/img/empty_profile.png"}" alt="" class="comment_img">
+            <p class="commentname">${item.nickname ?? "닉네임없음"}</p>
+            <div>
+                <p class="comment_text" id="comment_text-${item.id}">${item.value}</p>
+                    <div class="comment_input_container comment_input_container-${item.id}" id="${item.id}">
+                        <input type="text" class="comment_input_inside-${item.id}" id="${item.id}" />
+                        <button  id="comment_save" class="comment_save" onclick="comment_save(event)">완료</button>
+                    </div>
+            </div>
+        </div>
+
+        
+    
+        <div class="buttons1" id="${item.creatorId}">
+            <button href="#" class="top_btn1" id="${item.creatorId}" name="${item.id}" onclick="show1(event)">...</button>
+                <ul class="hide_bar1" id="search_history1-${item.id}" >
+                    <li class="comment_modify" id="comment_modify-${item.id}" name="${item.id}" onclick="comment_modifyed(event)">수정</li>
+                    <li class="comment_modify" id="${item.id}" onclick="comment_delete(event)">삭제</li>
+                </ul>
+        </div>
+`;
+    const div = document.createElement("div");
+    div.classList.add("box");
+    div.innerHTML = temp_html;
+    comment_box.appendChild(div);
+  });
+
+  // 버그가 있어서 나중에 풀어보기
+  document.querySelectorAll(".buttons1").forEach((button) => {
+    // 배열이 받아져요 [btn1, btn2, btn3...]
+    if (button.id !== authService.currentUser.uid) {
+      // creatorId !== 로그인 되어있는 유저 아이디
+      button.style.visibility = "hidden";
     }
   });
 };
