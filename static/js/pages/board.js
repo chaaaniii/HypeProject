@@ -100,7 +100,6 @@ window.heartIcon1 = function heartIcon1() {
 
 // ===========================modify
 
-const comment_modify = document.getElementById("comment_modify");
 window.comment_modifyed = function comment_modifyed(event) {
   const postid = event.target.id.split("-")[1];
   const comment_text = document.querySelector(`#comment_text-${postid}`);
@@ -122,27 +121,11 @@ window.comment_modifyed = function comment_modifyed(event) {
 
 window.comment_save = function comment_save(event) {
   update_comment(event);
-  const comment_box = document.getElementById("comment_text");
-  const comment_input = document.getElementById("comment_input");
-  const comment_input_container = document.querySelector(
-    ".comment_input_container"
-  );
-
-  const comment_text_value = comment_input.value;
-
-  comment_box.innerHTML = comment_text_value;
-  comment_input_container.style.display = "none";
-  comment_box.style.display = "block";
-  // window.location.reload()
-
-  //댓글수정한값이 db에 정상적으로 올라갔을때 수정할떄쓰는 input값을 수정한댓글위치에 삭제하고 붙여준다
 };
 
 // ============================commet_delete
 window.comment_delete = function comment_delete(event) {
   delete_comment(event);
-  const comment_delete = document.querySelector("#comment_box");
-  comment_delete.parentNode.removeChild(comment_delete);
 };
 
 // commtnt_firebase=============================
@@ -222,6 +205,7 @@ export const update_comment = async (event) => {
   const commentRef = doc(dbService, "boardcomment", id);
   try {
     await updateDoc(commentRef, { value: comment_input1 });
+    getfire();
   } catch (error) {
     alert(error);
   }
@@ -234,6 +218,7 @@ export const delete_comment = async (event) => {
   if (ok) {
     try {
       await deleteDoc(doc(dbService, "boardcomment", id));
+      getfire();
     } catch (error) {
       alert(error);
     }
