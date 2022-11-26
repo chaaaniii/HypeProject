@@ -23,6 +23,7 @@ const writecomment = async (event) => {
       nickname: displayName,
     });
     comment.value = "";
+    getfire();
   } catch (error) {
     alert(error);
   }
