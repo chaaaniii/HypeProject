@@ -170,8 +170,8 @@ const getHypeList = async () => {
                           <span>${new Date(hypeObject.createdAt).toString().slice(0, 16)}</span>
                       </div>
                       <div class="author_index">
-                          <img src="${hypeObject.profileImg ?? "static/img / empty_profile.png"}" alt="autor_index" />
-                          <span>by ${hypeObject.nickname}</span>
+                          <img src="${hypeObject.profileImg ?? "static/img/empty_profile.png"}" alt="autor_index" />
+                          <span>by ${hypeObject.nickname ?? "닉네임없음"}</span>
                       </div>
                   </div>
               </div>
@@ -218,7 +218,7 @@ const getFashion = async () => {
                     </div>
                   <div class="author_index">
                     <img src=${fashionObject.profileImg ?? "static/img/empty_profile.png"} alt="autor_index" />
-                    <span>by ${fashionObject.nickname}</span>
+                    <span>by ${fashionObject.nickname ?? "닉네임없음"}</span>
                   </div>
               </div>
           </div>
@@ -264,7 +264,7 @@ const getFood = async () => {
                   </div>
                 <div class="author_index">
                   <img src=${foodObject.profileImg ?? "static/img/empty_profile.png"} alt="autor_index" />
-                  <span>by ${foodObject.nickname}</span>
+                  <span>by ${foodObject.nickname ?? "닉네임없음"}</span>
                 </div>
             </div>
         </div>
@@ -310,7 +310,7 @@ const getSports = async () => {
                   </div>
                 <div class="author_index">
                   <img src=${sportsObject.profileImg ?? "static/img/empty_profile.png"} alt="autor_index" />
-                  <span>by ${sportsObject.nickname}</span>
+                  <span>by ${sportsObject.nickname ?? "닉네임없음"}</span>
                 </div>
             </div>
         </div>
@@ -356,7 +356,7 @@ const getTravel = async () => {
                   </div>
                 <div class="author_index">
                   <img src=${travelObject.profileImg ?? "static/img/empty_profile.png"} alt="autor_index" />
-                  <span>by ${travelObject.nickname}</span>
+                  <span>by ${travelObject.nickname ?? "닉네임없음"}</span>
                 </div>
             </div>
         </div>
@@ -402,7 +402,7 @@ const getEnt = async () => {
                   </div>
                 <div class="author_index">
                   <img src=${entObject.profileImg ?? "static/img/empty_profile.png"} alt="autor_index" />
-                  <span>by ${entObject.nickname}</span>
+                  <span>by ${entObject.nickname ?? "닉네임없음"}</span>
                 </div>
             </div>
         </div>
@@ -435,8 +435,8 @@ export const getFire = async () => {
     const temp_html = `<div class="comment_box" id="comment_box" >
 
         <div class="comment">
-            <img src="${item.profileImg}" alt="" class="comment_img">
-            <p class="commentname">${item.nickname}</p>
+            <img src="${item.profileImg ?? "static/img/empty_profile.png"}" alt="" class="comment_img">
+            <p class="commentname">${item.nickname ?? "닉네임없음"}</p>
             <div>
                 <p class="comment_text" id="comment_text-${item.id}">${item.value}</p>
                     <div class="comment_input_container comment_input_container-${item.id}" id="${item.id}">

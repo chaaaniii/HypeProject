@@ -153,8 +153,8 @@ const getfire = async () => {
     const temp_html = `<div class="comment_box" id="comment_box" >
 
         <div class="comment">
-            <img src="${item.profileImg}" alt="" class="comment_img">
-            <p class="commentname">${item.nickname}</p>
+            <img src="${item.profileImg??"static/img/empty_profile.png"}" alt="" class="comment_img">
+            <p class="commentname">${item.nickname??"닉네임없음"}</p>
             <div>
                 <p class="comment_text" id="comment_text-${item.id}">${item.value}</p>
                     <div class="comment_input_container comment_input_container-${item.id}" id="${item.id}">
@@ -189,13 +189,6 @@ const getfire = async () => {
     }
   });
 };
-
-
-window.getfire = getfire;
-
-window.addEventListener("hashchange", () => {
-  if (window.location.hash === "#board") getfire();
-});
 
 // ====================Update comment
 export const update_comment = async (event) => {
