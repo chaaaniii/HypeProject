@@ -59,11 +59,13 @@ body {
 }
 
 .nav_btns {
-  display: flex;
+  position: absolute;
+  display: inline-flex;
   flex-direction: row;
-
   float: right;
   margin-right: 5rem;
+  justify-content: flex-end;
+  margin-left: 131.0313rem;
 }
 
 .nav_item {

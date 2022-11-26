@@ -1,20 +1,12 @@
 import { emailRegex, pwRegex } from "./util.js";
 import { authService } from "./firebase.js";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  GoogleAuthProvider,
-  GithubAuthProvider,
-  signInWithPopup,
-  signOut,
-} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, GithubAuthProvider, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
 
 //회원가입
 export function handleAuth(event) {
   //회원가입
   const btnText = event.target.innerText;
   if (btnText === "가입하기") {
-    // document.getElementById("signUpBtn").addEventListener("click", (event) => {
     event.preventDefault();
     const signUpEmail = document.getElementById("signUpEmail").value;
     const signUpPassword = document.getElementById("signUpPassword").value;
@@ -34,7 +26,6 @@ export function handleAuth(event) {
           alert("이미 가입된 이메일입니다.");
         }
       });
-    // });
   } else {
     //로그인
     const email = document.getElementById("LoginInEmail");
@@ -67,8 +58,7 @@ export function handleAuth(event) {
       pw.focus();
       return;
     }
-    // console.log(event.target);
-    // document.getElementById("loginBtn").addEventListener("click", (event) => {
+
     event.preventDefault();
     const LoginInEmail = document.getElementById("LoginInEmail").value;
     const LoginInPassword = document.getElementById("LoginInPassword").value;
@@ -89,7 +79,6 @@ export function handleAuth(event) {
           alert("비밀번호가 잘못 되었습니다.");
         }
       });
-    // });
   }
 }
 

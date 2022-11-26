@@ -1,5 +1,6 @@
 function cancel() {
     const cancel_btn = document.getElementById("back_categori");
+    localStorage.clear();
     if (window.location.hash === "#f_wt_board"){
         cancel_btn.href = "#fashion"
     }else if (window.location.hash === "#fo_wt_board") {
