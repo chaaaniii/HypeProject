@@ -14,7 +14,7 @@ body {
 .fashion_b {
   position: relative;
   background: rgb(253, 246, 237);
-  height: 95vh;
+  height: 100rem;
   padding-top: 1px;
   margin-top: 12px;
   margin-left: 176px;
@@ -22,7 +22,7 @@ body {
 .food_b {
   position: relative;
   background: rgb(237, 191, 213);
-  height: 95vh;
+  height: 100rem;
   padding-top: 1px;
   margin-top: 12px;
   margin-left: 176px;
@@ -31,7 +31,7 @@ body {
 .tarvel_b {
   position: relative;
   background: rgb(237, 122, 59);
-  height: 95vh;
+  height: 100rem;
   padding-top: 1px;
   margin-top: 12px;
   margin-left: 176px;
@@ -39,7 +39,7 @@ body {
 .sports_b {
   position: relative;
   background: rgb(250, 255, 93);
-  height: 95vh;
+  height: 100rem;
   padding-top: 1px;
   margin-top: 12px;
   margin-left: 176px;
@@ -47,7 +47,7 @@ body {
 .ent_b {
   position: relative;
   background: rgb(79, 158, 247);
-  height: 95vh;
+  height: 100rem;
   padding-top: 1px;
   margin-top: 12px;
   margin-left: 176px;
@@ -55,8 +55,8 @@ body {
 
 /* glassmorphism */
 .glass {
-  width: 138.625rem;
-  height: 75.8vh;
+  width: 95%;
+  height: 65rem;
   position: absolute;
   margin: 3%;
   padding-bottom: 5%;
@@ -70,10 +70,8 @@ body {
 }
 
 /* 768 */
-@media screen and (min-width: 768px) {
+@media (max-width: 768px) {
   .glass {
-    width: 94%;
-    height: 94%;
   }
 }
 
@@ -109,6 +107,15 @@ body {
   border-radius: 50px;
   font-size: 1em;
   font-weight: bold;
+}
+
+/* 768 */
+@media screen and (max-width: 768px) {
+  .category .bt_new {
+    width: 18%;
+    height: 7vh;
+    font-size: 2rem;
+  }
 }
 
 /* 최신글&인기글 */

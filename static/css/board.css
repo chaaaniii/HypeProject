@@ -4,23 +4,22 @@
   list-style: none;
 }
 
-
 .bigcontainer {
   overflow: scroll;
   width: 1480px;
   height: 80%;
   position: absolute;
 
-  margin-bottom: .625rem;
+  margin-bottom: 0.625rem;
 }
 
 .tittle {
-  margin-bottom: .625rem;
+  margin-bottom: 0.625rem;
   font-size: 4rem;
 }
 .top_btn1 {
   /* margin-top: px; */
-  background:rgba(125, 125, 125, 0.7)
+  background: rgba(125, 125, 125, 0.7);
 }
 
 .buttons1 {
@@ -58,45 +57,42 @@
   z-index: 1;
 }
 
-
 .buttons ul li {
-  text-indent: .9375rem;
+  text-indent: 0.9375rem;
   display: flex;
   flex-direction: column;
   padding-right: 2.5rem;
   margin-left: 0%;
-  border-radius: .625rem;
-  padding-top: .3125rem;
-  padding-bottom: .3125rem;
+  border-radius: 0.625rem;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
   color: white;
-
 }
 
 .buttons ul li:hover {
   background: green;
   padding-right: 2.5rem;
-  
 }
 
 .buttons ul {
   background: black;
   margin-left: 0;
-  border-radius: .625rem;
-  padding-top: .3125rem;
-  padding-left: .3125rem;
-  padding-right: .3125rem;
-  padding-bottom: .3125rem;
+  border-radius: 0.625rem;
+  padding-top: 0.3125rem;
+  padding-left: 0.3125rem;
+  padding-right: 0.3125rem;
+  padding-bottom: 0.3125rem;
 }
 
 .buttons1 ul li {
-  text-indent: .9375rem;
+  text-indent: 0.9375rem;
   display: flex;
   flex-direction: column;
   padding-right: 2.5rem;
   margin-left: 0%;
-  border-radius: .625rem;
-  padding-top: .1875rem;
-  padding-bottom: .1875rem;
+  border-radius: 0.625rem;
+  padding-top: 0.1875rem;
+  padding-bottom: 0.1875rem;
   color: white;
   width: 3.125rem;
 }
@@ -109,11 +105,11 @@
 .buttons1 ul {
   background: black;
   margin-left: 0;
-  border-radius: .625rem;
-  padding-top: .3125rem;
-  padding-left: .3125rem;
-  padding-right: .3125rem;
-  padding-bottom: .3125rem;
+  border-radius: 0.625rem;
+  padding-top: 0.3125rem;
+  padding-left: 0.3125rem;
+  padding-right: 0.3125rem;
+  padding-bottom: 0.3125rem;
   position: relative;
   z-index: 100;
 }
@@ -126,7 +122,7 @@
 }
 
 .warp {
-  margin-top: .8125rem;
+  margin-top: 0.8125rem;
   /* float: right;
   width: 1616px;
   height: 100vh; */
@@ -135,12 +131,12 @@
   align-items: center;
   background-color: white;
   height: 90vh;
-  padding-top: .0625rem;
-  margin-top: .75rem;
+  padding-top: 0.0625rem;
+  margin-top: 0.75rem;
   margin-left: 11rem;
 }
 
-.glasswarp{
+.glasswarp {
   margin-top: 5.625rem;
   display: flex;
   justify-content: center;
@@ -151,11 +147,11 @@
   margin-bottom: 6.25rem;
 
   background-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 .5rem 2rem 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(.3125rem);
-  -webkit-backdrop-filter: blur(.3125rem);
-  border-radius: .625rem;
-  border: .0625rem solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 0.5rem 2rem 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0.3125rem);
+  -webkit-backdrop-filter: blur(0.3125rem);
+  border-radius: 0.625rem;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.18);
 }
 
 .warp_btn {
@@ -189,7 +185,7 @@
   width: 1.875rem;
   height: 1.875rem;
   border-radius: 1.875rem;
-  border: .125rem solid white;
+  border: 0.125rem solid white;
 }
 
 .warp_btn_scrap {
@@ -198,7 +194,7 @@
   width: 1.875rem;
   height: 1.875rem;
   border-radius: 1.875rem;
-  border: .125rem solid white;
+  border: 0.125rem solid white;
 }
 
 .container {
@@ -235,14 +231,13 @@
   margin-bottom: 1.25rem;
 }
 
-
-.text12{
+.text12 {
   display: flex;
   width: 80%;
-  margin-left:12.5rem;
+  margin-left: 12.5rem;
 }
 
-.text123{
+.text123 {
   display: flex;
   font-size: 20px;
 }
@@ -257,8 +252,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20p
-  x;
+  margin-top: 20p x;
 }
 
 .comment_input1 {
@@ -266,7 +260,7 @@
   height: 1.875rem;
   border-radius: 1.875rem;
   text-indent: 1.875rem;
-  border: .125rem solid gray;
+  border: 0.125rem solid gray;
 }
 
 .comment_input_btn {
@@ -275,7 +269,7 @@
   border-radius: 1.875rem;
   background: black;
   color: white;
-  border: .125rem solid black;
+  border: 0.125rem solid black;
   margin-left: 0.6rem;
 }
 
@@ -283,7 +277,7 @@
   display: flex;
   align-items: center;
   /* justify-content: center; */
-  margin-top: .625rem;
+  margin-top: 0.625rem;
   margin-left: 11.25rem;
   height: 3.125rem;
 }
@@ -304,7 +298,7 @@
 
 .comment_text {
   width: 26.125rem;
-  margin-left: .3125rem;
+  margin-left: 0.3125rem;
 }
 
 .comment_btn {
@@ -313,11 +307,9 @@
 
 .commentname {
   width: 12rem;
-  
 }
 
 /* ------------------------------하트버튼 */
-
 
 /* ================= */
 .like-button .heart-icon {
@@ -339,7 +331,7 @@
   }
 }
 
-.heart-bg{
+.heart-bg {
   margin-top: 5px;
 }
 
@@ -378,7 +370,6 @@
   /* margin-left: .375rem; */
 }
 
-
 /* ------------------------ */
 
 .like-button1 .heart-icon1 {
@@ -390,7 +381,7 @@
   /* position: relative; */
 }
 
-.heart-icon1.liked1{
+.heart-icon1.liked1 {
   display: flex;
 }
 
@@ -403,8 +394,6 @@
     background-position: right;
   }
 }
-
-
 
 .like-button1 .heart-bg1 {
   /* background: rgba(255, 192, 200, 0);
@@ -442,38 +431,36 @@
   display: none;
 }
 
-.comment_input_container input{
+.comment_input_container input {
   width: 23.75rem;
   /* margin-left: .9375rem; */
   border-radius: 1.875rem;
-  text-indent: .625rem;
-  
+  text-indent: 0.625rem;
 }
 
-.comment_input_container input:focus{
+.comment_input_container input:focus {
   outline: none;
-  border-radius: .625rem;
-  padding-right: .3125rem;
+  border-radius: 0.625rem;
+  padding-right: 0.3125rem;
   width: 23.4rem;
   border-radius: 1.875rem;
 }
 
-.comment_input_container button{
+.comment_input_container button {
   width: 3.75rem;
   height: 1.875rem;
   background-color: black;
   color: white;
-  margin-left: .3125rem;
+  margin-left: 0.3125rem;
 }
 
-.name{
-  padding-right: .625rem;
+.name {
+  padding-right: 0.625rem;
 }
 
-.comment p{
-  font-size: .9375rem;
+.comment p {
+  font-size: 0.9375rem;
 }
-
 
 .box {
   width: 768px;
@@ -481,4 +468,3 @@
   display: flex;
   /* margin-right: auto; */
 }
-
