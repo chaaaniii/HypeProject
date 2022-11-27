@@ -1,9 +1,11 @@
 .background {
+  position: fixed;
   background: rgb(89, 100, 217);
   height: 93vh;
   padding-top: 1px;
   margin-top: 12px;
   margin-left: 176px;
+  overflow: hidden;
 }
 .box {
   width: 768px;
@@ -312,7 +314,7 @@
   box-shadow: rgb(0 0 0 / 20%) 0px 4px 16px 0px;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .background {
     background: rgb(89, 100, 217);
     height: 100vh;
@@ -347,10 +349,10 @@
   }
 }
 
-@media (max-width: 1920px) {
+@media screen and (min-width: 769px) and (max-width: 1920px){
   .background {
     background: rgb(89, 100, 217);
-    height: 93vh;
+    height: 95vh;
     padding-top: 1px;
     margin-top: 12px;
     margin-left: 176px;
@@ -386,5 +388,40 @@
 
   .mypage_img_area img {
     width: 25rem;
+  }
+
+  .img_area img {
+    width: 25rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+  }
+
+  .write {
+    width: 25rem;
+  }
+  .txt_area ul h4 {
+    font-size: 1.25rem;
+    margin: 0rem 0.5rem 1rem 0;
+  }
+  .txt_area ul span p {
+    font-size: 1rem;
+    margin: 1rem 0.5rem 0 0;
+  }
+  .txt_area {
+    padding: 1.3rem;
+    font-size: 1rem;
+  }
+  .date {
+    margin: 1rem 1rem 0 1rem;
+    font-size: 14px;
+  }
+  .author_index {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1rem 0 1rem;
+    line-height: 1.5rem;
   }
 }
