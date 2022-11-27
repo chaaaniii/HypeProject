@@ -15,8 +15,8 @@ const routes = {
   sports: "/templates/pages/sports.html",
   entertainment: "/templates/pages/entertainment.html",
   mypage: "/templates/pages/mypage.html",
-  like: "/templates/pages/like.html",
-  scrap: "/templates/pages/scrap.html",
+  like: "/templates/pages/mypage.html",
+  scrap: "/templates/pages/mypage.html",
   setting: "/templates/pages/setting.html",
   login: "/templates/pages/login.html",
   signin: "/templates/pages/signin.html",
@@ -58,6 +58,7 @@ export const handleLocation = async () => {
 
   if (path === "mypage" || path === "scrap" || path === "like") {
     load_nickname();
+    getHypeList();
   }
 
   if (path === "setting") {
@@ -70,10 +71,6 @@ export const handleLocation = async () => {
     hide_nav_bar();
   } else {
     show_nav_bar();
-  }
-
-  if (path === "mypage") {
-    getHypeList();
   }
 
   if (path === "fashion") {
@@ -124,7 +121,7 @@ const show_nav_bar = () => {
   const logo = document.querySelector("#logoya");
   const nav_menu = document.querySelector(".nav_menu");
   const navBar = document.querySelector(".navBar");
-  const menu_login = document.querySelector(".menu");
+  const menu_login = document.querySelector(".Menu");
   nav_menu.style.display = "flex";
   navBar.style.backgroundColor = "black";
   logo.style.display = "flex";
@@ -134,7 +131,7 @@ const hide_nav_bar = () => {
   const logo = document.querySelector("#logoya");
   const nav_menu = document.querySelector(".nav_menu");
   const navBar = document.querySelector(".navBar");
-  const menu_login = document.querySelector(".menu");
+  const menu_login = document.querySelector(".Menu");
   nav_menu.style.display = "none";
   navBar.style.backgroundColor = "white";
   logo.style.display = "none";

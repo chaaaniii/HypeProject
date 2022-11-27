@@ -1,6 +1,6 @@
 .background {
   background: rgb(89, 100, 217);
-  height: 95vh;
+  height: 93vh;
   padding-top: 1px;
   margin-top: 12px;
   margin-left: 176px;
@@ -307,4 +307,39 @@
 .mypage_wrap_box:hover {
   transform: translateY(-1%);
   box-shadow: rgb(0 0 0 / 20%) 0px 4px 16px 0px;
+}
+
+@media (max-width: 768px) {
+  .background {
+    background: rgb(89, 100, 217);
+    height: 100vh;
+    padding-top: 0;
+    margin-top: -65px;
+    margin-left: 0;
+  }
+  .box {
+    width: 768px;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .profile_box {
+    display: flex;
+    justify-content: space-around;
+  }
+  .mypage_wrap_list {
+    height: 48vh;
+  }
+  .box_profile {
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10rem;
+    padding-left: 1rem;
+    width: 752px;
+    padding-bottom: 5rem;
+  }
+  .profile_text.display_name{
+    width: 44.5rem;
+  }
 }
