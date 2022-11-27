@@ -47,6 +47,32 @@ export const handleLocation = async () => {
       filebrowserImageUploadUrl: "파일업로드 작업을 할 URL 혹은 파일 경로 ex)./aaa.php 이런식으로 ",
       filebrowserUploadMethod: "form",
     });
+    CKEDITOR.on('dialogDefinition', function(ev) {
+      // Take the dialog window name and its definition from the event data.
+      var dialogName = ev.data.name;
+      var dialogDefinition = ev.data.definition;
+      console.log(dialogName)
+
+      console.log(document.querySelector('.cke_dialog_ui_fileButton'))
+      
+      if (dialogName == 'image2') {
+          // Get a reference to the "Upload" tab.
+          var uploadTab = dialogDefinition.getContents('Upload');
+          // Get the "Choose file" input definition.
+          var fileChooserDef = uploadTab.get('upload');
+          // Get the "Send it to the Server" button definition, and hide that button.
+          var sendButtonDef = uploadTab.get('uploadButton');
+          sendButtonDef.hidden = true;
+  
+          // When a file is chosen, automatically send it to the server.
+          fileChooserDef.onChange = function() {
+              // Get the "Send it to the Server" button element.
+              var sendButton = this.getDialog().getContentElement('Upload', 'uploadButton');
+              // Simulate clicking that button.
+              sendButton.click();
+          };
+      }
+  }); 
   }
   if (path === "/") TypeText();
 
@@ -124,17 +150,21 @@ const show_nav_bar = () => {
   const logo = document.querySelector("#logoya");
   const nav_menu = document.querySelector(".nav_menu");
   const navBar = document.querySelector(".navBar");
-  nav_menu.style.visibility = "visible";
+  const MENU = document.querySelector('.Menu')
+  nav_menu.style.display = "flex";
   navBar.style.backgroundColor = "black";
-  logo.style.visibility = "visible";
+  logo.style.display = "flex";
+  MENU.style.display = "flex";
 };
 const hide_nav_bar = () => {
   const logo = document.querySelector("#logoya");
   const nav_menu = document.querySelector(".nav_menu");
   const navBar = document.querySelector(".navBar");
-  nav_menu.style.visibility = "hidden";
+  const MENU = document.querySelector('.Menu')
+  nav_menu.style.display = "none";
   navBar.style.backgroundColor = "white";
-  logo.style.visibility = "hidden";
+  logo.style.display = "none";
+  MENU.style.display = "none";
 };
 
 const getHypeList = async () => {

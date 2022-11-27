@@ -92,6 +92,7 @@ export const socialLogin = (str) => {
   signInWithPopup(authService, provider)
     .then((result) => {
       const user = result.user;
+      window.location.hash = "/";
     })
     .catch((error) => {
       // Handle Errors here.
