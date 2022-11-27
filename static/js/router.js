@@ -1,4 +1,11 @@
-import { authService } from "./firebase.js";
+// import { authService, storageService } from "../firebase.js";
+// import {
+//   ref,
+//   uploadString,
+//   getDownloadURL,
+// } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-storage.js";
+// import { updateProfile } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+// import { v4 as uuidv4 } from "https://jspm.dev/uuid";
 
 export const route = (event) => {
   event.preventDefault();
@@ -38,10 +45,37 @@ export const handleLocation = async () => {
   document.getElementById("main-page").innerHTML = html;
   if(path === 'wt_board'){
     CKEDITOR.replace("myeditor",{
-    height:"300"
-    ,filebrowserImageUploadUrl: '파일업로드 작업을 할 URL 혹은 파일 경로 ex)./aaa.php 이런식으로 ',
+      width:"550",
+    height:"300",
+    filebrowserImageUploadUrl: '/uploader/upload.php?type=Images',
     filebrowserUploadMethod: 'form',
     });
+    CKEDITOR.on('dialogDefinition', function(ev) {
+      // Take the dialog window name and its definition from the event data.
+      var dialogName = ev.data.name;
+      var dialogDefinition = ev.data.definition;
+      console.log(dialogName)
+
+      console.log(document.querySelector('.cke_dialog_ui_fileButton'))
+      
+      if (dialogName == 'image2') {
+          // Get a reference to the "Upload" tab.
+          var uploadTab = dialogDefinition.getContents('Upload');
+          // Get the "Choose file" input definition.
+          var fileChooserDef = uploadTab.get('upload');
+          // Get the "Send it to the Server" button definition, and hide that button.
+          var sendButtonDef = uploadTab.get('uploadButton');
+          sendButtonDef.hidden = true;
+  
+          // When a file is chosen, automatically send it to the server.
+          fileChooserDef.onChange = function() {
+              // Get the "Send it to the Server" button element.
+              var sendButton = this.getDialog().getContentElement('Upload', 'uploadButton');
+              // Simulate clicking that button.
+              sendButton.click();
+          };
+      }
+  }); 
   }
   if (path === "/") TypeText();
 
@@ -62,6 +96,9 @@ export const handleLocation = async () => {
       authService.currentUser.displayName ?? "닉네임 없음";
 
     document.getElementById("profileView").src =
+      authService.currentUser.photoURL ?? "/static/img/empty_profile.png";
+
+    document.getElementById("ThumbnailView").src =
       authService.currentUser.photoURL ?? "/static/img/empty_profile.png";
 
     document.getElementById("urnameinput").placeholder =

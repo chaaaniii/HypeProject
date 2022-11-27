@@ -19,6 +19,11 @@
           rows="12"
           cols="50"
         ></textarea>
+        <form id="profile_form" onsubmit="Thumbnail(event)">
+        <button type="button" id="upload_btn" class="img_upload" onclick="upload_img()" style="display: block;">이미지 업로드</button>
+        <img id="ThumbnailView" src="/static/img/empty_profile.png" alt="profile">
+        <input onchange="onFileChange1(event)" type="file" id="imgUpload" accept="img/*" style="display: none;">
+        </form>
       </div>
     </div>
   </div>
