@@ -59,35 +59,6 @@ export const handleLocation = async () => {
         "파일업로드 작업을 할 URL 혹은 파일 경로 ex)./aaa.php 이런식으로 ",
       filebrowserUploadMethod: "form",
     });
-    CKEDITOR.on("dialogDefinition", function (ev) {
-      // Take the dialog window name and its definition from the event data.
-      var dialogName = ev.data.name;
-      var dialogDefinition = ev.data.definition;
-      console.log(dialogName);
-
-      console.log(document.querySelector(".cke_dialog_ui_fileButton"));
-
-      if (dialogName == "image2") {
-        // Get a reference to the "Upload" tab.
-        var uploadTab = dialogDefinition.getContents("Upload");
-        // Get the "Choose file" input definition.
-        var fileChooserDef = uploadTab.get("upload");
-        // Get the "Send it to the Server" button definition, and hide that button.
-        var sendButtonDef = uploadTab.get("uploadButton");
-        sendButtonDef.hidden = true;
-
-        // When a file is chosen, automatically send it to the server.
-        fileChooserDef.onChange = function () {
-          // Get the "Send it to the Server" button element.
-          var sendButton = this.getDialog().getContentElement(
-            "Upload",
-            "uploadButton"
-          );
-          // Simulate clicking that button.
-          sendButton.click();
-        };
-      }
-    });
   }
   if (path === "/") TypeText();
 
@@ -329,7 +300,7 @@ const getPost = async () => {
             <div class="image">
               <img src="${
                 postObject.thumbnail ?? "static/img/No_Thumbnail.png"
-              }" alt="" class="image1" />
+              }" alt="" />
             </div>
           </div>
         <div class="text">
@@ -356,7 +327,7 @@ const getPost = async () => {
           <!-- 홈페이지가 새로고침 또는 랜딩이 될떄마다 뿌려주는 함수는 getfire이다 팀원들이 뿌려주는 먼가를만들면 거기에 넣어주기만하면됨 -->
         </div>
         <div class="comment_list" id="comment_list">
-        </div>>`;
+        </div>`;
       const div = document.createElement("div");
       if (postObject.category === "#f_wt_board") {
         descWrap.style.background = "rgb(253, 246, 237)";
