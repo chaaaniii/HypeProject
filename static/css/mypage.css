@@ -298,6 +298,9 @@
   height: 52vh;
   overflow-y: scroll;
 }
+.mypage_wrap_list main {
+ margin: 0 auto 0 2.6303rem;
+}
 
 .mypage_wrap_box {
   margin-bottom: 3rem;
@@ -341,5 +344,47 @@
   }
   .profile_text.display_name{
     width: 44.5rem;
+  }
+}
+
+@media (max-width: 1920px) {
+  .background {
+    background: rgb(89, 100, 217);
+    height: 93vh;
+    padding-top: 1px;
+    margin-top: 12px;
+    margin-left: 176px;
+  }
+  
+  .box {
+    width: 768px;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mypage_wrap_list {
+    height: 40vh;
+  }
+
+  .profile_area {
+    margin-top: 5rem;
+  }
+
+  .tab_area {
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+
+  .profile_setting a {
+    font-size: 1rem;
+  }
+
+  .mypost {
+    font-size: 1.5rem;
+  }
+
+  .mypage_img_area img {
+    width: 25rem;
   }
 }

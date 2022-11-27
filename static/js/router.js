@@ -160,10 +160,10 @@ const getHypeList = async () => {
       const temp_html = `
     <div class="mypage_wrap_box">
           <a href="?${hypeObject.id}#board" class="board_w";">
-              <div class="img_area">
+              <div class="mypage_img_area">
                   <img src="${hypeObject.thumbnail ?? "static/img/No_Thumbnail.png"}" alt="img_area" />
               </div>
-              <div class="write">
+              <div class="mp_write">
                   <div class="txt_area">
                       <ul>
                           <h4>${hypeObject.title}</h4>
