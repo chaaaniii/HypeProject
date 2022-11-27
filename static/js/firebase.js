@@ -6,7 +6,6 @@ import { getStorage } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-s
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-// 읽기 다써서 파이어베이스 하나 더 팜 추후 수정 요망
 const firebaseConfig = {
   apiKey: "AIzaSyAymJFM3HxbgxEI12qobHCWrs-Nq1BJKTU",
   authDomain: "hypeproject-46a13.firebaseapp.com",
