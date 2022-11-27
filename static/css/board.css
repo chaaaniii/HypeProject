@@ -7,9 +7,9 @@
   list-style: none;
 }
 
-
 .bigcontainer {
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
   max-width: 92.5rem;
   width: 100%;
   margin: 0 auto;
@@ -21,17 +21,19 @@
 @media screen and (max-width : 768px){
   .bigcontainer{
     margin-top: 30px;
-    height: 90%;
+    height: 85vh;
   }
 }
 
 .tittle {
-  margin-bottom: .625rem;
+  margin-bottom: 0.625rem;
   font-size: 4rem;
+  word-break: break-word;
+  text-align: center;
 }
 .top_btn1 {
   /* margin-top: px; */
-  background:rgba(125, 125, 125, 0.7)
+  background: rgba(125, 125, 125, 0.7);
 }
 
 .buttons1 {
@@ -47,7 +49,6 @@
     margin-left: 0;
     position: relative;
     margin-right: 100px;
-
   }
 }
 
@@ -78,45 +79,52 @@
   z-index: 1;
 }
 
-
 .buttons ul li {
-  text-indent: .9375rem;
+  text-indent: 0.9375rem;
   display: flex;
   flex-direction: column;
   padding-right: 2.5rem;
   margin-left: 0%;
-  border-radius: .625rem;
-  padding-top: .3125rem;
-  padding-bottom: .3125rem;
+  border-radius: 0.625rem;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
   color: white;
-
 }
 
 .buttons ul li:hover {
   background: green;
   padding-right: 2.5rem;
-  
+}
+
+@media screen and (max-width : 768px) {
+  .buttons ul li {
+    padding-right: 1.2rem;
+  }
+
+  .buttons ul li:hover {
+    padding-right: 1.2rem;
+  }
 }
 
 .buttons ul {
   background: black;
   margin-left: 0;
-  border-radius: .625rem;
-  padding-top: .3125rem;
-  padding-left: .3125rem;
-  padding-right: .3125rem;
-  padding-bottom: .3125rem;
+  border-radius: 0.625rem;
+  padding-top: 0.3125rem;
+  padding-left: 0.3125rem;
+  padding-right: 0.3125rem;
+  padding-bottom: 0.3125rem;
 }
 
 .buttons1 ul li {
-  text-indent: .9375rem;
+  text-indent: 0.9375rem;
   display: flex;
   flex-direction: column;
   padding-right: 2.5rem;
   margin-left: 0%;
-  border-radius: .625rem;
-  padding-top: .1875rem;
-  padding-bottom: .1875rem;
+  border-radius: 0.625rem;
+  padding-top: 0.1875rem;
+  padding-bottom: 0.1875rem;
   color: white;
   width: 3.125rem;
 }
@@ -126,14 +134,23 @@
   padding-right: 2.5rem;
 }
 
+@media screen and (max-width : 768px) {
+  .buttons1 ul li {
+    padding-right: 1.2rem;
+  }
+  .buttons1 ul li:hover {
+    padding-right: 1.2rem;
+  }
+}
+
 .buttons1 ul {
   background: black;
   margin-left: 0;
-  border-radius: .625rem;
-  padding-top: .3125rem;
-  padding-left: .3125rem;
-  padding-right: .3125rem;
-  padding-bottom: .3125rem;
+  border-radius: 0.625rem;
+  padding-top: 0.3125rem;
+  padding-left: 0.3125rem;
+  padding-right: 0.3125rem;
+  padding-bottom: 0.3125rem;
   position: relative;
   z-index: 100;
 }
@@ -145,6 +162,12 @@
   z-index: 100;
 }
 
+@media screen and (max-width : 768px) {
+  .buttons {
+    margin-left: 30rem;
+  }
+}
+
 .warp {
   margin-top: .8125rem;
   /* float: right; */
@@ -154,7 +177,7 @@
   justify-content: center;
   align-items: center;
   background-color: white;
-  height: 1003px;
+  height: 95vh;
   padding-top: .0625rem;
   margin-top: .75rem;
   margin-left: 11rem;
@@ -162,26 +185,26 @@
 
 @media screen and (max-width : 768px){
   .warp{
-    height: 943px;
+    margin-top: 2rem;
+    height: 90vh;
+    margin-left: 0;
   }
 }
 
 .glasswarp{
-  margin-top: 5.625rem;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   width: 95%;
-  height: 76vh;
-  margin-bottom: 6.25rem;
+  height: 85vh;
 
   background-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 .5rem 2rem 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(.3125rem);
-  -webkit-backdrop-filter: blur(.3125rem);
-  border-radius: .625rem;
-  border: .0625rem solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 0.5rem 2rem 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0.3125rem);
+  -webkit-backdrop-filter: blur(0.3125rem);
+  border-radius: 0.625rem;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.18);
 }
 
 @media screen and (max-width : 768px){
@@ -189,7 +212,7 @@
     display: flex;
     align-items: baseline;
     margin-bottom: 0;
-    margin-top: 0;
+    height: 90vh;
   }
 }
 
@@ -224,7 +247,7 @@
   width: 1.875rem;
   height: 1.875rem;
   border-radius: 1.875rem;
-  border: .125rem solid white;
+  border: 0.125rem solid white;
 }
 
 .warp_btn_scrap {
@@ -233,7 +256,7 @@
   width: 1.875rem;
   height: 1.875rem;
   border-radius: 1.875rem;
-  border: .125rem solid white;
+  border: 0.125rem solid white;
 }
 
 .container {
@@ -249,56 +272,23 @@
   justify-content: center;
 }
 
-@media screen and (max-width : 768px){
-  .photo{
-    width: 40rem;
-  }
-}
-
-.image {
-  width: 60rem;
-  height: 35rem;
-}
-
-@media screen and (max-width : 768px){
-  .image{
-    width: 40rem;
-  }
-}
-
-.image1 {
-  width: 60rem;
-  height: 35rem;
-  background-size: cover;
-}
-
-
-
-@media screen and (max-width : 768px) {
-  .image1 {width: 35rem;
-          height: 35rem;
-          background-size: cover;
-  }
-}
-
 .text {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1.25rem;
+  margin: 1.25rem auto 1.25rem auto;
   width: 79%;
-  margin-left: 2.5rem;
-  margin-bottom: 1.25rem;
 }
 
-
-.text12{
+.text12 {
   display: flex;
   width: 80%;
-  margin-left:12.5rem;
+  word-break: break-word;
+  font-size: 2rem;
+  flex-direction: column;
 }
 
-.text123{
+.text123 {
   display: flex;
   font-size: 20px;
 }
@@ -320,15 +310,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1.25rem;
   margin-top: 20px;
 }
 
 .comment_input1 {
-  width: 46rem;
-  height: 1.875rem;
+  width: 40rem;
+  height: 3rem;
+  margin-left: 70px;
   border-radius: 1.875rem;
   text-indent: 1.875rem;
-  border: .125rem solid gray;
+  font-size: 1.25rem;
+  border: 0.125rem solid gray;
 }
 
 @media screen and (max-width : 768px){
@@ -339,13 +332,14 @@
 }
 
 .comment_input_btn {
-  width: 3.75rem;
-  height: 2.1875rem;
+  width: 4rem;
+  height: 3rem;
+  font-size: 1.25rem;
   border-radius: 1.875rem;
   background: black;
   color: white;
-  border: .125rem solid black;
-  margin-left: 0.6rem;
+  border: 0.125rem solid black;
+  margin-left: 1.5rem;
 }
 
 @media screen and (max-width : 768px){
@@ -360,7 +354,6 @@
   /* justify-content: center; */
   margin-top: .625rem;
   margin-left:200px;
-  
   height: 3.125rem;
 }
 
@@ -393,18 +386,18 @@
   display: flex;
   align-items: center;
   /* background-color: gray; */
-  width: 35rem;
+  width: 40rem;
 }
 
 @media screen and (max-width : 768px){
   .comment {
-    width: 32rem;}
+    width: 29rem;}
 }
 
 
 .comment_text {
   width: 26.125rem;
-  margin-left: .3125rem;
+  margin-left: 0.3125rem;
 }
 
 @media screen and (max-width : 768px){
@@ -429,7 +422,6 @@
 }
 /* ------------------------------하트버튼 */
 
-
 /* ================= */
 .like-button .heart-icon {
   height: 3.5rem;
@@ -450,7 +442,7 @@
   }
 }
 
-.heart-bg{
+.heart-bg {
   margin-top: 5px;
 }
 
@@ -489,7 +481,6 @@
   /* margin-left: .375rem; */
 }
 
-
 /* ------------------------ */
 
 .like-button1 .heart-icon1 {
@@ -501,7 +492,7 @@
   /* position: relative; */
 }
 
-.heart-icon1.liked1{
+.heart-icon1.liked1 {
   display: flex;
 }
 
@@ -514,8 +505,6 @@
     background-position: right;
   }
 }
-
-
 
 .like-button1 .heart-bg1 {
   /* background: rgba(255, 192, 200, 0);
@@ -553,38 +542,36 @@
   display: none;
 }
 
-.comment_input_container input{
+.comment_input_container input {
   width: 23.75rem;
   /* margin-left: .9375rem; */
   border-radius: 1.875rem;
-  text-indent: .625rem;
-  
+  text-indent: 0.625rem;
 }
 
-.comment_input_container input:focus{
+.comment_input_container input:focus {
   outline: none;
-  border-radius: .625rem;
-  padding-right: .3125rem;
+  border-radius: 0.625rem;
+  padding-right: 0.3125rem;
   width: 23.4rem;
   border-radius: 1.875rem;
 }
 
-.comment_input_container button{
+.comment_input_container button {
   width: 3.75rem;
   height: 1.875rem;
   background-color: black;
   color: white;
-  margin-left: .3125rem;
+  margin-left: 0.3125rem;
 }
 
-.name{
-  padding-right: .625rem;
+.name {
+  padding-right: 0.625rem;
 }
 
-.comment p{
-  font-size: .9375rem;
+.comment p {
+  font-size: 1.5rem;
 }
-
 
 .box {
   width: 768px;
@@ -592,4 +579,3 @@
   display: flex;
   /* margin-right: auto; */
 }
-
