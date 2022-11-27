@@ -60,12 +60,11 @@ body {
 
 .nav_btns {
   position: absolute;
-  display: inline-flex;
+  display: flex;
   flex-direction: row;
   float: right;
-  margin-right: 5rem;
+  right: 0;
   justify-content: flex-end;
-  margin-left: 131.0313rem;
 }
 
 .nav_item {
@@ -239,6 +238,10 @@ body {
     cursor: pointer;
   }
 
+  .nav_btns {
+    position: relative;
+  }
+
   .nav_btn {
     font-size: 1.3rem;
     font-weight: 600;
@@ -370,17 +373,24 @@ body {
 .slide {
   position: absolute;
 
-  /* float: right; */
   margin-left: 13rem;
   margin-top: 300px;
 
   font-size: 20rem;
   font-weight: 600;
-  color: transparent;
-  -webkit-text-stroke: 0.002rem #1ed760;
+  /* color: white; */
+  /* -webkit-text-stroke: 0.002rem #1ed760; */
+    color: #000;
+   text-shadow:
+  -8px -8px 0 #1ed760,
+  8px -8px 0 #1ed760,
+  -8px 8px 0 #1ed760,
+  8px 8px 0 #1ed760;
+  
   letter-spacing: 1rem;
 
   animation: fadeInRight 1s;
+
 }
 
 @keyframes fadeInRight {
@@ -412,4 +422,6 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 10rem;
+
+  z-index: -9;
 }

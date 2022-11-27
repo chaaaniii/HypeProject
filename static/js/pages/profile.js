@@ -22,15 +22,18 @@ export const changeProfile = async (event) => {
   const newNickname = document.getElementById("urnameinput").value;
   // 프로필 이미지 dataUrl을 Storage에 업로드 후 다운로드 링크를 받아서 photoURL에 저장.
   const imgDataUrl = localStorage.getItem("imgDataUrl");
+  console.log(imgDataUrl);
   let downloadUrl;
   if (imgDataUrl) {
     const response = await uploadString(imgRef, imgDataUrl, "data_url");
     downloadUrl = await getDownloadURL(response.ref);
+    console.log(downloadUrl)
   }
   await updateProfile(authService.currentUser, {
     displayName: newNickname ? newNickname : null,
     photoURL: downloadUrl ? downloadUrl : null,
   }) 
+  
 
   .then(() => {
     alert("프로필 수정 완료");
