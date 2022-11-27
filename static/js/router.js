@@ -300,7 +300,7 @@ const getPost = async () => {
             <div class="image">
               <img src="${
                 postObject.thumbnail ?? "static/img/No_Thumbnail.png"
-              }" alt="" class="image1" />
+              }" alt="" />
             </div>
           </div>
         <div class="text">

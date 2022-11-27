@@ -105,7 +105,32 @@ body {
 
 /* 768 */
 @media screen and (max-width: 768px) {
+.fashion_b {
+    margin-top: 2rem;
+    margin-left: 0;
+  }
+
+  .food_b {
+    margin-top: 2rem;
+    margin-left: 0;
+  }
+
+  .tarvel_b {
+    margin-top: 2rem;
+    margin-left: 0;
+  }
+
+  .sports_b {
+    margin-top: 2rem;
+    margin-left: 0;
+  }
+
+  .ent_b {
+    margin-top: 2rem;
+    margin-left: 0;
+  }
   .category .bt_new {
+    display: none;
     width: 18%;
     height: 7vh;
     font-size: 2rem;

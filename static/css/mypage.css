@@ -1,7 +1,8 @@
 .background {
   position: fixed;
   background: rgb(89, 100, 217);
-  height: 93vh;
+  width: 100%;
+  height: 95vh;
   padding-top: 1px;
   margin-top: 12px;
   margin-left: 176px;
@@ -313,8 +314,18 @@
   transform: translateY(-1%);
   box-shadow: rgb(0 0 0 / 20%) 0px 4px 16px 0px;
 }
+.mp_logo {
+  display: none;
+}
 
 @media screen and (max-width: 768px) {
+  .mp_logo {
+    display: block;
+    position: absolute;
+    width: 5rem;
+    padding: 1rem 1rem;
+    margin-top: 0;
+  }
   .background {
     background: rgb(89, 100, 217);
     height: 100vh;
@@ -333,7 +344,7 @@
     justify-content: space-around;
   }
   .mypage_wrap_list {
-    height: 48vh;
+    height: 45vh;
   }
   .box_profile {
     margin-top: 0;
