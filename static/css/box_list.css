@@ -59,6 +59,7 @@ body {
   flex-direction: column;
   padding: 1.7rem;
   background-color: white;
+  word-break: break-all;
 }
 .txt_area ul {
   display: block;
@@ -68,6 +69,14 @@ body {
   margin: 1rem 0.5rem 1rem 0;
 }
 .txt_area ul span p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  line-height: 1.5em;
+
   font-size: 1rem;
   margin: 1rem 0.5rem 1rem 0;
 }
