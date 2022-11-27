@@ -124,17 +124,21 @@ const show_nav_bar = () => {
   const logo = document.querySelector("#logoya");
   const nav_menu = document.querySelector(".nav_menu");
   const navBar = document.querySelector(".navBar");
-  nav_menu.style.visibility = "visible";
+  const menu_login = document.querySelector(".menu");
+  nav_menu.style.display = "flex";
   navBar.style.backgroundColor = "black";
-  logo.style.visibility = "visible";
+  logo.style.display = "flex";
+  menu_login.style.display = "flex";
 };
 const hide_nav_bar = () => {
   const logo = document.querySelector("#logoya");
   const nav_menu = document.querySelector(".nav_menu");
   const navBar = document.querySelector(".navBar");
-  nav_menu.style.visibility = "hidden";
+  const menu_login = document.querySelector(".menu");
+  nav_menu.style.display = "none";
   navBar.style.backgroundColor = "white";
-  logo.style.visibility = "hidden";
+  logo.style.display = "none";
+  menu_login.style.display = "none";
 };
 
 const getHypeList = async () => {
