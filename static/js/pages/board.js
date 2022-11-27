@@ -140,7 +140,7 @@ const getfire = async () => {
   comment_box.innerHTML = "";
   list.forEach((item) => {
     if (window.location.search === item.post) {
-    const temp_html = `<div class="comment_box" id="comment_box" >
+      const temp_html = `<div class="comment_box" id="comment_box" >
 
         <div class="comment">
             <img src="${item.profileImg ?? "static/img/empty_profile.png"}" alt="" class="comment_img">
@@ -163,10 +163,10 @@ const getfire = async () => {
                     <li class="comment_modify" id="${item.id}" onclick="comment_delete(event)">삭제</li>
                 </ul>
         </div>`;
-    const div = document.createElement("div");
-    div.classList.add("box");
-    div.innerHTML = temp_html;
-    comment_box.appendChild(div);
+      const div = document.createElement("div");
+      div.classList.add("box");
+      div.innerHTML = temp_html;
+      comment_box.appendChild(div);
     }
   });
 
