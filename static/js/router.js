@@ -15,8 +15,8 @@ const routes = {
   sports: "/templates/pages/sports.html",
   entertainment: "/templates/pages/entertainment.html",
   mypage: "/templates/pages/mypage.html",
-  like: "/templates/pages/mypage.html",
-  scrap: "/templates/pages/mypage.html",
+  like: "/templates/pages/like.html",
+  scrap: "/templates/pages/scrap.html",
   setting: "/templates/pages/setting.html",
   login: "/templates/pages/login.html",
   signin: "/templates/pages/signin.html",
@@ -58,7 +58,6 @@ export const handleLocation = async () => {
 
   if (path === "mypage" || path === "scrap" || path === "like") {
     load_nickname();
-    getHypeList();
   }
 
   if (path === "setting") {
@@ -71,6 +70,10 @@ export const handleLocation = async () => {
     hide_nav_bar();
   } else {
     show_nav_bar();
+  }
+
+  if (path === "mypage") {
+    getHypeList();
   }
 
   if (path === "fashion") {
