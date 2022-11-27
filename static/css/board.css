@@ -1,3 +1,6 @@
+/* padding 이나 margin이나 boder값 고정된 width 값은 대부분 px로 잡앚는게좋다 */
+/* 기기를 사용하는 사용자의 편의성을 고려한뿐이다 */
+
 * {
   margin: 0;
   padding: 0;
@@ -6,11 +9,19 @@
 
 .bigcontainer {
   overflow: scroll;
-  width: 1480px;
+  max-width: 92.5rem;
+  width: 100%;
+  margin: 0 auto;
   height: 80%;
   position: absolute;
+  margin-bottom: .625rem;
+}
 
-  margin-bottom: 0.625rem;
+@media screen and (max-width : 768px){
+  .bigcontainer{
+    margin-top: 30px;
+    height: 90%;
+  }
 }
 
 .tittle {
@@ -28,12 +39,21 @@
   justify-content: center;
   margin-top: 1.25rem;
   margin-left: 3rem;
+  position: relative;
+}
+@media screen and (max-width : 768px){
+  .buttons1{
+    margin-left: 0;
+    position: relative;
+    margin-right: 100px;
+
+  }
 }
 
 .buttons button {
   text-decoration: none;
   color: black;
-  background-color: white;
+  background-color: transparent;
   border: none;
   width: 2.5rem;
   height: 1.875rem;
@@ -46,7 +66,7 @@
 .buttons1 button {
   text-decoration: none;
   color: black;
-  background-color: white;
+  background-color: transparent;
   border: none;
   width: 2.5rem;
   height: 1.875rem;
@@ -122,28 +142,34 @@
 }
 
 .warp {
-  margin-top: 0.8125rem;
-  /* float: right;
-  width: 1616px;
+  margin-top: .8125rem;
+  /* float: right; */
+  /* width: 1616px;
   height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
-  height: 90vh;
-  padding-top: 0.0625rem;
-  margin-top: 0.75rem;
+  height: 1003px;
+  padding-top: .0625rem;
+  margin-top: .75rem;
   margin-left: 11rem;
 }
 
-.glasswarp {
+@media screen and (max-width : 768px){
+  .warp{
+    height: 943px;
+  }
+}
+
+.glasswarp{
   margin-top: 5.625rem;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  height: 60rem;
-  width: 90%;
+  width: 95%;
+  height: 76vh;
   margin-bottom: 6.25rem;
 
   background-color: rgba(255, 255, 255, 0.3);
@@ -152,6 +178,15 @@
   -webkit-backdrop-filter: blur(0.3125rem);
   border-radius: 0.625rem;
   border: 0.0625rem solid rgba(255, 255, 255, 0.18);
+}
+
+@media screen and (max-width : 768px){
+  .glasswarp{
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
 }
 
 .warp_btn {
@@ -210,15 +245,36 @@
   justify-content: center;
 }
 
+@media screen and (max-width : 768px){
+  .photo{
+    width: 40rem;
+  }
+}
+
 .image {
   width: 60rem;
   height: 35rem;
+}
+
+@media screen and (max-width : 768px){
+  .image{
+    width: 40rem;
+  }
 }
 
 .image1 {
   width: 60rem;
   height: 35rem;
   background-size: cover;
+}
+
+
+
+@media screen and (max-width : 768px) {
+  .image1 {width: 35rem;
+          height: 35rem;
+          background-size: cover;
+  }
 }
 
 .text {
@@ -245,14 +301,21 @@
 .comment_list {
   width: 80%;
   height: 15.625rem;
-  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+@media screen and (max-width : 768px){
+  .comment_list{
+    width: 60%;
+    margin-left: 0rem;
+  }
 }
 
 .comment_input {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-top: 20p x;
+  justify-content: center
+  margin-top: 20px;
 }
 
 .comment_input1 {
@@ -261,6 +324,13 @@
   border-radius: 1.875rem;
   text-indent: 1.875rem;
   border: 0.125rem solid gray;
+}
+
+@media screen and (max-width : 768px){
+  .comment_input1{
+    width: 700px;
+    margin-left: 10px;
+  }
 }
 
 .comment_input_btn {
@@ -273,13 +343,32 @@
   margin-left: 0.6rem;
 }
 
+@media screen and (max-width : 768px){
+  .comment_input_btn{
+    margin-right: 10px;
+  }
+}
+
 .comment_box {
   display: flex;
   align-items: center;
   /* justify-content: center; */
-  margin-top: 0.625rem;
-  margin-left: 11.25rem;
+  margin-top: .625rem;
+  margin-left:200px;
   height: 3.125rem;
+}
+
+
+
+@media screen and (max-width: 768px){
+  .comment_box{
+    margin-left: 0 !important;
+  /* background-color: #fff; */
+      /* display: flex;
+      align-items: center;
+      margin-top: .625rem;
+      height: 3.125rem; */ 
+    }
 }
 
 .comment_img {
@@ -287,6 +376,11 @@
   height: 3.125rem;
   border-radius: 50%;
   margin-right: 1.25rem;
+}
+@media screen and (max-width : 768px){
+  .comment_img{
+    margin-left: 10px;
+  }
 }
 
 .comment {
@@ -296,9 +390,21 @@
   width: 35rem;
 }
 
+@media screen and (max-width : 768px){
+  .comment {
+    width: 32rem;}
+}
+
+
 .comment_text {
   width: 26.125rem;
   margin-left: 0.3125rem;
+}
+
+@media screen and (max-width : 768px){
+  .comment_text{
+    width: 300px;
+  }
 }
 
 .comment_btn {
@@ -309,6 +415,12 @@
   width: 12rem;
 }
 
+
+@media screen and (max-width : 768px){
+  .commentname{
+    width: 5rem;
+  }
+}
 /* ------------------------------하트버튼 */
 
 /* ================= */
