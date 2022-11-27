@@ -1,7 +1,6 @@
 @font-face {
   font-family: "SLEIGothicTTF";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff")
-    format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -136,7 +135,6 @@ body {
   font-size: 1.3rem;
   font-weight: 600;
   color: black;
-
   display: block;
 }
 .Down_nav {
@@ -270,8 +268,7 @@ body {
   /* color: white; */
   /* -webkit-text-stroke: 0.002rem #1ed760; */
   color: #000;
-  text-shadow: -8px -8px 0 #1ed760, 8px -8px 0 #1ed760, -8px 8px 0 #1ed760,
-    8px 8px 0 #1ed760;
+  text-shadow: -8px -8px 0 #1ed760, 8px -8px 0 #1ed760, -8px 8px 0 #1ed760, 8px 8px 0 #1ed760;
 
   letter-spacing: 1rem;
 
@@ -394,7 +391,7 @@ body {
     font-size: 3rem;
     font-weight: 600;
     color: black;
-
+    margin-left: 30px;
     display: block;
   }
 
@@ -547,8 +544,7 @@ body {
     /* color: white; */
     /* -webkit-text-stroke: 0.002rem #1ed760; */
     color: #000;
-    text-shadow: -8px -8px 0 #1ed760, 8px -8px 0 #1ed760, -8px 8px 0 #1ed760,
-      8px 8px 0 #1ed760;
+    text-shadow: -8px -8px 0 #1ed760, 8px -8px 0 #1ed760, -8px 8px 0 #1ed760, 8px 8px 0 #1ed760;
 
     letter-spacing: 1rem;
 
@@ -806,8 +802,7 @@ body {
     /* color: white; */
     /* -webkit-text-stroke: 0.002rem #1ed760; */
     color: #000;
-    text-shadow: -8px -8px 0 #1ed760, 8px -8px 0 #1ed760, -8px 8px 0 #1ed760,
-      8px 8px 0 #1ed760;
+    text-shadow: -8px -8px 0 #1ed760, 8px -8px 0 #1ed760, -8px 8px 0 #1ed760, 8px 8px 0 #1ed760;
 
     letter-spacing: 1rem;
 

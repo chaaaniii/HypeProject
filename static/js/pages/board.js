@@ -1,13 +1,4 @@
-import {
-  addDoc,
-  collection,
-  query,
-  orderBy,
-  getDocs,
-  doc,
-  updateDoc,
-  deleteDoc,
-} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+import { addDoc, collection, query, orderBy, getDocs, doc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 import { dbService, authService } from "../firebase.js";
 
 const writecomment = async (event) => {
@@ -86,9 +77,7 @@ window.heartIcon = function heartIcon() {
 let likesAmount1 = 0;
 window.heartIcon1 = function heartIcon1() {
   const heartIcon1 = document.querySelector(".like-button1 .heart-icon1");
-  const likesAmountLabel1 = document.querySelector(
-    ".like-button1 .likes-amount1"
-  );
+  const likesAmountLabel1 = document.querySelector(".like-button1 .likes-amount1");
 
   heartIcon1.classList.toggle("liked1");
   if (heartIcon1.classList.contains("liked1")) {
@@ -109,16 +98,12 @@ window.comment_modifyed = function comment_modifyed(event) {
   const comment_text_value = comment_text.innerHTML;
   console.log(comment_text);
 
-  const comment_input_container = document.querySelector(
-    `.comment_input_container-${postid}`
-  );
+  const comment_input_container = document.querySelector(`.comment_input_container-${postid}`);
   comment_input_container.style.display = "flex";
 
   comment_text.style.display = "none";
 
-  const comment_input = document.querySelector(
-    `.comment_input_inside-${postid}`
-  );
+  const comment_input = document.querySelector(`.comment_input_inside-${postid}`);
 
   comment_input.value = comment_text_value;
 };
@@ -155,11 +140,11 @@ const getfire = async () => {
   comment_box.innerHTML = "";
   list.forEach((item) => {
     if (window.location.search === item.post) {
-    const temp_html = `<div class="comment_box" id="comment_box" >
+      const temp_html = `<div class="comment_box" id="comment_box" >
 
         <div class="comment">
-            <img src="${item.profileImg??"static/img/empty_profile.png"}" alt="" class="comment_img">
-            <p class="commentname">${item.nickname??"닉네임없음"}</p>
+            <img src="${item.profileImg ?? "static/img/empty_profile.png"}" alt="" class="comment_img">
+            <p class="commentname">${item.nickname ?? "닉네임없음"}</p>
             <div>
                 <p class="comment_text" id="comment_text-${item.id}">${item.value}</p>
                     <div class="comment_input_container comment_input_container-${item.id}" id="${item.id}">
@@ -178,10 +163,10 @@ const getfire = async () => {
                     <li class="comment_modify" id="${item.id}" onclick="comment_delete(event)">삭제</li>
                 </ul>
         </div>`;
-    const div = document.createElement("div");
-    div.classList.add("box");
-    div.innerHTML = temp_html;
-    comment_box.appendChild(div);
+      const div = document.createElement("div");
+      div.classList.add("box");
+      div.innerHTML = temp_html;
+      comment_box.appendChild(div);
     }
   });
 
