@@ -212,7 +212,7 @@ export const update_comment = async (event) => {
 export const delete_comment = async (event) => {
   event.preventDefault();
   const id = event.target.id;
-  const ok = window.confirm("해당 응원글을 정말 삭제하시겠습니까?");
+  const ok = window.confirm("해당 댓글을 정말 삭제하시겠습니까?");
   if (ok) {
     try {
       await deleteDoc(doc(dbService, "boardcomment", id));
@@ -222,3 +222,17 @@ export const delete_comment = async (event) => {
     }
   }
 };
+
+// export const delete_board = async (event) => {
+//   event.preventDefault();
+//   const id = event.target.id;
+//   const ok = window.confirm("해당 글을 정말 삭제하시겠습니까?");
+//   if (ok) {
+//     try {
+//       await deleteDoc(doc(dbService, "wt_board", id));
+//       getfire();
+//     } catch (error) {
+//       alert(error);
+//     }
+//   }
+// };
