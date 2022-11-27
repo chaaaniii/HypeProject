@@ -1,0 +1,581 @@
+/* padding 이나 margin이나 boder값 고정된 width 값은 대부분 px로 잡앚는게좋다 */
+/* 기기를 사용하는 사용자의 편의성을 고려한뿐이다 */
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bigcontainer {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  max-width: 92.5rem;
+  width: 100%;
+  margin: 0 auto;
+  height: 80%;
+  position: absolute;
+  margin-bottom: .625rem;
+}
+
+@media screen and (max-width : 768px){
+  .bigcontainer{
+    margin-top: 30px;
+    height: 85vh;
+  }
+}
+
+.tittle {
+  margin-bottom: 0.625rem;
+  font-size: 4rem;
+  word-break: break-word;
+  text-align: center;
+}
+.top_btn1 {
+  /* margin-top: px; */
+  background: rgba(125, 125, 125, 0.7);
+}
+
+.buttons1 {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.25rem;
+  margin-left: 3rem;
+  position: relative;
+}
+@media screen and (max-width : 768px){
+  .buttons1{
+    margin-left: 0;
+    position: relative;
+    margin-right: 100px;
+  }
+}
+
+.buttons button {
+  text-decoration: none;
+  color: black;
+  background-color: transparent;
+  border: none;
+  width: 2.5rem;
+  height: 1.875rem;
+  font-size: xx-large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons1 button {
+  text-decoration: none;
+  color: black;
+  background-color: transparent;
+  border: none;
+  width: 2.5rem;
+  height: 1.875rem;
+  font-size: xx-large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.buttons ul li {
+  text-indent: 0.9375rem;
+  display: flex;
+  flex-direction: column;
+  padding-right: 2.5rem;
+  margin-left: 0%;
+  border-radius: 0.625rem;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  color: white;
+}
+
+.buttons ul li:hover {
+  background: green;
+  padding-right: 2.5rem;
+}
+
+@media screen and (max-width : 768px) {
+  .buttons ul li {
+    padding-right: 1.2rem;
+  }
+
+  .buttons ul li:hover {
+    padding-right: 1.2rem;
+  }
+}
+
+.buttons ul {
+  background: black;
+  margin-left: 0;
+  border-radius: 0.625rem;
+  padding-top: 0.3125rem;
+  padding-left: 0.3125rem;
+  padding-right: 0.3125rem;
+  padding-bottom: 0.3125rem;
+}
+
+.buttons1 ul li {
+  text-indent: 0.9375rem;
+  display: flex;
+  flex-direction: column;
+  padding-right: 2.5rem;
+  margin-left: 0%;
+  border-radius: 0.625rem;
+  padding-top: 0.1875rem;
+  padding-bottom: 0.1875rem;
+  color: white;
+  width: 3.125rem;
+}
+
+.buttons1 ul li:hover {
+  background: green;
+  padding-right: 2.5rem;
+}
+
+@media screen and (max-width : 768px) {
+  .buttons1 ul li {
+    padding-right: 1.2rem;
+  }
+  .buttons1 ul li:hover {
+    padding-right: 1.2rem;
+  }
+}
+
+.buttons1 ul {
+  background: black;
+  margin-left: 0;
+  border-radius: 0.625rem;
+  padding-top: 0.3125rem;
+  padding-left: 0.3125rem;
+  padding-right: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  position: relative;
+  z-index: 100;
+}
+
+.buttons {
+  position: absolute;
+  margin-bottom: 35.625rem;
+  margin-left: 85rem;
+  z-index: 100;
+}
+
+@media screen and (max-width : 768px) {
+  .buttons {
+    margin-left: 30rem;
+  }
+}
+
+.warp {
+  margin-top: .8125rem;
+  /* float: right; */
+  /* width: 1616px;
+  height: 100vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  height: 95vh;
+  padding-top: .0625rem;
+  margin-top: .75rem;
+  margin-left: 11rem;
+}
+
+@media screen and (max-width : 768px){
+  .warp{
+    margin-top: 2rem;
+    height: 90vh;
+    margin-left: 0;
+  }
+}
+
+.glasswarp{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 95%;
+  height: 85vh;
+
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0.5rem 2rem 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0.3125rem);
+  -webkit-backdrop-filter: blur(0.3125rem);
+  border-radius: 0.625rem;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.18);
+}
+
+@media screen and (max-width : 768px){
+  .glasswarp{
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 0;
+    height: 90vh;
+  }
+}
+
+.warp_btn {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 39.375rem;
+  background-color: gray;
+  width: 2.5rem;
+  height: 6.25rem;
+  border-radius: 1.875rem;
+}
+
+.hide_bar {
+  position: relative;
+  /* display: none; */
+  visibility: hidden;
+}
+
+.hide_bar1 {
+  position: relative;
+  /* display: none; */
+  visibility: hidden;
+}
+
+.warp_btn_like {
+  background-color: transparent;
+  color: white;
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: 1.875rem;
+  border: 0.125rem solid white;
+}
+
+.warp_btn_scrap {
+  background-color: transparent;
+  color: white;
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: 1.875rem;
+  border: 0.125rem solid white;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.25rem auto 1.25rem auto;
+  width: 79%;
+}
+
+.text12 {
+  display: flex;
+  width: 80%;
+  word-break: break-word;
+  font-size: 2rem;
+  flex-direction: column;
+}
+
+.text123 {
+  display: flex;
+  font-size: 20px;
+}
+
+.comment_list {
+  width: 80%;
+  height: 15.625rem;
+  margin-right: 3rem;
+}
+
+@media screen and (max-width : 768px){
+  .comment_list{
+    width: 60%;
+    margin-left: 0rem;
+  }
+}
+
+.comment_input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-top: 20px;
+}
+
+.comment_input1 {
+  width: 40rem;
+  height: 3rem;
+  margin-left: 70px;
+  border-radius: 1.875rem;
+  text-indent: 1.875rem;
+  font-size: 1.25rem;
+  border: 0.125rem solid gray;
+}
+
+@media screen and (max-width : 768px){
+  .comment_input1{
+    width: 700px;
+    margin-left: 10px;
+  }
+}
+
+.comment_input_btn {
+  width: 4rem;
+  height: 3rem;
+  font-size: 1.25rem;
+  border-radius: 1.875rem;
+  background: black;
+  color: white;
+  border: 0.125rem solid black;
+  margin-left: 1.5rem;
+}
+
+@media screen and (max-width : 768px){
+  .comment_input_btn{
+    margin-right: 10px;
+  }
+}
+
+.comment_box {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  margin-top: .625rem;
+  margin-left:200px;
+  height: 3.125rem;
+}
+
+
+
+@media screen and (max-width: 768px){
+  .comment_box{
+    margin-left: 0 !important;
+  /* background-color: #fff; */
+      /* display: flex;
+      align-items: center;
+      margin-top: .625rem;
+      height: 3.125rem; */ 
+    }
+}
+
+.comment_img {
+  width: 3.125rem;
+  height: 3.125rem;
+  border-radius: 50%;
+  margin-right: 1.25rem;
+}
+@media screen and (max-width : 768px){
+  .comment_img{
+    margin-left: 10px;
+  }
+}
+
+.comment {
+  display: flex;
+  align-items: center;
+  /* background-color: gray; */
+  width: 40rem;
+}
+
+@media screen and (max-width : 768px){
+  .comment {
+    width: 29rem;}
+}
+
+
+.comment_text {
+  width: 26.125rem;
+  margin-left: 0.3125rem;
+}
+
+@media screen and (max-width : 768px){
+  .comment_text{
+    width: 300px;
+  }
+}
+
+.comment_btn {
+  margin-left: 7.5rem;
+}
+
+.commentname {
+  width: 12rem;
+}
+
+
+@media screen and (max-width : 768px){
+  .commentname{
+    width: 5rem;
+  }
+}
+/* ------------------------------하트버튼 */
+
+/* ================= */
+.like-button .heart-icon {
+  height: 3.5rem;
+  width: 6.25rem;
+  background: url("/static/img/heart1.png");
+  background-position: left;
+  cursor: pointer;
+  position: fixed;
+}
+
+.like-button .heart-icon.liked {
+  animation: like-anim 0.7s steps(28) forwards;
+}
+
+@keyframes like-anim {
+  to {
+    background-position: right;
+  }
+}
+
+.heart-bg {
+  margin-top: 5px;
+}
+
+.like-button .heart-bg {
+  background: rgba(255, 192, 200, 0);
+  border-radius: 50%;
+  height: 2.5rem;
+  width: 3.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 100ms ease;
+}
+
+/* .like-button .heart-bg:hover {
+  background: rgba(255, 192, 200, 0.7);
+} */
+
+.like-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 1350px;
+  margin-bottom: 320px;
+  background-color: gray;
+  border-radius: 1.875rem;
+  z-index: 100;
+  width: 2.5rem;
+}
+
+.like-button .likes-amount {
+  /* font-size: 1.25rem; */
+  font-family: "Roboto", sans-serif;
+  color: #888;
+  /* font-weight: 900; */
+  /* margin-left: .375rem; */
+}
+
+/* ------------------------ */
+
+.like-button1 .heart-icon1 {
+  height: 3.5rem;
+  width: 6.25rem;
+  background: url("/static/img/heart1.png");
+  background-position: left;
+  cursor: pointer;
+  /* position: relative; */
+}
+
+.heart-icon1.liked1 {
+  display: flex;
+}
+
+.like-button1 .heart-icon1.liked1 {
+  animation: like-anim1 0.7s steps(28) forwards;
+}
+
+@keyframes like-anim1 {
+  to {
+    background-position: right;
+  }
+}
+
+.like-button1 .heart-bg1 {
+  /* background: rgba(255, 192, 200, 0);
+  border-radius: 50%;
+  height: 2.5rem; */
+  width: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 100ms ease;
+}
+
+/* .like-button .heart-bg:hover {
+  background: rgba(255, 192, 200, 0.7);
+} */
+
+.like-button1 {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  width: 6.5rem;
+}
+
+.like-button1 .likes-amount1 {
+  /* font-size: 1.25rem; */
+  font-family: "Roboto", sans-serif;
+  color: #888;
+  /* font-weight: 900; */
+  /* margin-left: .375rem; */
+}
+
+/* =================== */
+
+.comment_input_container {
+  display: none;
+}
+
+.comment_input_container input {
+  width: 23.75rem;
+  /* margin-left: .9375rem; */
+  border-radius: 1.875rem;
+  text-indent: 0.625rem;
+}
+
+.comment_input_container input:focus {
+  outline: none;
+  border-radius: 0.625rem;
+  padding-right: 0.3125rem;
+  width: 23.4rem;
+  border-radius: 1.875rem;
+}
+
+.comment_input_container button {
+  width: 3.75rem;
+  height: 1.875rem;
+  background-color: black;
+  color: white;
+  margin-left: 0.3125rem;
+}
+
+.name {
+  padding-right: 0.625rem;
+}
+
+.comment p {
+  font-size: 1.5rem;
+}
+
+.box {
+  width: 768px;
+  margin-left: auto;
+  display: flex;
+  /* margin-right: auto; */
+}

@@ -1,0 +1,29 @@
+<div class="background">
+    <div class="box_profile">
+        <div class="profile_setting_box">
+            <form id="profile_form" onsubmit="changeProfile(event)">
+                <div class="back_button">
+                    <a href="#mypage"><i class="fa-solid fa-angle-left"></i></a>
+                </div>
+                <div class="profile_img_area">
+                    <img id="profileView" src="/static/img/empty_profile.png" alt="profile">
+                </div>
+                <div class="profile_img_btn">
+                    <div class="img_btn_wrap">
+                        <button type="button" id="upload_btn" class="img_upload" onclick="upload_img()" style="display: block;">이미지 업로드</button>
+                        <button type="button" id="remove_btn" class="img_remove" onclick="delete_img()">이미지 제거</button>
+                    </div>
+                </div>
+                <input onchange="onFileChange(event)" type="file" id="imgUpload" accept="img/*" style="display: none;">
+                <div class="profile_info_area">
+                    <div id="modify" class="profile_modify" style="visibility: visible;">
+                        <input placeholder="닉네임" id="urnameinput" class="profile_text display_name" value="" />
+                        <input id="profileBtn" class="img_save" type="submit" value="프로필 변경" />
+                        </div>
+                    </div>
+                
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
