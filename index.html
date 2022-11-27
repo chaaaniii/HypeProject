@@ -9,53 +9,94 @@
     <title>Hype Express</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="./static/css/main.css" />
-    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css"
+      rel="stylesheet"
+    />
     <!-- 내용글에대한 스크립트 -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="https://kit.fontawesome.com/66c674ac51.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/66c674ac51.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 
-    <script src="https://kit.fontawesome.com/96c0010bf4.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/96c0010bf4.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
     <div id="root">
       <nav class="navBar">
-        <input type="image" id="logoya" class="logo" onclick="location.href='/'" src="static/img/logo8.png" />
+        <input
+          type="image"
+          id="logoya"
+          class="logo"
+          onclick="location.href='/'"
+          src="static/img/logo8.png"
+        />
         <ul class="nav_menu">
           <div class="nav_lis">
             <h1 class="Down_nav" onclick="DowntoMenu()">MENU</h1>
             <li class="nav_item Fs">
-              <a href="#fashion" class="nav_link" onclick="route(event)"> Fashion </a>
+              <a href="#fashion" class="nav_link" onclick="route(event)">
+                Fashion
+              </a>
             </li>
             <li class="nav_item Fd">
               <a href="#food" class="nav_link" onclick="route(event)"> Food </a>
             </li>
             <li class="nav_item Tr">
-              <a href="#travel" class="nav_link" onclick="route(event)"> Travel </a>
+              <a href="#travel" class="nav_link" onclick="route(event)">
+                Travel
+              </a>
             </li>
             <li class="nav_item Sp">
-              <a href="#sports" class="nav_link" onclick="route(event)"> Sports </a>
+              <a href="#sports" class="nav_link" onclick="route(event)">
+                Sports
+              </a>
             </li>
             <li class="nav_item Em">
-              <a href="#entertainment" class="nav_link" onclick="route(event)"> Entertainment </a>
+              <a href="#entertainment" class="nav_link" onclick="route(event)">
+                Entertainment
+              </a>
             </li>
             <li class="nav_item Mp">
-              <a href="#mypage" class="nav_link" onclick="route(event)"> My Page </a>
+              <a href="#mypage" class="nav_link" onclick="route(event)">
+                My Page
+              </a>
             </li>
           </div>
           <div class="nav_btns">
             <li class="nav_button">
-              <a href="#signin" class="nav_btn" id="sign_in" onclick="route(event)"> Sign In </a>
+              <a
+                href="#signin"
+                class="nav_btn"
+                id="sign_in"
+                onclick="route(event)"
+              >
+                Sign In
+              </a>
             </li>
             <li class="nav_button login">
-              <a href="#login" id="log_in" class="nav_btn" onclick="route(event)"> Log In </a>
+              <a
+                href="#login"
+                id="log_in"
+                class="nav_btn"
+                onclick="route(event)"
+              >
+                Log In
+              </a>
             </li>
           </div>
           <div class="logout_btn">
             <li class="nav_button logout">
-              <button id="logout" class="nav_btn" onclick="logout()">Logout</button>
+              <button id="logout" class="nav_btn" onclick="logout()">
+                Logout
+              </button>
             </li>
           </div>
         </ul>
