@@ -327,7 +327,7 @@ const getPost = async () => {
           <!-- 홈페이지가 새로고침 또는 랜딩이 될떄마다 뿌려주는 함수는 getfire이다 팀원들이 뿌려주는 먼가를만들면 거기에 넣어주기만하면됨 -->
         </div>
         <div class="comment_list" id="comment_list">
-        </div>>`;
+        </div>`;
       const div = document.createElement("div");
       if (postObject.category === "#f_wt_board") {
         descWrap.style.background = "rgb(253, 246, 237)";
