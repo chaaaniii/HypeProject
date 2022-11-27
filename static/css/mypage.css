@@ -1,288 +1,310 @@
-.background{
-    background: rgb(89, 100, 217);
-    height: 90vh;
-    padding-top: 1px;
-    margin-top: 13px;
-    margin-left: 176px;
+.background {
+  background: rgb(89, 100, 217);
+  height: 95vh;
+  padding-top: 1px;
+  margin-top: 12px;
+  margin-left: 176px;
 }
 .box {
-    width: 768px;
-    margin-left: auto;
-    margin-right: auto;
+  width: 768px;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
 }
 .profile_area {
-    margin-top: 8rem;
+  margin-top: 8rem;
 }
 .profile_box {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 .profile {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 .profile_info {
-    display: flex;
-    flex-direction: column;
-    margin-left: 1.5rem;
+  display: flex;
+  margin-left: 1.5rem;
 }
 .profile img {
-    display: block;
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: rgb(0 0 0 / 6%) 0px 0px 4px 0px;
+  display: block;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: rgb(0 0 0 / 6%) 0px 0px 4px 0px;
 }
 .profile_setting a {
-    color: black;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out 0s;
+  font-size: 1.35rem;
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out 0s;
 }
-.profile_setting a:hover{
-    color: white;
+.profile_setting a:hover {
+  color: white;
 }
 .name {
-    font-size: 1.5rem;
-    line-height: 1.5;
-    font-weight: bold;
+  font-size: 2rem;
+  line-height: 1.5;
+  font-weight: 200;
 }
 .desc {
-    line-height: 1.5;
-    margin-top: .5rem;
+  line-height: 1.5;
+  margin-top: 0.5rem;
 }
-.underline{
-    background: black;
-    width: 100%;
-    height: 2px;
-    margin-top: 2.5rem;
-    margin-bottom: 2rem;
+.underline {
+  background: black;
+  width: 100%;
+  height: 2px;
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
 }
-.tab_area{
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-    display: flex;
-    justify-content: center;
+.tab_area {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
 }
-.tab_btn{
-    display: flex;
-    position: relative;
+.tab_btn {
+  display: flex;
+  position: relative;
 }
-.mypost{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.325rem;
-    width: 10rem;
-    height: 3rem;
-    color: black;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out 0s;
-    font-weight: 600;
+.mypost {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  width: 10rem;
+  height: 3rem;
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out 0s;
+  font-weight: 200;
 }
-.mypost.active{
-    color: white;
+.mypost.active {
+  color: white;
 }
-.tab_underline{
-    width: 10rem;
-    height: 2px;
-    background: white;
-    position: absolute;
-    bottom: -2px;
-    transition: left 0.3s ease-in-out 0s;
+.tab_underline {
+  width: 10rem;
+  height: 2px;
+  background: white;
+  position: absolute;
+  bottom: -2px;
+  transition: left 0.3s ease-in-out 0s;
 }
 /* 프로필 설정 */
 .box_profile {
-    margin-top: 5rem;
-    margin-left: auto;
-    margin-right: auto;
-    width: 768px;
-    padding-bottom: 5rem;
+  margin-top: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 768px;
+  padding-bottom: 5rem;
 }
-.profile_setting_box{
-    display: flex;
-    flex-direction: column;
+.profile_setting_box {
+  display: flex;
+  flex-direction: column;
 }
 .profile_img_area {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 .profile_img_area img {
-    display: block;
-    width: 20rem;
-    height: 20rem;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: rgb(0 0 0 / 6%) 0px 0px 4px 0px;
-    margin-bottom: 2rem;
+  display: block;
+  width: 30rem;
+  height: 30rem;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: rgb(0 0 0 / 6%) 0px 0px 4px 0px;
+  margin-bottom: 2rem;
 }
 .back_button {
-    display: inline-flex;
-    position: absolute;
+  display: inline-flex;
+  position: absolute;
 }
 .back_button a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    text-decoration: none;
-    background: white;
-    color: black;
-    border-radius: 1rem;
-    width: 2rem;
-    height: 2rem;
-    font-size: 1rem;
-    transition: background-color 0.3s ease-in-out 0s;
-    z-index: 999;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  background: white;
+  color: black;
+  border-radius: 1rem;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1rem;
+  transition: background-color 0.3s ease-in-out 0s;
+  z-index: 999;
 }
 .back_button a:hover {
-    background: green;
-    color: white;
+  background: green;
+  color: white;
 }
 .img_btn_wrap {
-    display: flex;
+  display: flex;
 }
 .profile_img_btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .img_save {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    background: white;
-    color: black;
-    border-radius: 1rem;
-    width: 9rem;
-    height: 3rem;
-    font-size: 1rem;
-    margin-top: 1.5rem;
-    padding: .5rem 1.5rem;
-    transition: background-color 0.3s ease-in-out 0s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: white;
+  color: black;
+  border-radius: 1rem;
+  width: 11rem;
+  height: 3.5rem;
+  font-size: 1.35rem;
+  margin-top: 1.5rem;
+  padding: 0.5rem 1.5rem;
+  transition: background-color 0.3s ease-in-out 0s;
 }
 .profile_img_btn .img_save:hover {
-    background-color: green;
-    color: white;
+  background-color: green;
+  color: white;
 }
 .profile_img_btn button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    background: white;
-    color: black;
-    border-radius: 1rem;
-    width: 9rem;
-    height: 3rem;
-    font-size: 1rem;
-    padding: .5rem 1.5rem;
-    transition: background-color 0.3s ease-in-out 0s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: white;
+  color: black;
+  border-radius: 1rem;
+  width: 11rem;
+  height: 3.5rem;
+  font-size: 1.35rem;
+  padding: 0.5rem 1.5rem;
+  transition: background-color 0.3s ease-in-out 0s;
 }
 .profile_img_btn button:hover {
-    background-color: green;
-    color: white;
+  background-color: green;
+  color: white;
 }
-.img_remove{
-    margin-left: 2rem;
+.img_remove {
+  margin-left: 2rem;
 }
-.profile_info_area{
-    position: relative;
-    margin-top: 1rem;
-    padding-top: 3rem;
-    flex: 1 1 0%;
-    border-top: 2px solid black;
+.profile_info_area {
+  position: relative;
+  margin-top: 1rem;
+  padding-top: 3rem;
+  flex: 1 1 0%;
+  border-top: 2px solid black;
 }
 .info {
-    position: absolute;
-    width: 768px;
+  position: absolute;
+  width: 768px;
 }
 .profile_info_area .username {
-    font-size: 2.25rem;
-    margin: 0px;
-    line-height: 1.5;
+  font-size: 2rem;
+  margin: 0px;
+  line-height: 1.5;
 }
 .profile_info_area p {
-    font-size: 1rem;
-    margin-top: 0.5rem;
-    line-height: 1.5;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  line-height: 1.5;
 }
 .modify_button {
-    display: flex;
-    margin-top: 1.5rem;
-    justify-content: flex-end;
+  display: flex;
+  margin-top: 1.5rem;
+  justify-content: flex-end;
 }
 .modify {
-    outline: none;
-    padding: 0px 1.25rem;
-    border: none;
-    display: inline;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: rgb(255 255 255 / 80%);
-    text-decoration: underline;
-    background: none;
-    cursor: pointer;
-    width: 5rem;
-    height: 2.5rem;
-    transition: transform,color 0.3s ease-in-out 0s;;
+  outline: none;
+  padding: 0px 1.25rem;
+  border: none;
+  display: inline;
+  font-size: 1.35rem;
+  line-height: 1.5;
+  color: rgb(255 255 255 / 80%);
+  text-decoration: underline;
+  background: none;
+  cursor: pointer;
+  width: 5rem;
+  height: 2.5rem;
+  transition: transform, color 0.3s ease-in-out 0s;
 }
 .profile_info_area button:hover {
-    transform: scale(1.05);
-    color: white;
+  transform: scale(1.05);
+  color: white;
 }
 .profile_text {
-    display: block;
-    border: 1px solid rgb(0 0 0 / 6%);;
-    padding: 0.5rem;
-    font-size: 1rem;
-    line-height: 1rem;
-    outline: none;
-    border-radius: 4px;
-    color: #868E96;
+  display: block;
+  border: 1px solid rgb(0 0 0 / 6%);
+  padding: 0.5rem;
+  font-size: 1rem;
+  line-height: 1rem;
+  outline: none;
+  border-radius: 4px;
+  color: #868e96;
 }
-.profile_text.display_name{
-    color: black;
-    font-size: 1.5rem;
-    font-weight: 600;
-    width: 46.8rem;
+.profile_text.display_name {
+  color: black;
+  font-size: 2rem;
+  font-weight: 200;
+  width: 46.8rem;
 }
-.profile_text.info{
-    color: black;
-    margin-top: 1rem;
-    width: 46.8rem;
+.profile_text.info {
+  color: black;
+  margin-top: 1rem;
+  width: 46.8rem;
 }
 .save_button {
-    display: flex;
-    margin-top: 4rem;
-    justify-content: flex-end;
+  display: flex;
+  margin-top: 4rem;
+  justify-content: flex-end;
 }
 .save {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    background: green;
-    color: white;
-    border-radius: 1rem;
-    padding: 0px 1.25rem;
-    width: 5rem;
-    height: 2rem;
-    font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: green;
+  color: white;
+  border-radius: 1rem;
+  padding: 0px 1.25rem;
+  width: 5rem;
+  height: 2rem;
+  font-size: 1rem;
+}
+
+.mypage_wrap_list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: space-around;
+  width: 80%;
+  max-width: 149rem;
+  height: 52vh;
+  overflow-y: scroll;
+}
+
+.mypage_wrap_box {
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 16px 0 rgb(0 0 0 / 10%);
+  transform: translateY(0);
+}
+.mypage_wrap_box:hover {
+  transform: translateY(-1%);
+  box-shadow: rgb(0 0 0 / 20%) 0px 4px 16px 0px;
 }

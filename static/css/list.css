@@ -1,7 +1,6 @@
 @font-face {
   font-family: "SLEIGothicTTF";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff")
-    format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -14,61 +13,59 @@ body {
 .fashion_b {
   position: relative;
   background: rgb(253, 246, 237);
-  height: 90vh;
+  height: 95vh;
   padding-top: 1px;
   margin-top: 12px;
   margin-left: 176px;
-  overflow: scroll;
 }
 .food_b {
   position: relative;
   background: rgb(237, 191, 213);
-  height: 90vh;
+  height: 95vh;
   padding-top: 1px;
   margin-top: 12px;
   margin-left: 176px;
-  overflow: scroll;
 }
 
 .tarvel_b {
   position: relative;
   background: rgb(237, 122, 59);
-  height: 90vh;
+  height: 95vh;
   padding-top: 1px;
   margin-top: 12px;
   margin-left: 176px;
-  overflow: scroll;
 }
 .sports_b {
   position: relative;
   background: rgb(250, 255, 93);
-  height: 90vh;
+  height: 95vh;
   padding-top: 1px;
   margin-top: 12px;
   margin-left: 176px;
-  overflow: scroll;
 }
 .ent_b {
   position: relative;
   background: rgb(79, 158, 247);
-  height: 90vh;
+  height: 95vh;
   padding-top: 1px;
   margin-top: 12px;
   margin-left: 176px;
-  overflow: scroll;
 }
 
 /* glassmorphism */
 .glass {
+  width: 138.625rem;
+  height: 75.8vh;
   position: absolute;
   margin: 3%;
-  padding-bottom: 10%;
+  padding-bottom: 5%;
   background-color: rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
+  overflow-y: scroll;
 }
 
 /* 카테고리&새글작성버튼 */

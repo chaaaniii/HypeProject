@@ -1,7 +1,6 @@
 @font-face {
   font-family: "SLEIGothicTTF";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff")
-    format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -18,6 +17,7 @@
 }
 
 #loginPage {
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -32,7 +32,9 @@
   width: 100%;
 }
 
-#logo {
+.logo2 {
+  width: 220px;
+  margin-left: -20px;
   font-size: 40px;
   margin-bottom: 30px;
 }
@@ -134,8 +136,7 @@ button {
 }
 
 .googleimg {
-  background: url("https://accounts.scdn.co/sso/images/google-icon.1cdc8fce9609d07f0e9d8d0bc4b61f8f.svg")
-    center center no-repeat;
+  background: url("https://accounts.scdn.co/sso/images/google-icon.1cdc8fce9609d07f0e9d8d0bc4b61f8f.svg") center center no-repeat;
   width: 25px;
   height: 25px;
   margin-right: 10px;
@@ -216,6 +217,18 @@ button {
   transform: scale(1.05);
 }
 #signinBtn {
+  border-radius: 50px;
+  border-style: none;
+  width: 500px;
+  height: 50px;
+  color: white;
+  font-size: 16px;
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  letter-spacing: 1px;
   background-color: white;
   border: 1px solid rgb(135, 136, 136);
   color: rgb(135, 136, 136);
