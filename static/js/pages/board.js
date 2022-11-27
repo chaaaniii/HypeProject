@@ -3,10 +3,12 @@ import { dbService, authService } from "../firebase.js";
 
 const writecomment = async (event) => {
   event.preventDefault();
+  let param = window.location.search;
   const comment = document.getElementById("comment_input1");
   const { uid, photoURL, displayName } = authService.currentUser;
   try {
     await addDoc(collection(dbService, "boardcomment"), {
+      post: param,
       value: comment.value,
       createAt: Date.now(),
       creatorId: uid,
@@ -94,6 +96,7 @@ window.comment_modifyed = function comment_modifyed(event) {
   const postid = event.target.id.split("-")[1];
   const comment_text = document.querySelector(`#comment_text-${postid}`);
   const comment_text_value = comment_text.innerHTML;
+  console.log(comment_text);
 
   const comment_input_container = document.querySelector(`.comment_input_container-${postid}`);
   comment_input_container.style.display = "flex";
@@ -136,6 +139,7 @@ const getfire = async () => {
   const comment_box = document.getElementById("comment_list");
   comment_box.innerHTML = "";
   list.forEach((item) => {
+    if (window.location.search === item.post) {
     const temp_html = `<div class="comment_box" id="comment_box" >
 
         <div class="comment">
@@ -158,12 +162,12 @@ const getfire = async () => {
                     <li class="comment_modify" id="comment_modify-${item.id}" name="${item.id}" onclick="comment_modifyed(event)">수정</li>
                     <li class="comment_modify" id="${item.id}" onclick="comment_delete(event)">삭제</li>
                 </ul>
-        </div>
-`;
+        </div>`;
     const div = document.createElement("div");
     div.classList.add("box");
     div.innerHTML = temp_html;
     comment_box.appendChild(div);
+    }
   });
 
   // 버그가 있어서 나중에 풀어보기
