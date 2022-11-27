@@ -150,17 +150,21 @@ const show_nav_bar = () => {
   const logo = document.querySelector("#logoya");
   const nav_menu = document.querySelector(".nav_menu");
   const navBar = document.querySelector(".navBar");
+  const MENU = document.querySelector('.Menu')
   nav_menu.style.display = "flex";
   navBar.style.backgroundColor = "black";
   logo.style.display = "flex";
+  MENU.style.display = "flex";
 };
 const hide_nav_bar = () => {
   const logo = document.querySelector("#logoya");
   const nav_menu = document.querySelector(".nav_menu");
   const navBar = document.querySelector(".navBar");
+  const MENU = document.querySelector('.Menu')
   nav_menu.style.display = "none";
   navBar.style.backgroundColor = "white";
   logo.style.display = "none";
+  MENU.style.display = "none";
 };
 
 const getHypeList = async () => {

@@ -1,6 +1,7 @@
 @font-face {
   font-family: "SLEIGothicTTF";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff") format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -144,118 +145,6 @@ body {
 .Menu {
   display: none;
 }
-/* nav바 반응형 */
-@media (max-width: 1120px) {
-  .Down_nav {
-    background-color: green;
-    color: #fff;
-    margin-top: -95px;
-
-    display: flex;
-    justify-content: center;
-
-    position: absolute;
-    right: 0;
-
-    font-size: 2.5rem;
-    padding: 1rem 1.5rem 2rem 1rem;
-
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-
-    width: 8rem;
-    height: 1.6rem;
-
-    cursor: pointer;
-  }
-
-  .Menu {
-    background-color: green;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-    font-size: 2.5rem;
-    padding: 1rem 1.5rem 2rem 1rem;
-
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-
-    width: 8rem;
-    height: 1.6rem;
-
-    cursor: pointer;
-  }
-
-  .nav_menu {
-    display: fixed;
-    flex-direction: column;
-    justify-content: flex-end;
-    position: absolute;
-
-    bottom: 0;
-    width: 100%;
-    background-color: green;
-
-    margin-bottom: -50rem;
-    transition: 0.5s;
-
-    z-index: 9;
-  }
-  .nav_lis {
-    flex-direction: column;
-
-    width: 100%;
-  }
-
-  .nav_item {
-    padding: 1rem 1.5rem 1rem 1rem;
-    justify-content: center;
-    align-items: center;
-    background-color: green;
-    border-bottom: 3px dashed white;
-    border-radius: 0;
-
-    width: 100%;
-    height: 3rem;
-  }
-
-  .nav_link {
-    font-size: 3rem;
-    font-weight: 600;
-    color: black;
-
-    display: block;
-  }
-
-  .nav_item:hover {
-    height: 100%;
-    margin-top: 0;
-
-    cursor: pointer;
-  }
-
-  .nav_btns {
-    position: relative;
-  }
-
-  .nav_btn {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: black;
-
-    margin: 30px 0 30px 0;
-  }
-
-  .nav_btn:hover {
-    color: #fff;
-    background-color: black;
-    border: 2px solid white;
-  }
-}
 
 /* 바디 타이핑효과 */
 .top_text {
@@ -380,17 +269,13 @@ body {
   font-weight: 600;
   /* color: white; */
   /* -webkit-text-stroke: 0.002rem #1ed760; */
-    color: #000;
-   text-shadow:
-  -8px -8px 0 #1ed760,
-  8px -8px 0 #1ed760,
-  -8px 8px 0 #1ed760,
-  8px 8px 0 #1ed760;
-  
+  color: #000;
+  text-shadow: -8px -8px 0 #1ed760, 8px -8px 0 #1ed760, -8px 8px 0 #1ed760,
+    8px 8px 0 #1ed760;
+
   letter-spacing: 1rem;
 
   animation: fadeInRight 1s;
-
 }
 
 @keyframes fadeInRight {
@@ -424,4 +309,523 @@ body {
   font-size: 10rem;
 
   z-index: -9;
+}
+
+/* 1024 반응형 */
+@media (max-width: 1024px) {
+  .Down_nav {
+    background-color: green;
+    color: #fff;
+    margin-top: -95px;
+
+    display: flex;
+    justify-content: center;
+
+    position: absolute;
+    right: 0;
+
+    font-size: 2.5rem;
+    padding: 1rem 1.5rem 2rem 1rem;
+
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+
+    width: 8rem;
+    height: 1.6rem;
+
+    cursor: pointer;
+  }
+
+  .Menu {
+    background-color: green;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    font-size: 2.5rem;
+    padding: 1rem 1.5rem 2rem 1rem;
+
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+
+    width: 8rem;
+    height: 1.6rem;
+
+    cursor: pointer;
+  }
+
+  .nav_menu {
+    display: fixed;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: absolute;
+
+    bottom: 0;
+    width: 100%;
+    background-color: green;
+
+    margin-bottom: -50rem;
+    transition: 0.5s;
+
+    z-index: 9;
+  }
+  .nav_lis {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .nav_item {
+    padding: 1rem 0rem 1rem 0rem;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+    border-bottom: 3px dashed white;
+    border-radius: 0;
+
+    width: 100%;
+    height: 3rem;
+  }
+
+  .nav_link {
+    font-size: 3rem;
+    font-weight: 600;
+    color: black;
+
+    display: block;
+  }
+
+  .nav_item:hover {
+    height: 100%;
+    margin-top: 0;
+
+    cursor: pointer;
+  }
+
+  .nav_btns {
+    position: relative;
+  }
+
+  .nav_btn {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: black;
+
+    margin: 30px 0 30px 0;
+  }
+
+  .nav_btn:hover {
+    color: #fff;
+    background-color: black;
+    border: 2px solid white;
+  }
+
+  /* 바디 타이핑효과 */
+  .top_text {
+    height: 110px;
+  }
+
+  .first_text {
+    color: white;
+    font-size: 4rem;
+    font-weight: 100;
+
+    margin-left: 5rem;
+    margin-top: 6rem;
+
+    letter-spacing: 0.3rem;
+  }
+
+  /* 네온사인 플리커 */
+  .flicker {
+    position: absolute;
+    margin-top: 2.5rem;
+    margin-left: 5rem;
+
+    color: #fff;
+    font-weight: bold;
+    font-size: 30vw;
+    font-weight: 600;
+    line-height: 0.75;
+    letter-spacing: 2rem;
+
+    opacity: 0;
+    animation: text-flicker 5s linear infinite;
+  }
+
+  .offset {
+    color: #fff;
+    animation: letter-flicker 3s linear infinite;
+  }
+
+  @keyframes text-flicker {
+    0% {
+      opacity: 0.1;
+      text-shadow: 0px 0px 22px gray;
+    }
+    2% {
+      opacity: 1;
+      text-shadow: 0px 0px 22px gray;
+    }
+    6% {
+      opacity: 0.1;
+      text-shadow: 0px 0px 22px gray;
+    }
+    8% {
+      opacity: 0.1;
+      text-shadow: 0px 0px 22px gray;
+    }
+    9% {
+      opacity: 1;
+      text-shadow: 0px 0px 22px gray;
+    }
+    12% {
+      opacity: 0.1;
+      text-shadow: 0px 0px 22px gray;
+    }
+    20% {
+      opacity: 1;
+      text-shadow: 0px 0px 22px gray;
+    }
+    100% {
+      opacity: 0.9;
+      text-shadow: 0px 0px 22px gray;
+    }
+  }
+
+  @keyframes letter-flicker {
+    0% {
+      opacity: 0.1;
+      text-shadow: 0px 0px 22px gray;
+    }
+    2% {
+      opacity: 0.1;
+      text-shadow: 0px 0px 22px gray;
+    }
+    4% {
+      opacity: 1;
+      text-shadow: 0px 0px 22px gray;
+    }
+    19% {
+      opacity: 1;
+      text-shadow: 0px 0px 22px gray;
+    }
+    21% {
+      opacity: 0.1;
+      text-shadow: 0px 0px 22px gray;
+    }
+    23% {
+      opacity: 1;
+      text-shadow: 0px 0px 22px gray;
+    }
+    80% {
+      opacity: 1;
+      text-shadow: 0px 0px 22px gray;
+    }
+    83% {
+      opacity: 0.4;
+      text-shadow: 0px 0px 22px gray;
+    }
+    87% {
+      opacity: 1;
+      text-shadow: 0px 0px 22px gray;
+    }
+  }
+
+  /* express 슬라이드 */
+  .slide {
+    position: absolute;
+
+    margin-left: 5rem;
+    margin-top: 300px;
+
+    font-size: 30vw;
+    font-weight: 600;
+    /* color: white; */
+    /* -webkit-text-stroke: 0.002rem #1ed760; */
+    color: #000;
+    text-shadow: -8px -8px 0 #1ed760, 8px -8px 0 #1ed760, -8px 8px 0 #1ed760,
+      8px 8px 0 #1ed760;
+
+    letter-spacing: 1rem;
+
+    animation: fadeInRight 1s;
+  }
+
+  @keyframes fadeInRight {
+    0% {
+      opacity: 0;
+      transform: translate3d(100%, 0, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translateZ(0);
+    }
+  }
+
+  .last_text {
+    display: none;
+  }
+}
+/* 768일때 */
+@media (max-width: 768px) {
+  .Down_nav {
+    background-color: green;
+    color: #fff;
+    margin-top: -95px;
+
+    display: flex;
+    justify-content: center;
+
+    position: absolute;
+    right: 0;
+
+    font-size: 2.5rem;
+    padding: 1rem 1.5rem 2rem 1rem;
+
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+
+    width: 8rem;
+    height: 1.6rem;
+
+    cursor: pointer;
+  }
+
+  .Menu {
+    background-color: green;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    font-size: 2.5rem;
+    padding: 1rem 1.5rem 2rem 1rem;
+
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+
+    width: 8rem;
+    height: 1.6rem;
+
+    cursor: pointer;
+  }
+
+  .nav_menu {
+    display: fixed;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: absolute;
+
+    bottom: 0;
+    width: 100%;
+    background-color: green;
+
+    margin-bottom: -50rem;
+    transition: 0.5s;
+
+    z-index: 9;
+  }
+  .nav_lis {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .nav_item {
+    padding: 1rem 0rem 1rem 0rem;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+    border-bottom: 3px dashed white;
+    border-radius: 0;
+
+    width: 100%;
+    height: 3rem;
+  }
+
+  .nav_link {
+    font-size: 3rem;
+    font-weight: 600;
+    color: black;
+
+    display: block;
+  }
+
+  .nav_item:hover {
+    height: 100%;
+    margin-top: 0;
+
+    cursor: pointer;
+  }
+
+  .nav_btns {
+    position: relative;
+  }
+
+  .nav_btn {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: black;
+
+    margin: 30px 0 30px 0;
+  }
+
+  .nav_btn:hover {
+    color: #fff;
+    background-color: black;
+    border: 2px solid white;
+  }
+
+  /* 바디 타이핑효과 */
+  .top_text {
+    height: 110px;
+  }
+
+  .first_text {
+    color: white;
+    font-size: 3rem;
+    font-weight: 100;
+
+    margin-left: 5rem;
+    margin-top: 6rem;
+
+    letter-spacing: 0.3rem;
+  }
+
+  /* 네온사인 플리커 */
+  .flicker {
+    position: absolute;
+    margin-top: 2.5rem;
+    margin-left: 5rem;
+
+    color: #fff;
+    font-weight: bold;
+    font-size: 34vw;
+    font-weight: 600;
+    line-height: 0.75;
+    letter-spacing: 1rem;
+
+    opacity: 0;
+    animation: text-flicker 5s linear infinite;
+  }
+
+  .offset {
+    color: #fff;
+    animation: letter-flicker 3s linear infinite;
+  }
+
+  @keyframes text-flicker {
+    0% {
+      opacity: 0.1;
+      text-shadow: 0px 0px 22px gray;
+    }
+    2% {
+      opacity: 1;
+      text-shadow: 0px 0px 22px gray;
+    }
+    6% {
+      opacity: 0.1;
+      text-shadow: 0px 0px 22px gray;
+    }
+    8% {
+      opacity: 0.1;
+      text-shadow: 0px 0px 22px gray;
+    }
+    9% {
+      opacity: 1;
+      text-shadow: 0px 0px 22px gray;
+    }
+    12% {
+      opacity: 0.1;
+      text-shadow: 0px 0px 22px gray;
+    }
+    20% {
+      opacity: 1;
+      text-shadow: 0px 0px 22px gray;
+    }
+    100% {
+      opacity: 0.9;
+      text-shadow: 0px 0px 22px gray;
+    }
+  }
+
+  @keyframes letter-flicker {
+    0% {
+      opacity: 0.1;
+      text-shadow: 0px 0px 22px gray;
+    }
+    2% {
+      opacity: 0.1;
+      text-shadow: 0px 0px 22px gray;
+    }
+    4% {
+      opacity: 1;
+      text-shadow: 0px 0px 22px gray;
+    }
+    19% {
+      opacity: 1;
+      text-shadow: 0px 0px 22px gray;
+    }
+    21% {
+      opacity: 0.1;
+      text-shadow: 0px 0px 22px gray;
+    }
+    23% {
+      opacity: 1;
+      text-shadow: 0px 0px 22px gray;
+    }
+    80% {
+      opacity: 1;
+      text-shadow: 0px 0px 22px gray;
+    }
+    83% {
+      opacity: 0.4;
+      text-shadow: 0px 0px 22px gray;
+    }
+    87% {
+      opacity: 1;
+      text-shadow: 0px 0px 22px gray;
+    }
+  }
+
+  /* express 슬라이드 */
+  .slide {
+    position: absolute;
+
+    margin-left: 5rem;
+    margin-top: 250px;
+
+    font-size: 32vw;
+    font-weight: 600;
+    /* color: white; */
+    /* -webkit-text-stroke: 0.002rem #1ed760; */
+    color: #000;
+    text-shadow: -8px -8px 0 #1ed760, 8px -8px 0 #1ed760, -8px 8px 0 #1ed760,
+      8px 8px 0 #1ed760;
+
+    letter-spacing: 1rem;
+
+    animation: fadeInRight 1s;
+  }
+
+  @keyframes fadeInRight {
+    0% {
+      opacity: 0;
+      transform: translate3d(100%, 0, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translateZ(0);
+    }
+  }
+
+  .last_text {
+    display: none;
+  }
 }
