@@ -7,7 +7,7 @@
 ## 팀원 소개
 |박진양|조영찬|김예슬|유영재|한상권
 |------|------|------|------|------|
-|[Github](https://github.com/Jinyang-Park)%7C[Github](https://github.com/chaaaniii)%7C[Github](https://github.com/2sel)%7C[Github](https://github.com/YoungJae0910)%7C[Github](https://github.com/Gon1782)%7C
+|[Github](https://github.com/Jinyang-Park)|[Github](https://github.com/chaaaniii)|[Github](https://github.com/2sel)|[Github](https://github.com/YoungJae0910)|[Github](https://github.com/Gon1782)|
 ## 기능 구현
 * 로그인, 회원 가입 + 소셜 로그인 (구글, 깃헙)
     - 로그인하지 않을 경우 전체 게시글 조회만 가능
