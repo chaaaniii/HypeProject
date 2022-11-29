@@ -52,5 +52,5 @@
 ### 반응형 디자인
 ![반응형](https://user-images.githubusercontent.com/80263801/204563514-05a2bff1-623e-45dc-a4f2-f36b650067df.gif)
 
-### :아래를_가리키는_손_모양: 다양한 기능들은 아래 홈페이지에서 체험해주세요
+### 👇 다양한 기능들은 아래 홈페이지에서 체험해주세요
 http://hypexpress.shop/
