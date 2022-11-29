@@ -42,11 +42,15 @@
 ---
 ### 메인 페이지
 ![메인페이지](https://user-images.githubusercontent.com/80263801/204556124-2ebf4af1-4067-457e-83a4-811893d7875d.gif)
+
 ### 로그인 페이지
 ![로그인](https://user-images.githubusercontent.com/80263801/204556828-b055bd4c-6038-4e68-8e91-b920bd8507ad.gif)
+
 ### 댓글 기능과 좋아요 및 게시물 작성
 ![63861bd623206981370568](https://user-images.githubusercontent.com/80263801/204561351-9796d98b-4016-4ada-8f62-d7b928697f0e.gif)
+
 ### 반응형 디자인
 ![반응형](https://user-images.githubusercontent.com/80263801/204563514-05a2bff1-623e-45dc-a4f2-f36b650067df.gif)
+
 ### :아래를_가리키는_손_모양: 다양한 기능들은 아래 홈페이지에서 체험해주세요
 http://hypexpress.shop/
