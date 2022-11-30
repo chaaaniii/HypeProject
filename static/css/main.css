@@ -1,5 +1,26 @@
+/*reset*/
+@import "reset.css";
+
 /*home*/
 @import url("./home.css");
 
 /*login*/
 @import url("./login.css");
+
+/*Signin*/
+@import url("./signin.css");
+
+/*list*/
+@import url("./list.css");
+
+/*box-list*/
+@import url("./box_list.css");
+
+/* board */
+@import url("./board.css");
+
+/* mypage */
+@import url("./mypage.css");
+
+/* wt_board */
+@import url("./wt_board.css");

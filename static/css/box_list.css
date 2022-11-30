@@ -1,0 +1,117 @@
+@font-face {
+  font-family: "SLEIGothicTTF";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "SLEIGothicTTF";
+}
+
+/* 이미지&글정보 */
+.wrap_list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+  padding: 0 3% 0 3%;
+}
+
+/* 768 */
+@media screen and (max-width: 768px) {
+  .wrap_list {
+  }
+}
+
+.wrap_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 30rem;
+  margin: 3rem;
+  box-shadow: 0 4px 16px 0 #ddd;
+  transform: translateY(0);
+  /* transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s; */
+}
+.wrap_box:hover {
+  transform: translateY(-5%);
+  box-shadow: rgb(0 0 0 / 20%) 0px 4px 16px 0px;
+}
+
+.img_area img {
+  width: 34rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+}
+
+.write {
+  width: 34rem;
+}
+.txt_area {
+  display: flex;
+  flex: 1 1 0%;
+  flex-direction: column;
+  padding: 1.7rem;
+  background-color: white;
+  word-break: break-all;
+}
+.txt_area ul {
+  display: block;
+}
+.txt_area ul h4 {
+  font-size: 1.5rem;
+  margin: 1rem 0.5rem 1rem 0;
+}
+.txt_area ul span p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  line-height: 1.5em;
+
+  font-size: 1rem;
+  margin: 1rem 0.5rem 1rem 0;
+}
+.date {
+  margin: 2rem 1rem 1rem 0;
+}
+
+.author_index {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  line-height: 1.5rem;
+}
+.author_index img {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+  border-radius: 50%;
+}
+.author_index span {
+  width: 15rem;
+  padding-left: 5px;
+}
+
+.like {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.like img {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding-left: 15rem;
+}
+.like span {
+  padding-left: 5px;
+}
