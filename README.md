@@ -41,7 +41,7 @@
 * 2022.11.28(월) 프로젝트 발표
 ---
 ### 메인 페이지
-![메인페이지](https://user-images.githubusercontent.com/80263801/204556124-2ebf4af1-4067-457e-83a4-811893d7875d.gif)
+ ![메인페이지](https://user-images.githubusercontent.com/80263801/204556124-2ebf4af1-4067-457e-83a4-811893d7875d.gif)
 
 ### 로그인 페이지
 ![로그인](https://user-images.githubusercontent.com/80263801/204556828-b055bd4c-6038-4e68-8e91-b920bd8507ad.gif)
