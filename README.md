@@ -36,12 +36,14 @@
 	<img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat&logo=Firebase&logoColor=white" />
 </div>
 * s3를 통한 배포 및 Route 53, 가비아를 이용하여 도메인 연결
+
 ## 기간
 * 2022.11.18(금) ~ 2022.11.27(일)
 * 2022.11.28(월) 프로젝트 발표
 ---
 ### 메인 페이지
-![메인페이지](https://user-images.githubusercontent.com/80263801/204556124-2ebf4af1-4067-457e-83a4-811893d7875d.gif)
+
+<img src = "https://user-images.githubusercontent.com/80263801/204556124-2ebf4af1-4067-457e-83a4-811893d7875d.gif"/>
 
 ### 로그인 페이지
 ![로그인](https://user-images.githubusercontent.com/80263801/204556828-b055bd4c-6038-4e68-8e91-b920bd8507ad.gif)
